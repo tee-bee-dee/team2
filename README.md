@@ -8,6 +8,10 @@ Use https://cse112bluejay.herokuapp.com/ to access last years version of the app
 2. make sure you are in the robo_betty_alpha repo dir
 3. `npm install`
 4. If npm install fails, try to remove the `node_modules` dir and `client/bower_components` dir
+5. In the event 'npm install -g gulp bower foreman' does not work. Run individually
+  'npm install gulp' \
+  'npm install bower' \
+  'npm install foreman'
 
 
 # You will need a .env file. Ask team leads about this
