@@ -32,7 +32,7 @@ app.use(morgan('dev', {"stream": winstonConfig.stream}));
 /*
  * Connect to MongoDB.
  */
-mongoose.connect(config.mongoDBUrl);
+mongoose.connect(config.mongoDBURI);
 mongoose.connection.on('connected', function() {
   console.log('MongoDB connected succesfully at: ' + config.mongoDBUrl);
 });
