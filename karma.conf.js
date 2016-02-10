@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sun Mar 01 2015 16:23:07 GMT-0800 (PST)
+// Generated on Sat Feb 07 2015 17:45:05 GMT-0800 (PST)
 
 module.exports = function(config) {
   config.set({
@@ -7,19 +7,14 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-
     // frameworks to use
-    // available frameworks: https://nkapmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'sinon-chai'],
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'client/bower_components/angular/angular.js',
-      'client/bower_components/angular-mocks/angular-mocks.js',
-      'client/bower_components/angular-bootstrap/ui-bootstrap.js',
-      'dist/bundle.js',
-      'client/test/**/*.js'
+        "test/test.js"
     ],
 
 
@@ -37,7 +32,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec'],
+    reporters: ['progress'],
 
 
     // web server port
@@ -54,16 +49,16 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    autoWatch: true,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: false
   });
 };

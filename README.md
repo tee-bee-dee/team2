@@ -1,41 +1,45 @@
-# robo_betty_alpha [![Build Status](https://travis-ci.org/bluejay112/robo_betty_alpha.svg?branch=development)](https://travis-ci.org/bluejay112/robo_betty_alpha)
+# web-app [ ![Codeship Status for CSE112-GoldTeam/web-app](https://codeship.com/projects/9df65660-88a3-0132-d13f-02ce2f7c7d8a/status?branch=master)](https://codeship.com/projects/59497)
 
-# Update 1/12/16 for CSE112 Winter 2016 Students
-Use https://cse112bluejay.herokuapp.com/ to access last years version of the app. Happy Refactoring!
+First Run
+----------------------------
+1. If on a Mac first install [Xcode](https://developer.apple.com/xcode/downloads/)
+2. Install [MongoDB](https://www.mongodb.org/downloads)
+3. Install [Node.js](http://nodejs.org/download/)
+4. Install Imagemagick using [Homebrew](http://brew.sh/) if you're using OS X
 
-# How to install
-1. `npm install -g gulp bower foreman`
-2. make sure you are in the robo_betty_alpha repo dir
-3. `npm install`
-4. If npm install fails, try to remove the `node_modules` dir and `client/bower_components` dir
-5. In the event 'npm install -g gulp bower foreman' does not work. Run individually
-  'npm install gulp' \
-  'npm install bower' \
-  'npm install foreman'
+        $ brew install imagemagick
 
+   If you're using Windows, head to http://www.imagemagick.org/download/ and download
+   the latest version of Imagemagick, and just follow the installer steps.
 
-# You will need a .env file. Ask team leads about this
-1. the .env file will go in the root directory of the app
-2. it will be used to store server configurations
-3. __This .env file should never be pushed to github__
+5. Navigate to the web-app directory
+6. Install npm dependencies:
 
-# How to run frontend portion only
-1. `gulp frontend`
+        $ npm install
+        $ npm install --global gulp
 
-This will launch a server that will host your angular app.
-This server will solely serve your angular files. This will not run our backend.
-This server will also be updated when you changed one of the source files.
+7. Create a folder for the MongoDB server with
 
-# How to run backend portion only
-1. `gulp backend`
+        $ mkdir db
 
-This will only start up the backend. You can use this to quickly test API
-routes.
+8. Use ``gulp`` to run the application (it will automatically start Mongo)
+9. Navigate your browser to [http://localhost:4000](http://localhost:4000/)
 
-# How To run entire app with our backend
-1. `gulp build:dev`
-2. `nf start web`
+Push to testing environment
+----------------------------
+1. Install git and heroku toolbelt (https://toolbelt.heroku.com/)
+2. git config --global user.name "John Doe"
+3. git config --global user.email johndoe@example.com
+4. if want to only temporarily be login to git (http://stackoverflow.com/questions/5343068/is-there-a-way-to-skip-password-typing-when-using-https-github)
+5. if want permanent storage of git password (https://help.github.com/articles/caching-your-github-password-in-git/)
+6. heroku login
+7. gulp stage OR gulp stage --test [stage number]
 
-# If you want to run our backend while watching for changes to the frontend
-1. Run our entire app with our backend with the steps above
-2. In a separate terminal run `gulp frontend:combined`
+REST API Documentation
+---------------------
+http://cse112-goldteam.github.io/web-app/
+
+To deploy documents
+```
+gulp doc-deploy
+```
