@@ -20,7 +20,8 @@ global.__base = __dirname + '/';
 
 //Database
 var monk = require('monk');
-var mongoURI = process.env.MONGOLAB_URI || 'localhost:27017/robobetty';
+//var mongoURI = process.env.MONGOLAB_URI || 'localhost:27017/robobetty';
+var mongoURI = 'mongodb://admin:admin@ds061335.mongolab.com:61335/heroku_w9bxpzpc';
 console.log('Connecting to DB: ' + mongoURI);
 var db = monk(mongoURI);
 
