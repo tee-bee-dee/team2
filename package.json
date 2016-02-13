@@ -5,6 +5,7 @@
   "title": "Robobetty API",
   "private": true,
   "scripts": {
+    "build": "gulp",
     "start": "node ./bin/www"
   },
   "dependencies": {
