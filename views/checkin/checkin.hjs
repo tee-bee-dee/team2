@@ -21,9 +21,9 @@
             }
 
             .btn {
-                background-color: {{buttonBg}};
-                border-color: {{buttonBg}};
-                color: {{buttonText}}
+                background-color: {{buttonBg}} !important;
+                border-color: {{buttonBg}} !important;
+                color: {{buttonText}} !important;
             }
 
             .container-checkin {
