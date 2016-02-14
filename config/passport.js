@@ -76,7 +76,8 @@ module.exports = function (passport) {
                             phone: phone,
                             fname: fname,
                             lname: lname,
-                            logo: '',
+                            logo: 'http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png',
+                            bg: 'http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-26.jpg',
                             walkins: false
                         }, function (err, result) {
                             if (err) {
@@ -84,7 +85,7 @@ module.exports = function (passport) {
                             }
 
                             var businessID = result._id.toString();
-                            
+
                             employees.insert({
                                 business: ObjectId(businessID),
                                 password: result.password,
@@ -118,7 +119,7 @@ module.exports = function (passport) {
     },
         function (req,email,password,done) {
 
-       
+
 
             var db =req.db;
             var employee = db.get('employees');
@@ -129,12 +130,12 @@ module.exports = function (passport) {
              query: {registrationToken: req.query.token},
              update: { $unset: {registrationToken: 1},
                 $set: {password: password} },
-             new: true},    
-                function (err,user){  
-                if (err) { 
+             new: true},
+                function (err,user){
+                if (err) {
                      throw err; }
                 return done(null,user);
-       
+
                  }
             );
         }
@@ -156,17 +157,17 @@ module.exports = function (passport) {
         },
         function (req, email, password, done) { // callback with email and password from our form
 
-      
+
             auth.validateLogin(req.db, email, password, function (user) {
                 if (!user) {
                     return done(null, false, req.flash("login", "Invalid Email/Password Combo"));
-                } 
+                }
                 else {
                     return done(null,user);
                     }
-            });     
+            });
         }
     ));
-    
+
 
 };
