@@ -10,7 +10,7 @@ exports.get = function (req, res, next) {
         res.render('business/customize_theme', {
             message: req.flash('permission'),
             logo: business.logo,
-            bg: business.bg,
+            bg: business.style.bg,
         });
     });
 

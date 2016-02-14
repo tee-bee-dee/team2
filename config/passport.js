@@ -77,7 +77,29 @@ module.exports = function (passport) {
                             fname: fname,
                             lname: lname,
                             logo: 'http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png',
-                            bg: 'http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-26.jpg',
+                            style: {
+                                bg: 'http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-26.jpg',
+                                buttonBg: {
+                                    r: 66,
+                                    g: 167,
+                                    b: 204,
+                                },
+                                buttonText: {
+                                    r: 66,
+                                    g: 167,
+                                    b: 204,
+                                },
+                                containerText: {
+                                    r: 66,
+                                    g: 167,
+                                    b: 204,
+                                },
+                                containerBg: {
+                                    r: 66,
+                                    g: 167,
+                                    b: 204,
+                                },
+                            },
                             walkins: false
                         }, function (err, result) {
                             if (err) {
