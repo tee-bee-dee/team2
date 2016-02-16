@@ -79,7 +79,7 @@
 			<form class="form-horizontal" action="" method="post">
 				<label class="col-md-2 col-md-offset-2 control-label editPassword">Password</label>
 				<div class="col-md-3">
-					<input type="password" id="editPassword" name="editPassword" value="{{ password }}" class="form-control">
+					<input type="password" id="editPassword" name="editPassword" value="" class="form-control" required>
 				</div>
 				<div class="col-md-2">
 					<button type="password" style = "margin-bottom: 10px" class="btn custom-button" type="submit">Update</button>
