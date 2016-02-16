@@ -18,10 +18,24 @@
             <img id = "company-logo" src="images/logo.png">
         </a>
       </div>
-      <div class="navbar-padding-right">
-        <ul class="nav navbar-nav navbar-right">
+      <div class="navbar-right" id="nav-menu">
+        <ul class="nav navbar-nav navbar-select">
+            <li>
+                <a href="#overview">Overview</a>
+            </li>
            <li>
-               <p class="navbar-btn">
+            <a href="#testimonial_blk">Testimonial</a>
+           </li>
+
+           <li>
+            <a href="#pricing">Pricing</a>
+           </li>
+
+           <li>
+             <a href="#support">Contact Us</a>
+           </li>
+           <li>
+               <p>
                    <a href="/login" class="btn custom-button" id="login-btn-navbar">Log In</a>
                </p>
            </li>
@@ -49,7 +63,27 @@
             </div>
         </div>
 
+    <section id="overview" style="padding: 50px">
+        <div class="container">
+            <div class="row" id="some-section">
+                <div class="row">
+                   <div class="col-lg-12 text-center">
+                        <h1>Overview</h1>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="testimonial_blk" style="padding: 50px">
+    <div class="container">
         <div class="row" id="second-section">
+            <div class="row">
+               <div class="col-lg-12 text-center">
+                    <h1>Testimonials</h1>
+               </div>
+            </div>
+
             <div class="col-xs-6">
                 <div>
                     <blockquote class="testimonial">
@@ -89,6 +123,32 @@
             </div>
         </div>
     </div>
+    </section>
+
+
+    <section id="pricing" style="padding: 50px">
+        <div class="row" id="third-section">
+            <div class="row">
+                 <div class="col-lg-12 text-center">
+                    <h1>Pricing</h1>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="pricing" style="padding: 50px">
+            <div class="row" id="fourth-section">
+                <div class="row">
+                     <div class="col-lg-12 text-center">
+                        <h1>Contact Us!</h1>
+                        <h4>Email us at: fubar@fubar.co</h4>
+                        <h4>Call us at:  605-475-6968 </h4>
+                     </div>
+                </div>
+            </div>
+        </section>
+
     <footer class="footer navbar-bottom">
         <div class="container">
             <ul class="list-inline footer-links text-center">
@@ -102,5 +162,12 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        $('.navbar-default .navbar-select  li  a').click(function(e) {
+            var $this = $(this);
+            $this.parent().siblings().removeClass('active').end().addClass('active');
+        });
+    </script>
 </body>
 </html>
