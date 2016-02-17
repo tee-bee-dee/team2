@@ -65,7 +65,7 @@
             </div>
         </div>
 
-    <div class="row>
+    <div class="row">
     <section id="overview" style="padding: 50px">
         <div class="container">
             <div class="row" id="some-section">
@@ -280,10 +280,9 @@
     </footer>
 
     <script>
-        $('.navbar-default .navbar-select  li  a').click(function(e) {
-            var $this = $(this);
-            $this.parent().siblings().removeClass('active').end().addClass('active');
-        });
+        $('body').scrollspy({
+            target: '.navbar-fixed-top'
+        })
     </script>
 </body>
 </html>
