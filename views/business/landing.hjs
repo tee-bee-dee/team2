@@ -65,6 +65,7 @@
             </div>
         </div>
 
+    <div class="row>
     <section id="overview" style="padding: 50px">
         <div class="container">
             <div class="row" id="some-section">
@@ -112,7 +113,10 @@
         </div>
 
     </section>
-    <section id="testimonial_blk" style="padding: 50px">
+    </div>
+
+    <div class="row">
+    <section id="testimonial_blk" style="padding: 50px;  background: #CAD1D1">
     <div class="container">
         <div class="row" id="second-section">
             <div class="row">
@@ -161,8 +165,9 @@
         </div>
     </div>
     </section>
+    </div>
 
-
+    <div class="row">
     <section id="pricing" style="padding: 50px">
         <div class="row" id="third-section">
             <!-- Pricing Header-->
@@ -243,9 +248,11 @@
 
         </div>
     </section>
+    </div>
 
 
-    <section id="support" style="padding: 50px">
+    <div class="row">
+    <section id="support" style="padding: 50px; background: #CAD1D1; margin: 0">
             <div class="row" id="fourth-section">
                 <div class="row">
                      <div class="col-lg-12 text-center">
@@ -256,6 +263,7 @@
                 </div>
             </div>
         </section>
+    </div>
 
     <footer class="footer navbar-fixed-bottom">
         <div class="container">
