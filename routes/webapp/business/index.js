@@ -49,7 +49,7 @@ module.exports = function (passport) {
 
 
     router.get('/uploadlogo', isLoggedInBusiness, uploadLogo.get);
-    router.post('/uploadlogo', isLoggedInBusiness, uploadLogo.post);
+    router.post('/uploadlogo', isLoggedInBusiness, accountSettings.uploadLogo);
 
     router.get('/register', register.get);
     router.post('/register',passport.authenticate('local-signup',{
