@@ -32,6 +32,26 @@
     </nav>
 
     <div class="container container-margin">
+
+            <div class="row text-center" id="regis-container">
+                <form method="post" action="addemployees" enctype="application/x-www-form-urlencoded">
+                <label class="col-md-2 col-md-offset-2 control-label ">Name</label>
+                    <div class="col-md-3">
+                    	<input type="text" id="inputName" name="inputName" value="{{ name }}" class="form-control" required>
+                    </div>
+                <label class="col-md-2 col-md-offset-2 control-label ">Email</label>
+                    <div class="col-md-3">
+                    	<input type="email" id="inputEmail" name="inputEmail" value="{{ email }}" class="form-control" required>
+                    </div>
+                <label class="col-md-2 col-md-offset-2 control-label ">Phone</label>
+                    <div class="col-md-3">
+                    	<input type="phone" id="inputPhone" name="inputPhone" value="{{ phone }}" class="form-control" required>
+                    </div>
+                    <input class="btn custom-button" name="submit" type="submit" href="/addemployees" value="Upload">
+                </form>
+
+        <!-- OLD GOLD TEAM CODE -->
+        <!--
             <div class="row">
                 <div class="col-xs-offset-1 col-xs-4">
                     <h2>Register Employees</h2>
@@ -44,7 +64,7 @@
                     <textarea class="add-email" type="text" name="csvEmployees" placeholder="CSV of Employees EMAILS" required></textarea>
                     <input class="btn custom-button" name="submit" type="submit" href="/addemployees" value="Upload">
                 </form>
-
+        -->
                 <div class="outerAlign" >
 
                     <h3 class="tableheader">Employees already registered</h2>
