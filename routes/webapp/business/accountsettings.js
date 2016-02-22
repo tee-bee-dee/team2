@@ -38,6 +38,8 @@ exports.get = function (req,res) {
  * @returns title, fname, lname, password, phone, email, smsNotify, emailNotify
  */
 exports.post = function (req, res) {
+    console.log('1')
+
     var db = req.db;
     var employees = db.get('employees');
     var eid = req.user[0]._id;
@@ -50,6 +52,10 @@ exports.post = function (req, res) {
 
     if (inputPass != null)
     {
+
+    console.log('2')
+
+
         inputPass = auth.hashPassword(inputPass);
         employees.findAndModify({_id: eid}, {$set: {password: inputPass}}, function (err, data) {
             if (err) {
@@ -62,41 +68,75 @@ exports.post = function (req, res) {
         });
     }
 
-    if (inputEmail != null)
+    // if (inputEmail != null)
+    // {
+    //     employees.findAndModify({_id: eid}, { $set: {email: inputEmail}}, function(err, data)
+    //     {
+    //         if (err) { return handleError(res, err);}
+
+    //         render(req, res, {
+    //             edited: 'Email successfully changed!'
+    //         });
+    //     });
+    // }
+
+    // if (inputPhone != null)
+    // {
+    //     inputPhone = inputPhone.replace(/-/g, '');
+
+    //     if (inputPhone.length === 10)
+    //     {
+    //         inputPhone = '1' + inputPhone;
+				// 		employees.findAndModify({_id: eid}, { $set: {phone: inputPhone}}, function(err, data)
+    //         {
+    //             if (err) { return handleError(res, err);}
+
+
+    //             render(req, res, {
+    //                 edited: 'Phone number successfully changed!'
+    //             });
+    //         });
+    //     }
+    //     else
+    //     {
+    //         render(req, res, {
+    //             alert: 'Incorrect phone number format'
+    //         });
+    //     }
+    // }
+
+    if (inputPhone != null || inputEmail != null)
     {
-        employees.findAndModify({_id: eid}, { $set: {email: inputEmail}}, function(err, data)
+        console.log('3')
+
+
+        var phoneAndEmail = {};
+
+        if (inputPhone != null) {
+            inputPhone = inputPhone.replace(/-/g, '');
+            if (inputPhone.length === 10) {
+                inputPhone = '1' + inputPhone;
+            } else {
+                render(req, res, {
+                    alert: 'Incorrect phone number format'
+                });
+            }
+            phoneAndEmail.phone = inputPhone;
+        }
+
+        if (inputEmail != null) {
+            phoneAndEmail.email = inputEmail;
+        }
+
+        employees.findAndModify({_id: eid}, { $set: phoneAndEmail}, function(err, data)
         {
             if (err) { return handleError(res, err);}
 
+
             render(req, res, {
-                edited: 'Email successfully changed!'
+                edited: 'Contact info saved.'
             });
         });
-    }
-
-    if (inputPhone != null)
-    {
-        inputPhone = inputPhone.replace(/-/g, '');
-
-        if (inputPhone.length === 10)
-        {
-            inputPhone = '1' + inputPhone;
-						employees.findAndModify({_id: eid}, { $set: {phone: inputPhone}}, function(err, data)
-            {
-                if (err) { return handleError(res, err);}
-
-
-                render(req, res, {
-                    edited: 'Phone number successfully changed!'
-                });
-            });
-        }
-        else
-        {
-            render(req, res, {
-                alert: 'Incorrect phone number format'
-            });
-        }
     }
 
     if (textNotify != null)
