@@ -5,7 +5,9 @@ var style = require('./../../../lib/style.js');
 exports.get = function (req, res, next) {
     var business = req.session.business;
     res.render('checkin/nocode', {
+        companyName: business.companyName,
         bg: business.style.bg,
+        logo: business.style.logo,
         buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
         buttonText: style.rgbObjectToCSS(business.style.buttonText),
         containerText: style.rgbObjectToCSS(business.style.containerText),
@@ -201,8 +203,19 @@ exports.post = function (req, res, next) {
                 if (err) {
                     console.error('Session save error:', err);
                 }
-                res.redirect('apptinfo');
+                res.redirect('done');
+            });
+                    //Update the state of the appointment
+            req.db.get('appointments').updateById(req.session.appointmentId, {
+                $set: {
+                    state: 'checkedIn'
+                }
+            }, function (err) {
+                if (err) {
+                    return next(err);
+                }
             });
         }
+
     });
 };
