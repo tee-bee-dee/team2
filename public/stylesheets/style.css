@@ -10,6 +10,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 100px;
+  overflow-x: hidden;
 }
 
 /* Begin: Changes made by William Huang 2/7/15 */
