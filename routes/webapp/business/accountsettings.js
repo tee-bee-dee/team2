@@ -38,13 +38,15 @@ exports.get = function (req,res) {
  * @returns title, fname, lname, password, phone, email, smsNotify, emailNotify
  */
 exports.post = function (req, res) {
-    console.log('1')
+
 
     var db = req.db;
     var employees = db.get('employees');
     var eid = req.user[0]._id;
 
+    var inputOldPass = req.body.oldPassword;
     var inputPass = req.body.editPassword;
+    var inputPass2 = req.body.editPassword2;
     var inputEmail = req.body.editEmail;
     var inputPhone = req.body.editPhone;
     var textNotify = req.body.sendText;
@@ -52,20 +54,33 @@ exports.post = function (req, res) {
 
     if (inputPass != null)
     {
-
-    console.log('2')
-
-
-        inputPass = auth.hashPassword(inputPass);
-        employees.findAndModify({_id: eid}, {$set: {password: inputPass}}, function (err, data) {
-            if (err) {
-                return handleError(res, err);
-            }
-
+        hashedInputPass = auth.hashPassword(inputPass);
+        if (inputPass != inputPass2) {
             render(req, res, {
-                edited: 'Password successfully changed!'
-            });
-        });
+                alert: 'Passwords do not match'
+            })
+        } else {
+
+            employees.find({_id: eid}, function (err2, result) {
+                var emp = result[0];
+                if (!auth.validPassword(emp.password, inputOldPass)) {
+                    render(req, res, {
+                        alert: 'Incorrect password'
+                    })
+                } else {
+
+                    employees.findAndModify({_id: eid}, {$set: {password: hashedInputPass}}, function (err, data) {
+                        if (err) {
+                            return handleError(res, err);
+                        }
+
+                        render(req, res, {
+                            edited: 'Password successfully changed!'
+                        });
+                    });
+                }
+            })
+        }
     }
 
     // if (inputEmail != null)
@@ -107,7 +122,7 @@ exports.post = function (req, res) {
 
     if (inputPhone != null || inputEmail != null)
     {
-        console.log('3')
+    
 
 
         var phoneAndEmail = {};

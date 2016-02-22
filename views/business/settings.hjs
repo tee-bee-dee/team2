@@ -56,17 +56,17 @@
 			<form class="form-horizontal" action="" method="post">
 				<label class="col-md-6 control-label editPassword">Old Password</label>
 				<div class="col-md-6">
-					<input type="password" id="editPassword" name="" value="" class="form-control" required>
+					<input type="password" id="editPassword" name="oldPassword" value="" class="form-control" required>
 				</div>
 				<br><br>
 				<label class="col-md-6 control-label editPassword">New Password</label>
 				<div class="col-md-6">
-					<input type="password" id="editPassword" name="" value="" class="form-control" required>
+					<input type="password" id="editPassword" name="editPassword" value="" class="form-control" required>
 				</div>
 				<br><br>
 				<label class="col-md-6 control-label editPassword">Confirm New Password</label>
 				<div class="col-md-6">
-					<input type="password" id="editPassword" name="editPassword" value="" class="form-control" required>
+					<input type="password" id="editPassword" name="editPassword2" value="" class="form-control" required>
 				</div>
 				<br><br>
 				<div class="col-md-2 col-md-offset-5">
