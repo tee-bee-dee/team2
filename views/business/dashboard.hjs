@@ -258,7 +258,7 @@
                                         <th>New Patient</th>
                                     </tr>
                                     </thead>
-                                    <tbody id="tblBody">
+                                    <tbody>
                                     <tr>
 
                                         <td>Gev</td>
