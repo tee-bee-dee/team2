@@ -121,14 +121,8 @@
               </thead>
               <tbody id="tblBody">
                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+
+
                   </tr>
               </tbody>
           </table>
@@ -241,7 +235,7 @@
                     </div> -->
 
   <footer class="footer">
-        <div class="container">
+        <!-- <div class="container"> -->
             <ul class="list-inline footer-links text-center">
 
                 <!--<li><a href="#">Privacy</a></li>
@@ -249,7 +243,7 @@
                 <li><a href="#">Support</a></li>-->
                 <li class = "footer-copyright">Copyright &#169; Gold Team-CSE 112, Winter 2015. All Rights Reserved.</li>
             </ul>
-        </div>
+        <!-- </div> -->
     </footer>
     <!-- </div> -->
     <!-- </div> -->

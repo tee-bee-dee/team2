@@ -127,7 +127,7 @@ function poll() {
         table();
 
         poll();
-    },1000);//checks every 1000 millisecond
+    },20000);//checks every 1000 millisecond
 }
 
 //function to get the appointment's time in a formatted string
