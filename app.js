@@ -20,8 +20,8 @@ global.__base = __dirname + '/';
 
 //Database
 var monk = require('monk');
-var mongoURI = process.env.MONGOLAB_URI || 'mongodb://heroku_w9bxpzpc:q7po0h9hcnap9vkcem34givjr4@ds061335.mongolab.com:61335/heroku_w9bxpzpc';
-//var mongoURI = 'mongodb://admin:admin@ds061335.mongolab.com:61335/heroku_w9bxpzpc';
+//var mongoURI = process.env.MONGOLAB_URI || 'mongodb://heroku_w9bxpzpc:q7po0h9hcnap9vkcem34givjr4@ds061335.mongolab.com:61335/heroku_w9bxpzpc';
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://admin:admin@ds061335.mongolab.com:61335/heroku_w9bxpzpc';
 console.log('Connecting to DB: ' + mongoURI);
 var db = monk(mongoURI);
 
