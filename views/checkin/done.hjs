@@ -47,6 +47,6 @@
     <h1 class="header"> Thank you! Someone will be with you shortly. </h1>
     <img class="checkinphoto" src="{{logo}}" alt="">
 </div>
-<meta http-equiv="refresh" content="5;checkin" />
+<meta http-equiv="refresh" content="5;nocode" />
 </body>
 </html>
