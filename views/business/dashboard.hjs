@@ -180,6 +180,7 @@
                             <li class="footer"><a href="#">View all</a></li>
                         </ul>
                     </li>
+                    <li><a href="#" class="btn btn-sm btn-info btn-flat pull-right">Logout</a></li>
                 </ul>
             </div>
 
@@ -204,15 +205,13 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Patients</span> <i
-                            class="fa fa-angle-left pull-right"></i>
+                        <i class="fa fa-dashboard"></i> <span>Patients</span>
                     </a>
                 </li>
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-files-o"></i>
                         <span>Settings</span>
-                        <span class="label label-primary pull-right">4</span>
                     </a>
                 </li>
             </ul>
@@ -294,9 +293,9 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer clearfix">
-                            <a href="#" class="btn btn-sm btn-info btn-flat pull-right">Check In</a>
-                            <a href="#" class="btn btn-sm btn-default btn-flat pull-right">Check Out</a>
-                            <a href="#" class="btn btn-sm btn-default btn-flat pull-right">Reschedule</a>
+                            <a href="#" class="btn btn-sm btn-success btn-flat pull-right">Check In</a>
+                            <a href="#" class="btn btn-sm btn-warning btn-flat pull-right">Check Out</a>
+                            <a href="#" class="btn btn-sm btn-info btn-flat pull-right">Reschedule</a>
                         </div>
                         <!-- /.box-footer -->
                     </div>
