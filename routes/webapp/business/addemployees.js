@@ -1,7 +1,8 @@
 var crypto = require('crypto');
 var baby = require('babyparse');
 var async = require('async');
-var sendgrid  = require('sendgrid')('robobetty', 'NoKcE0FGE4bd');
+// var sendgrid  = require('sendgrid')('robobetty', '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');
+var sendgrid = require('sendgrid')('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');
 var ObjectId = require('mongodb').ObjectID;
 
  /**
@@ -74,7 +75,7 @@ exports.post = function(req,res,next){
     var password;
 
     crypto.pbkdf2('password', salt, 10000, 512, function(err, dk) {
-        password = dk;         
+        password = dk;
         employeeDB.insert({
             business: businessID,
             fname: name,
@@ -82,16 +83,17 @@ exports.post = function(req,res,next){
             phone: inputPhone,
             registrationToken : token,
             admin: false,
-            password: password
+            // password: password
             // need to create a randomly generated bCrypted Password
         });
+        // can't use variables in an object's field. Instead, create the field outside, then put it as the text argument in sendgrid
+        var emailContent = 'Hello ' + name + ', \n\n' + 'Please click on the following link, or paste this into your browser to complete sign-up the process: ' + 'http://team-fubar.herokuapp.com/employeeregister?token=' + token;
 
         sendgrid.send({
             to: inputEmail,
-            from: 'test@localhost',
+            from: 'test@localhost.com',
             subject: 'Employee Signup',
-            text: 'Hello ' + name + ',\n\n' + 'Please click on the following link, or paste this into your browser to complete sign-up the process: \n\n' +
-            'http://robobetty-dev.herokuapp.com/employeeregister?token=' + token
+            text: emailContent
         }, function (err){
             if (err) {
                 return next(err);
