@@ -394,7 +394,7 @@ a:hover {
 .subtitle {
   color: #808080;
 }
-
+/*
 .table.registeredTable {
   font-size:11px;
   color:#333333;
@@ -411,7 +411,7 @@ a:hover {
   border-color: #666666;
   border-collapse: collapse;
   text-align: center;
-}
+}*/
 
 .tableheader {
   position: relative;
@@ -429,10 +429,9 @@ a:hover {
   text-align: left;
 }
 
-.outerAlign {
+/*.outerAlign {
   position: relative;
-  text-align: center;
-}
+}*/
 
 
 
@@ -814,8 +813,6 @@ a:hover {
 }
 
 
-
-
 .price.panel-red>.panel-body .lead{
   text-shadow: 0px 3px 0px rgba(50,50,50, .3);
 }
@@ -834,7 +831,6 @@ a:hover {
 #chartX {
   color: red;
 }
-
 .list-group{
   color: #888a8c;
 }

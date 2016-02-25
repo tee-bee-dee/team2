@@ -176,3 +176,5 @@ function insRow(cols) {
 
   $('#tblBody').append($row); // Append to top of element using prepend
 }
+
+
