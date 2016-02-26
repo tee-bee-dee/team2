@@ -14,7 +14,15 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var passport = require('passport');
 var async = require('async');
+var exphbs = require('express-handlebars');
+
 var app = express();
+var hbs = exphbs({ /* configs */});
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', hbs.engine);
+app.set('view engine', hbs.engine);
 
 global.__base = __dirname + '/';
 
@@ -63,9 +71,7 @@ var mobileAppointment = require('./routes/api/appointment');
 var mobileToken = require('./routes/api/mobiletoken');
 var business = require('./routes/api/business');
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hjs');
+
 
 
 // uncomment after placing your favicon in /public

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    {{{ newrelic.getBrowserTimingHeader }}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+    folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+</head>
+
+<body class="skin-blue sidebar-mini">
+
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+	    <div class="navbar-header">
+	        <a class="navbar-brand" href="/">
+            <img id = "company-logo" src="images/logo.png">
+        </a>
+	    </div>
+	    <div class="navbar-padding-right">
+        <ul class="nav navbar-nav navbar-right navbar-padding">
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/addemployees">Employees</a></li>
+            <li class="active">
+                <a href="/customizetheme">Settings</a>
+            </li>
+            <li><a href="/businesssetting">Company Name</a></li>
+        </ul>
+	    </div>
+	</nav>
+
+	<div class="container container-margin-accountSettings">
+		<div class="box box-primary">
+			<div class="box-body">
+				{{#if edited}}
+					<div class="alert alert-success" role="alert">
+						{{edited}}
+					</div>
+				{{/if}}
+				{{#if alert}}
+					<div class="alert alert-warning" role="alert">
+						{{alert}}
+					</div>
+				{{/if}}
+				{{#if message}}
+				   <div class="alert alert-danger">{{message}}</div>
+				{{/if}}
+			</div>
+			<div class="box-header with-border">
+				<h3 class='box-title'>Change Password</h3>
+			</div>
+
+			<div class="">
+				<form class="" action="" method="post">
+					<div class="box-body">
+						<div class="form-group">
+							<label >Old Password</label>
+							<input type="password" id="editPassword" name="oldPassword" value="" class="form-control" placeholder='Enter old password' required>
+						</div>
+						<div class="form-group">
+							<label >New Password</label>
+							<input type="password" id="editPassword" name="editPassword" value="" class="form-control" placeholder='Password' required>
+						</div>
+						<div class="form-group">
+							<label >Confirm Password</label>
+							<input type="password" id="editPassword" name="editPassword2" value="" class="form-control" placeholder='Password' required>
+						</div>
+					</div>
+					<div class='box-footer'>
+						<button type="email" class="btn btn-primary">Update</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- ################################################
+				    	CONTACT INFO
+		 ################################################ -->
+
+	<div class="container container-margin-accountSettings-continued">
+		<div class="box box-primary">
+			<div class="box-header with-border" >
+				<h3 class='box-title'>Update Contact Information</h3>
+			</div>
+			<div class="">
+				<form class="" action="" method="post">
+					<div class='box-body'>
+						<div class="form-group">
+							<label >Name</label>
+							<input type="" id="editPassword" name="editName" value="{{fname}} {{lname}}" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label >Email Address</label>
+							<input type="" id="editPassword" name="editEmail" value="{{email}}" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label >Phone Number</label>
+							<input type="" id="editPassword" name="editPhone" value="{{phone}}" class="form-control" required>
+						</div>
+					</div>
+					<div class="box-footer">
+						<button type="email" class="btn btn-primary">Update</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- ################################################
+				    	UPLOAD LOGO
+		 ################################################ -->
+
+	<div class="container container-margin-accountSettings-continued">
+		<div class ="box box-primary">
+
+		    <div class="box-header with-border">
+		        <h3 class='box-title'>Upload a New Logo</h2>
+		        <p style="color:grey">Upload your own logo to match your office.</p>
+		    </div>
+		    <div class='box-body text-center' >
+		    	<div class='row verticalAlign'>
+			    	<div class='col-md-6'>
+				        {{#if logo}}
+				            <h4 class="">Current Logo</h4>
+				            <div class="">
+				                <img class="logoImage logoRow" src={{logo}} />
+				            </div>
+				        {{else}}
+				            <h2>There is currently no logo to display for your business</h2>
+				        {{/if}}
+				    </div>
+				    <div class='col-md-6'>
+						<form id        =  "uploadForm"
+						     enctype   =  "multipart/form-data"
+						     action    =  "/uploadlogo"
+						     method    =  "post"
+						     class=""
+						>
+						<div class='form-group'>
+						    <input type="file" name="userLogo" class="text-center" />
+						    <input type="hidden" value="54eca979f2a2d47937757617" name="business" class="text-center"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='box-footer'>
+				    <input class ="btn btn-primary" type="submit" value="Upload Image" name="Upload Button"/>
+				</form>
+			</div>
+		</div>
+	</div>
+
+    <footer class="footer navbar-fixed-bottom">
+        <div class="container">
+            <ul class="list-inline footer-links text-center">
+                <!--<li><a href="#">About Us</a></li>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Support</a></li>-->
+                <li class = "footer-copyright">Copyright &#169; Gold Team-CSE 112, Winter 2015. All Rights Reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
+
