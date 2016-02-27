@@ -145,7 +145,7 @@ gulp.task('mongoend', function() {
     });
 })
 
-gulp.task('browser-sync', ['nodemon', 'mongostart', 'watch-check'], function () {
+gulp.task('browser-sync', ['nodemon', 'mongostart'/*, 'watch-check'*/], function () {
 
   // for more browser-sync config options: http://www.browsersync.io/docs/options/
   browserSync.init({
@@ -274,11 +274,11 @@ gulp.task('checkLocal', ['lint'], function(callback) {
   plugins.checkPages(console, options, callback);
 });
 
-gulp.task('watch-check', function() {
-    gulp.watch('public/**/*.*', ['lint']);
-    gulp.watch('views/**/*.*', ['lint']);
-    gulp.watch('public/javascripts/*.js', ['lint']);
-});
+//gulp.task('watch-check', function() {
+//    gulp.watch('public/**/*.*', ['lint']);
+//    gulp.watch('views/**/*.*', ['lint']);
+//    gulp.watch('public/javascripts/*.js', ['lint']);
+//});
 
 // check pages on development
 gulp.task('checkDev', ['lint'], function(callback) {
