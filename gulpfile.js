@@ -8,7 +8,7 @@ var child_process = require('child_process');
 //var rename = require('gulp-rename');
 var server = require('gulp-express');
 var browserSync = require('browser-sync');
-var mongobackup = require('mongobackup')
+var mongobackup = require('mongobackup');
 
 var plugins= require('gulp-load-plugins')({
 	pattern: ['gulp-*', 'gulp.*', 'check-*', 
@@ -32,9 +32,10 @@ var plugins= require('gulp-load-plugins')({
 
 
 var exec = require('child_process').exec;
-function execute(command, callback){
+
+function execute(command, callback) {
     exec(command, function(error, stdout, stderr){callback(stdout);});
-};
+}
 
 //// these plugins are added first, but still need for
 //// dev team to group files by types to make it happen
@@ -65,7 +66,7 @@ gulp.task('vendor', function() {
     .pipe(plugins.uglify())
     .pipe(plugins.rename('vendor.min.js'))
     .pipe(gulp.dest('./public/javascripts/'))
-    .on('error', plugins.util.log)
+    .on('error', plugins.util.log);
 });
 
 //gulp.task('build', ['vendor'], function() {
@@ -73,7 +74,7 @@ gulp.task('build-concat', ['vendor'], function() {
   return gulp.src('./public/stylesheets/*.css')
 	.pipe(plugins.minifyCss({keepBreaks:false}))
     	.pipe(plugins.rename('style.min.css'))
-    	.pipe(gulp.dest('./build/concat/stylesheets/'))
+    	.pipe(gulp.dest('./build/concat/stylesheets/'));
 	});
 
 gulp.task('compress', function() {
@@ -82,7 +83,7 @@ gulp.task('compress', function() {
     .pipe(plugins.rename(function (path) {
         path.basename += ".min";
     }))
-    .pipe(gulp.dest('./build/js'))
+    .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('build', ['compress'], function() {
@@ -91,7 +92,7 @@ gulp.task('build', ['compress'], function() {
     .pipe(plugins.rename(function (path) {
         path.basename += ".min";
     }))
-    .pipe(gulp.dest('./build/css'))
+    .pipe(gulp.dest('./build/css'));
 
     //.pipe(minifyCSS({keepBreaks:false}))
     //.pipe(rename('style.min.css'))
@@ -124,7 +125,7 @@ gulp.task('nodemon', ['lint'], function (cb) {
     });
 });
 
-gulp.task('mongostart', function() {
+/*gulp.task('mongostart', function() {
     child_process.exec('mongod --dbpath db', function(err, stdout, stderr) {
         if(err) {
             console.log(err.stack);
@@ -143,9 +144,9 @@ gulp.task('mongoend', function() {
             console.log("Signal received: " + err.signal);
         }
     });
-})
+});*/
 
-gulp.task('browser-sync', ['nodemon', 'mongostart'/*, 'watch-check'*/], function () {
+gulp.task('browser-sync', ['nodemon'/*, 'mongostart', 'watch-check'*/], function () {
 
   // for more browser-sync config options: http://www.browsersync.io/docs/options/
   browserSync.init({
@@ -164,7 +165,7 @@ gulp.task('browser-sync', ['nodemon', 'mongostart'/*, 'watch-check'*/], function
     open: true,
 
     // open the proxied app in chrome
-    browser: ['google chrome']
+    //browser: ['google chrome']
   });
 });
 
@@ -222,7 +223,7 @@ gulp.task('stage', ['test'], function(){
                         },
                         getArg: function() {
                             var n = plugins.yargs.test;
-                            if (n == null) {
+                            if (n === null) {
                                 n = "1";
                             }
                             return n;
@@ -241,7 +242,7 @@ gulp.task('stage', ['test'], function(){
                     }
                 }));
     }); 
-})
+});
 
 // check pages on local
 gulp.task('checkLocal', ['lint'], function(callback) {
@@ -267,7 +268,7 @@ gulp.task('checkLocal', ['lint'], function(callback) {
     summary: true
   };
 
-  var callback = function() {
+  callback = function() {
     console.log('Done checking local.');
   };
 
@@ -293,7 +294,7 @@ gulp.task('checkDev', ['lint'], function(callback) {
     summary: true
   };
 
-  var callback = function() {
+  callback = function() {
     console.log('Done checking development.');
   };
 
@@ -313,7 +314,7 @@ gulp.task('checkProd', function(callback) {
     summary: true
   };
 
-  var callback = function() {
+  callback = function() {
     console.log('Done checking production.');
   };
 
@@ -336,12 +337,12 @@ var deploy = require('gulp-gh-pages');
 
 gulp.task('deploy-gh', function () {
    	var currentdate = new Date();    
-	var timeString = currentdate.getDate() + "/"
+	/*var timeString = currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/"
                 + currentdate.getFullYear() + " @ "
                 + currentdate.getHours() + ":"
                 + currentdate.getMinutes() + ":"
-                + currentdate.getSeconds();
+                + currentdate.getSeconds();*/
     var options = {
         message :  "Update API Doc --skip-ci"
     };
