@@ -105,7 +105,7 @@ gulp.task('nodemon', ['lint'], function (cb) {
   return plugins.nodemon({
 
     // nodemon our expressjs server
-    script: '/Users/Seiji/Desktop/team2/bin/www',
+    script: '/bin/www',
     //  script: '/Users/Seiji/Desktop/team2/bin/www',
     // watch core server file(s) that require server restart on change
     watch: ['./routes/'],
