@@ -1,279 +1,317 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>{{ title }}</title>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
-          rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <head>
+        <title>{{ title }}</title>
+        <!-- Google Fonts-->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <!-- Local BootStrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <!--Local Unviersal Stylesheet-->
+        <link rel='stylesheet' href='/stylesheets/landingStyle.css'/>
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <!--Icon -->
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
-</head>
-<body>
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="/">
-            <img id="company-logo" src="images/logo.png">
-        </a>
-    </div>
-    <div class="navbar-right" id="nav-menu">
-        <ul class="nav navbar-nav navbar-select">
-            <li>
-                <a href="#overview">Overview</a>
-            </li>
-            <li>
-                <a href="#testimonial_blk">Testimonial</a>
-            </li>
+        <!--JQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- Web call to Bootstrap-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-            <li>
-                <a href="#pricing">Pricing</a>
-            </li>
+    </head>
+    <body id="top-page">
+        <!--Navigation bar-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+           <div class = "container-fluid">
+               <div class = "navbar-header">
 
-            <li>
-                <a href="#support">Contact Us</a>
-            </li>
-            <li>
-                <p>
-                    <a href="/login" class="btn custom-button" id="login-btn-navbar">Log In</a>
-                </p>
-            </li>
-        </ul>
-    </div>
-</nav>
-<!-- start of outer container -->
-<div class="container-fluid landing-pic">
+                   <button type = "button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                       <!--"Screen Readers Only" sr-only-->
+                       <span class = "sr-only">Toggle Navigation</span>
+                       <span class = "icon-bar"></span>
+                       <span class = "icon-bar"></span>
+                       <span class = "icon-bar"></span>
+                   </button>
+                   <!--No Implementation of navbar-brand & page-scroll-->
+                   <a class = "navbar-brand page-scroll" href="#top-page">Enque</a>
+               </div>
+               <!-- No Implementation of page-scroll-->
+               <div class = "collapse navbar-collapse" id="navbar-collapse-1">
+                   <ul class="nav navbar-nav navbar-right navbar-landing-padding">
+                       <li>
+                           <a class="page-scroll" href="#overview">Overview</a>
+                       </li>
 
-    <div class="row" id="first-section">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <img id="intro-image" src="images/ipad.png">
-        </div>
+                       <li>
+                           <a class="page-scroll" href="#testimonial_blk">Testimonial</a>
+                       </li>
 
-        <div id="intro" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h1 class="heading bold text-center">The old rules of waiting are over.</h1>
-            <p class="text-center info-text"> Let us help you revolutionize your patient waiting experience with
-                effortless check-in, form management, arrival notification, and appointment integration for your
-                office.</p>
-            <form class="form-group" action="" method="post">
-                <div class="col-xs-9">
-                    <input type="company" class="small form-control" id="companyName" name="companyName"
-                           value="{{companyName}}" method="post" placeholder="Step 1: Enter company name">
-                </div>
-                <div class="col-xs-1 text-small">
-                    <button type="submit" class="btn custom-button">Sign Up</button>
-                </div>
-            </form>
-        </div>
-    </div>
+                       <li>
+                           <a class="page-scroll" href="#pricing">Pricing</a>
+                       </li>
 
-    <div class="row">
-        <section id="overview" style="padding: 50px">
-            <div class="container">
-                <div class="row" id="some-section">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h1>Overview</h1>
-                        </div>
-                    </div>
+                       <li>
+                           <a class="page-scroll" href="#support">Contact</a>
+                       </li>
 
-                    <div class="row" style="padding: 20px">
-                        <div class="col-sm-3 text-center">
-                            <h4>Sign Up For An Account</h4>
-                            <i class="fa fa-pencil-square-o fa-5x" style="color:#ffae00"></i>
-                            <br><br>
-                            <p class="overviewColor">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
-                                uectetur tortor id, pharetra lorem.
-                            </p>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                            <h4>Customize Your Own Forms </h4>
-                            <i class="fa fa-file-text-o fa-5x" style="color:#ffae00"></i>
-                            <br><br>
-                            <p class="overviewColor">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
-                                uectetur tortor id, pharetra lorem.
-                            </p>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                            <h4>Deploy Onto Device </h4>
-                            <i class="fa fa-tablet fa-5x" style="color:#ffae00"></i>
-                            <br><br>
-                            <p class="overviewColor">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
-                                uectetur tortor id, pharetra lorem.
-                            </p>
-                        </div>
-                        <div class="col-sm-3 text-center">
-                            <h4>Manage Your Customers </h4>
-                            <i class="fa fa-users fa-5x" style="color: #ffae00;"></i>
-                            <br><br>
-                            <p class="overviewColor">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
-                                uectetur tortor id, pharetra lorem.
-                            </p>
-                        </div>
+                       <li>
+                           <!--<button type = "button" class = "btn btn-default navbar-btn">Navbar Button</button>-->
+                           <a href="/login" class="page-scroll" style="color: #ffae00;">Log In</a>
+                           <!--<a href="/login" class="btn custom-button page-scroll navbar-btn" id="login-btn-navbar">Log In</a>-->
+                       </li>
+                   </ul>
+               </div>
+           </div>
+        </nav>
 
-                    </div>
+        <header>
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <h1>The Old Rules Of Waiting Are Over.</h1>
+                    <hr>
+                    <p>Let us help you revolutionize your patient waiting experience with effortless check-in, form management, arrival notification, and appointment integration for your office.</p>
                 </div>
             </div>
+        </header>
 
-        </section>
+        <!-- Overview -->
+        <section id="overview">
+            <div class = "container">
 
-        <section id="testimonial_blk" style="padding: 50px; background-color: #e6e6e6;">
-            <div class="container">
-                <div class="row" id="second-section">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h1>Testimonials</h1>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-6">
-                        <div>
-                            <blockquote class="testimonial">
-                                <p>With a limited budget and tight schedule, this check-in app really saved me time
-                                    and cost to run the dental clinic I just opened up. Thank you, iReceptionist.
-                                    You’re a life-saver.</p>
-                            </blockquote>
-                            <div class="arrow-down"></div>
-                            <img src="images/jennifer.jpg" class="testimonial-image">
-                            <span class="testimonial-author">Dr. Jennifer Kim, DDS | <span>San Francisco, California</span></span>
-                        </div>
-                        <div>
-                            <blockquote class="testimonial testimonial-grey">
-                                <p>Wow! iReceptionist was the perfect addition to our offices! It’s elegant, fast,
-                                    and our customers absolutely love it! The team’s continued support and
-                                    commitment to excellence has made me a life-long customer. Definitely the GOLD
-                                    standard for check-in apps!</p>
-                            </blockquote>
-                            <div class="arrow-down arrow-down-grey"></div>
-                            <img src="images/leonard.jpg" class="testimonial-image">
-                            <span class="testimonial-author">Dr. Leonard McCoy, M.D. | <span>Riverside, California</span></span>
-
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div>
-                            <blockquote class="testimonial testimonial-grey">
-                                <p>iReceptionist is truly an aesthetic experience, I love how intuitive and modern
-                                    the design is. Making appointments and checking in has never been easier.</p>
-                            </blockquote>
-                            <div class="arrow-down arrow-down-grey"></div>
-                            <img src="images/betty.jpg" class="testimonial-image">
-                            <span class="testimonial-author">Betty Johnson | <span>Stockholm, Sweden</span></span>
-                        </div>
-                        <div>
-                            <blockquote class="testimonial">
-                                <p>I can’t believe how much time I saved using iReceptionist. It was truly a breathe
-                                    of fresh air. Never again will I have to deal with the hassle of a grumpy
-                                    receptionist and a clipboard!</p>
-                            </blockquote>
-                            <div class="arrow-down"></div>
-                            <img src="images/joel.jpg" class="testimonial-image">
-                            <span class="testimonial-author">Joel Spolsky | <span>Kathmandu, Nepal</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" style="padding: 50px">
-            <div class="row" id="third-section">
-                <!-- Pricing Header-->
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h1>Pricing</h1>
+                        <h1>OVERVIEW</h1>
+                        <hr id="custom_hr">
+                    </div>
+                </div>
+
+                <div class = "row rowPadding">
+
+                    <div class="col-sm-3 text-center">
+                        <h4>Sign Up For An Account</h4>
+                        <i class="fa fa-pencil-square-o fa-5x" style="color:#ffae00"></i>
                         <br><br>
-                    </div>
-                </div>
-
-                <!--Container for Pricing Chart-->
-                <div class="row">
-                    <!--Filler to center Pricing Chart-->
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <p class="overviewColor">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
+                            uectetur tortor id, pharetra lorem.
+                        </p>
                     </div>
 
-                    <!--First Pricing Chart (FREE) -->
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-
-                        <div class="panel price panel-green">
-                            <div class="panel-heading arrow_box text-center">
-                                <h3>FREE</h3>
-                            </div>
-
-                            <!--Pricing-->
-                            <div class="panel-body text-center">
-                                <p class="lead" style="font-size:40px"><strong>$0 / month</strong></p>
-                            </div>
-
-                            <!-- Features -->
-                            <ul class="list-group list-group-flush text-center">
-                                <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i> Personal use
-                                </li>
-                                <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i>Unlimited
-                                    projects
-                                </li>
-                                <li class="list-group-item"><i class="fa fa-times" id="chartX"></i>24/7 support</li>
-                            </ul>
-
-                            <!-- Button (Currently no function) -->
-                            <div class="panel-footer">
-                                <a class="btn btn-lg btn-block btn-success" href="#">SIGN UP!</a>
-                            </div>
-                        </div>
+                    <div class="col-sm-3 text-center">
+                        <h4>Customize Your Own Forms </h4>
+                        <i class="fa fa-file-text-o fa-5x" style="color:#ffae00"></i>
+                        <br><br>
+                        <p class="overviewColor">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
+                            uectetur tortor id, pharetra lorem.
+                        </p>
                     </div>
 
-                    <!-- Second Pricing Chart (PREMIUM) -->
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-
-
-                        <div class="panel price panel-red">
-                            <div class="panel-heading  text-center">
-                                <h3>PREMIUM</h3>
-                            </div>
-
-                            <!--Cost-->
-                            <div class="panel-body text-center">
-                                <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
-                            </div>
-
-                            <!-- Features -->
-                            <ul class="list-group list-group-flush text-center">
-                                <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i> Personal use
-                                </li>
-                                <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i> Unlimited
-                                    projects
-                                </li>
-                                <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i> 24/7 support
-                                </li>
-                            </ul>
-
-                            <!--Button to purchase (No Function)-->
-                            <div class="panel-footer">
-                                <a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a>
-                            </div>
-                        </div>
-
+                    <div class="col-sm-3 text-center">
+                        <h4>Deploy Onto Device </h4>
+                        <i class="fa fa-tablet fa-5x" style="color:#ffae00"></i>
+                        <br><br>
+                        <p class="overviewColor">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
+                            uectetur tortor id, pharetra lorem.
+                        </p>
                     </div>
 
-                    <!--Filler to center two pricing charts-->
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="col-sm-3 text-center">
+                        <h4>Manage Your Customers </h4>
+                        <i class="fa fa-users fa-5x" style="color: #ffae00;"></i>
+                        <br><br>
+                        <p class="overviewColor">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
+                            uectetur tortor id, pharetra lorem.
+                        </p>
                     </div>
 
                 </div>
-
             </div>
         </section>
-    </div>
 
-    <div class="row">
-        <section id="support" style="padding: 50px; background-color: #e6e6e6; margin:0">
-            <div class="row" id="fourth-section">
+        <!-- Testimonials-->
+        <section id="testimonial_blk" style="background-color: #ffae00;">
+            <div class="container">
+
+                <div class = "row rowPadding">
+                    <div class="col-lg-12 text-center">
+                        <h1 id="h1Custom">Testimonials</h1>
+                        <hr id="custom_hr2">
+                    </div>
+                </div>
+
+                <div id="testimonial_Carousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#testimonial_Carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#testimonial_Carousel" data-slide-to="1"></li>
+                        <li data-target="#testimonial_Carousel" data-slide-to="2"></li>
+                        <li data-target="#testimonial_Carousel" data-slide-to="3"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="http://i25.photobucket.com/albums/c97/evilsmith/test_zpsedcsiaxd.jpg" alt="test">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://i25.photobucket.com/albums/c97/evilsmith/test_zpsedcsiaxd.jpg" alt="test2">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://i25.photobucket.com/albums/c97/evilsmith/test_zpsedcsiaxd.jpg" alt="test3">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://i25.photobucket.com/albums/c97/evilsmith/test_zpsedcsiaxd.jpg" alt="test4">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://i25.photobucket.com/albums/c97/evilsmith/test_zpsedcsiaxd.jpg" alt="test5">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#testimonial_Carousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#testimonial_Carousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+
+
+                <!--
+                <div class="col-xs-6">
+                    <div>
+                        <blockquote class="testimonial">
+                            <p>With a limited budget and tight schedule, this check-in app really saved me time
+                                and cost to run the dental clinic I just opened up. Thank you, iReceptionist.
+                                You’re a life-saver.</p>
+                        </blockquote>
+                        <div class="arrow-down"></div>
+                        <img src="images/jennifer.jpg" class="testimonial-image">
+                        <span class="testimonial-author">Dr. Jennifer Kim, DDS | <span>San Francisco, California</span></span>
+                    </div>
+
+                    <div>
+                        <blockquote class="testimonial testimonial-grey">
+                            <p>Wow! iReceptionist was the perfect addition to our offices! It’s elegant, fast,
+                                and our customers absolutely love it! The team’s continued support and
+                                commitment to excellence has made me a life-long customer. Definitely the GOLD
+                                standard for check-in apps!</p>
+                        </blockquote>
+                        <div class="arrow-down arrow-down-grey"></div>
+                        <img src="images/leonard.jpg" class="testimonial-image">
+                        <span class="testimonial-author">Dr. Leonard McCoy, M.D. | <span>Riverside, California</span></span>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                    <div>
+                        <blockquote class="testimonial testimonial-grey">
+                            <p>iReceptionist is truly an aesthetic experience, I love how intuitive and modern
+                                the design is. Making appointments and checking in has never been easier.</p>
+                        </blockquote>
+                        <div class="arrow-down arrow-down-grey"></div>
+                        <img src="images/betty.jpg" class="testimonial-image">
+                        <span class="testimonial-author">Betty Johnson | <span>Stockholm, Sweden</span></span>
+                    </div>
+
+                    <div>
+                        <blockquote class="testimonial">
+                            <p>I can’t believe how much time I saved using iReceptionist. It was truly a breathe
+                                of fresh air. Never again will I have to deal with the hassle of a grumpy
+                                receptionist and a clipboard!</p>
+                        </blockquote>
+                        <div class="arrow-down"></div>
+                        <img src="images/joel.jpg" class="testimonial-image">
+                        <span class="testimonial-author">Joel Spolsky | <span>Kathmandu, Nepal</span></span>
+                    </div>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="container">
+                <div class = "row rowPadding">
+                    <div class="col-lg-12 text-center">
+                        <h1>Pricing</h1>
+                        <hr id="custom_hr">
+                    </div>
+                </div>
+            </div>
+            <div class = "container">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="panel price panel-green">
+                        <div class="panel-heading arrow_box text-center">
+                            <h3>FREE</h3>
+                        </div>
+
+                        <!--Pricing-->
+                        <div class="panel-body text-center">
+                            <p class="lead" style="font-size:40px"><strong>$0 / month</strong></p>
+                        </div>
+
+                        <!-- Features -->
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i> Personal use
+                            </li>
+                            <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i>Unlimited
+                                projects
+                            </li>
+                            <li class="list-group-item"><i class="fa fa-times" id="chartX"></i>24/7 support</li>
+                        </ul>
+
+                        <!-- Button (Currently no function) -->
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-success" href="#">SIGN UP!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="panel price panel-red">
+                        <div class="panel-heading  text-center">
+                            <h3>PREMIUM</h3>
+                        </div>
+
+                        <!--Cost-->
+                        <div class="panel-body text-center">
+                            <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                        </div>
+
+                        <!-- Features -->
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i> Personal use
+                            </li>
+                            <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i> Unlimited
+                                projects
+                            </li>
+                            <li class="list-group-item"><i class="fa fa-check" id="chartCheck"></i> 24/7 support
+                            </li>
+                        </ul>
+
+                        <!--Button to purchase (No Function)-->
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                </div>
+            </div>
+        </section>
+        <!--
+        <section id="support" style="background-color: #d3d3d3;">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h1>Contact Us!</h1>
@@ -282,16 +320,62 @@
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
-</div>
+        </section> -->
+        <footer class = "text-center" id="support">
+            <div class ="footer-above">
+                <div class = "container">
+                    <div class = "row">
+                        <div class = "footer-col col-md-4">
+                            <h3 id="format_Footer_h3">Contact Information</h3>
+                            <p>University of California, San Diego
+                                <br>
+                                9500 Gilman Dr, La Jolla, CA 92093
+                                <br>
+                                (858)534-2230
+                            </p>
+                        </div>
 
-{{>footer}}
+                        <div class = "footer-col col-md-4">
+                            <h3 id="format_Footer_h3">Social Media</h3>
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
 
-    <script>
-        $('body').scrollspy({
-            target: '.navbar-fixed-top'
-        })
-    </script>
-</body>
+                        <div class = "footer-col col-md-4">
+                            <h3 id="format_Footer_h3">About Team Fubar</h3>
+                            <p>Team Fubar is a development team formed in <a href="http://classes.pint.com/cse112/">CSE 112</a> at UC San Diego. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-below">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            Copyright &copy; Team Fubar, CSE 112 Winter 2016. All Rights Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            $('body').scrollspy({
+                target: '.navbar-fixed-top',
+                offset: 51
+            })
+        </script>
+    </body>
 </html>

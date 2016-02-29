@@ -1,11 +1,68 @@
 /* These are global changes applied to every page that is linked to this stylesheet */
 /* End: Changes made by William Huang 2/7/15 */
 
-/* shared class written to be shared across checkin and done page */
+.html, .body {
+  height: 100%;
+  width: 100%;
+}
+
 .header {
-  text-align:center;
-  margin-top: 70px;
-  font-weight: bold;
+  position: relative;
+  width: 100%;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url('../images/bg2.jpg');
+  text-align: center;
+  color: white;
+}
+.header .header-content {
+  position: relative;
+  text-align: center;
+  padding: 100px 15px 100px;
+  width: 100%;
+}
+.header .header-content .header-content-inner h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.header .header-content .header-content-inner hr {
+  margin: 30px auto;
+}
+.header .header-content .header-content-inner p {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .header {
+    min-height: 100%;
+  }
+  .header .header-content {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0 50px;
+  }
+  .header .header-content .header-content-inner {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header .header-content .header-content-inner p {
+    font-size: 18px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* shared class written to be shared across checkin and done page */
@@ -102,6 +159,9 @@
 .navbar-default {
   background-color: #071C33;
   border-color: #071C33;
+  font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .navbar-default .navbar-brand {
   color: #ffae00;
@@ -159,17 +219,20 @@
   }
 }
 
+.navbar-collapse, .navbar{
+  border-bottom-color: #ffae00;
+}
+
+.navbar-landing-padding{
+  margin-right: 5px;
+}
+
 #company-logo {
   height:75px;
   margin-left:-20%;
   margin-top:-15%;
 }
 
-#login-btn-navbar {
-  margin-top: 8px;
-  margin-right: 25px;
-  margin-left: 15px;
-}
 /***********************************************/
 
 /********************* Landing Page **************************/
@@ -185,8 +248,9 @@ h1, .h1, h4{
   color: #ffffff;
   font-family: 'Lato', sans-serif;
   border-radius: 4px; /* Overrides bootstrap rounded corners*/
-  border-color: #ffae00;
+  border-color: #34495e;
   width: 100px;
+  margin-right: 10px;
 }
 
 .custom-button:visited, .custom-button:link, .btn:visited, .btn:link {
