@@ -19,6 +19,7 @@ var customizeTheme = require('./customize_theme');
 var manageForms = require('./manage_forms');
 var businesssetting = require('./businesssetting');
 var setdisclosure = require('./setdisclosure');
+var adminDashboard = require('./dashboard-peter');
 module.exports = function (passport) {
 
 
@@ -37,6 +38,8 @@ module.exports = function (passport) {
         failureRedirect : '/login',
         failureFlash: true
     }));
+
+    router.get('/dashboard-admin', adminDashboard.get);
 
     router.get('/formbuilder',isLoggedIn, formbuilder.get);
 
