@@ -7,13 +7,16 @@ exports.get = function (req, res) {
 	var employeename = req.user[0].fname;
 
 	if( isPeter ) {
-		res.render('business/dashboard-admin', {title: 'Express',
+		res.render('business/dashboard-admin', {
+			title: 'Express',
 			eid: employeeId,
 			employeeName: employeename,
-			message: req.flash("permission")
+			message: req.flash("permission"),
+			layout: 'admin'
 		});
 	} else {
-		res.render('business/dashboard-business', {title: 'Express',
+		res.render('business/dashboard-business', {
+			title: 'Express',
 			eid: employeeId,
 			employeeName: employeename,
 			message: req.flash("permission"),
