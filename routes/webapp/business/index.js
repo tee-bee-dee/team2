@@ -47,8 +47,6 @@ module.exports = function (passport) {
 
     router.post('/businesssetting', isLoggedInBusiness,businesssetting.post);
 
-
-
     router.get('/register', register.get);
     router.post('/register',passport.authenticate('local-signup',{
         successRedirect : '/dashboard', // redirect to the secure profile section
@@ -57,9 +55,9 @@ module.exports = function (passport) {
 
     router.get('/dashboard', isLoggedIn, dashboard.get);
 
-    router.get('/registerdevice', isLoggedIn, registerDevice.get);
+    //router.get('/registerdevice', isLoggedIn, registerDevice.get);
 
-    router.get('/addemployees',isLoggedInBusiness, addEmployees.get);
+    //router.get('/addemployees',isLoggedInBusiness, addEmployees.get);
     router.post('/addemployees',isLoggedInBusiness, addEmployees.post);
 
     //router.get('/customizetheme', isLoggedIn, customizeTheme.get);
