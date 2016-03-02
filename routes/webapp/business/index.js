@@ -64,7 +64,7 @@ module.exports = function (passport) {
     router.get('/addemployees',isLoggedInBusiness, addEmployees.get);
     router.post('/addemployees',isLoggedInBusiness, addEmployees.post);
 
-    router.get('/customizetheme', isLoggedIn, customizeTheme.get);
+    //router.get('/customizetheme', isLoggedIn, customizeTheme.get);
 
     router.get('/manageforms', isLoggedInBusiness, manageForms.get);
 
@@ -75,9 +75,6 @@ module.exports = function (passport) {
     }));
 
     router.get('/viewform/:id', viewForm.get);
-
-    router.get('/setdisclosure', isLoggedInBusiness, setdisclosure.get);
-    router.post('/setdisclosure', isLoggedInBusiness, setdisclosure.post);
 
 function isLoggedIn(req,res,next){
         if(req.isAuthenticated()){
