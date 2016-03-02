@@ -43,13 +43,11 @@ module.exports = function (passport) {
 
     router.get('/accountSettings', isLoggedIn, accountSettings.get);
     router.post('/accountSettings', isLoggedIn, accountSettings.post);
+    router.post('/uploadlogo', isLoggedInBusiness, accountSettings.uploadLogo);
 
-    router.get('/businesssetting', isLoggedInBusiness, businesssetting.get);
     router.post('/businesssetting', isLoggedInBusiness,businesssetting.post);
 
 
-    router.get('/uploadlogo', isLoggedInBusiness, uploadLogo.get);
-    router.post('/uploadlogo', isLoggedInBusiness, accountSettings.uploadLogo);
 
     router.get('/register', register.get);
     router.post('/register',passport.authenticate('local-signup',{
