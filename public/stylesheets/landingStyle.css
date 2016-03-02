@@ -59,6 +59,133 @@ section{
     border-width: 3px;
     max-width: 75px;
 }
+/*** Call to Action Butto***/
+.call-to-action h2 {
+    margin: 0 auto 20px;
+}
+.text-primary {
+    color: #071C33;
+}
+.no-gutter > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+.btn-default {
+    color: #222222;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    color: #222222;
+    background-color: #f2f2f2;
+    border-color: #ededed;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-image: none;
+}
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-default .badge {
+    color: #ffffff;
+    background-color: #222222;
+}
+.btn-primary {
+    color: #ffffff;
+    background-color: #071C33;
+    border-color: #ffae00;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    color: #ffffff;
+    background-color: #ffae00;
+    border-color: #ffae00;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    background-color: #071C33;
+    border-color: #071C33;
+}
+.btn-primary .badge {
+    color: #071C33;
+    background-color: #ffffff;
+}
+.btn {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    border: none;
+    border-radius: 300px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.btn-xl {
+    padding: 15px 30px;
+}
+::-moz-selection {
+    color: white;
+    text-shadow: none;
+    background: #222222;
+}
+::selection {
+    color: white;
+    text-shadow: none;
+    background: #222222;
+}
 
 /***Carousel***/
 .carousel{
@@ -443,3 +570,73 @@ header .header-content .header-content-inner p {
     background-color: #071C33;
     color: #ffffff;
 }
+
+
+/******** Login Page Form ****/
+.form-control{
+    margin: 0 auto;
+    width: 50%;
+    border:3px solid #071C33;
+}
+
+.control-label, .label{
+    font-size: 18px;
+}
+
+.form-control:focus{
+    border-color: #ffae00;
+}
+
+/**Invalid login information**/
+.alert-danger {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/********************* Registration Page **************************/
+.centerForm{
+    margin: 0 auto;
+    color: black;
+}
+
+.centerForm:focus{
+    border-color: #ffae00;
+}
+
+.regis {
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    height: 35px;
+    width: 300px;
+    border:3px solid #071C33;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.regTitleColor{
+    color: #fff;
+}
+
+.custom-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#regis-container {
+    margin-top: 20px;
+    margin-bottom: 150px;
+}
+
+#form-separator {
+    border-right: 2px solid;
+    border-color: #999999;
+}
+
+#register-image {
+    margin-left: 100px;
+    margin-top: -10px;
+    width:500px;
+}
+
