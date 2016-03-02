@@ -586,6 +586,13 @@ header .header-content .header-content-inner p {
 .form-control:focus{
     border-color: #ffae00;
 }
+
+/**Invalid login information**/
+.alert-danger {
+    width: 50%;
+    margin: 0 auto;
+}
+
 /********************* Registration Page **************************/
 .centerForm{
     margin: 0 auto;
@@ -632,3 +639,4 @@ header .header-content .header-content-inner p {
     margin-top: -10px;
     width:500px;
 }
+
