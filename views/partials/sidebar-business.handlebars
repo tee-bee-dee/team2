@@ -14,34 +14,33 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
+            {{#if isOwner}}
             <li class="treeview">
-                <a href="/dashboard-admin">
+                <a href="/dashboard">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
+            {{else}}
             <li class="active treeview">
                 <a href="/dashboard">
                     <i class="fa fa-dashboard"></i> <span>Patients</span>
                 </a>
             </li>
+            {{/if}}
             <li class="treeview">
                 <a href="/accountSettings">
                     <i class="fa fa-files-o"></i>
                     <span>Settings</span>
                 </a>
             </li>
+            {{if isOwner}}
             <li class="treeview">
                 <a href="/addemployees">
                     <i class="fa fa-files-o"></i>
                     <span>Employees</span>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="/businesssetting">
-                    <i class="fa fa-files-o"></i>
-                    <span>Company Name</span>
-                </a>
-            </li>
+            {{/if}}
         </ul>
     </section>
     <!-- /.sidebar -->
