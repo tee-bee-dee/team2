@@ -16,9 +16,28 @@
 var ObjectID = require('mongodb').ObjectID;
 var style = require('./../../../lib/style.js');
 
+var request = require('request');
+
+
 
 exports.get = function (req, res, next) {
     var business = req.session.business;
+
+    var slackOptions = {
+        uri: 'https://hooks.slack.com/services/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',
+        method: 'POST',
+        json: {
+            "channel": "#bobsburgers",
+            "text": "A new client just checked in!"
+        }
+    };
+
+    request(slackOptions, function (error, response, body) {
+        if(!error && response.statusCode == 200) {
+            console.log(body.id);
+        }
+    });
+
     res.render('checkin/checkin', {
         companyName: business.companyName,
         bg: business.style.bg,
@@ -48,6 +67,8 @@ exports.post = function (req, res, next) {
     var inputDOB = req.body.inputDOB;
     var dobSubStr = req.body.inputDOB;
     var numSlash = inputDOB.match(/\//g);
+
+
 
     if (numSlash !== null && numSlash.length !== 2) {
         res.render('checkin/checkin', {
@@ -219,6 +240,7 @@ exports.post = function (req, res, next) {
                 if (err) {
                     console.error('Session save error:', err);
                 }
+
                 res.redirect('done');
             });
                     //Update the state of the appointment
