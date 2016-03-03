@@ -8,6 +8,9 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <!--Analytics-->
+        <script src='/javascripts/analytics.js'></script>
     </head>
 
     <body>
@@ -49,7 +52,7 @@
                     <input class="regis centerForm" type="email" name="email" value="{{ email }}" placeholder="EMAIL" required>
                     <input class="regis centerForm" type="tel" name="phone" value="{{ phone }}" placeholder="PHONE NUMBER" required>
                     <input class="regis centerForm" type="password" name="password" value="{{ password }}" placeholder="PASSWORD" required>
-                    <input class="btn btn-primary btn-x2 page-scroll" name="submit" type="submit" value="Sign Up">
+                    <input class="btn btn-primary btn-x2 page-scroll sign1Btn" name="submit" type="submit" onclick="sign1Click()" value="Sign Up">
                 </form>
             </div>
         </header>
@@ -64,6 +67,7 @@
                 </div>
             </div>
         </footer>
+        {{> googleAnalytics}}
     </body>
 
 </html>
