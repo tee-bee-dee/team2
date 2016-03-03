@@ -39,8 +39,6 @@ module.exports = function (passport) {
         failureFlash: true
     }));
 
-    router.get('/dashboard-admin', adminDashboard.get);
-
     router.get('/formbuilder',isLoggedIn, formbuilder.get);
 
 
@@ -60,7 +58,7 @@ module.exports = function (passport) {
 
     //router.get('/registerdevice', isLoggedIn, registerDevice.get);
 
-    //router.get('/addemployees',isLoggedInBusiness, addEmployees.get);
+    router.get('/addemployees',isLoggedInBusiness, addEmployees.get);
     router.post('/addemployees',isLoggedInBusiness, addEmployees.post);
 
     //router.get('/customizetheme', isLoggedIn, customizeTheme.get);
