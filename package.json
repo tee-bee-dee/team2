@@ -36,6 +36,7 @@
     "passport-local": "~0.1.6",
     "plivo-node": "^0.2.5",
     "plugin": "^0.3.3",
+    "request": "^2.69.0",
     "sendgrid": "^1.6.0",
     "serve-favicon": "^2.2.1",
     "underscore": "^1.8.1"
