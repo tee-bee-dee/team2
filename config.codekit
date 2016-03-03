@@ -13128,6 +13128,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/images\/bgagain.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3.28624e+06,
+		"inputAbbreviatedPath": "\/public\/images\/bgagain.jpg",
+		"outputAbbreviatedPath": "\/public\/images\/bgagain.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/public\/images\/bgFilter.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.3266e+06,
+		"inputAbbreviatedPath": "\/public\/images\/bgFilter.jpg",
+		"outputAbbreviatedPath": "\/public\/images\/bgFilter.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/images\/dentalLogo.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -13205,6 +13227,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/public\/images\/test.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 37776,
+		"inputAbbreviatedPath": "\/public\/images\/test.jpg",
+		"outputAbbreviatedPath": "\/public\/images\/test.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/public\/images\/uploads\/arch.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -13237,6 +13270,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
+		},
+	"\/public\/javascripts\/analytics.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/javascripts\/analytics.js",
+		"outputAbbreviatedPath": "\/public\/javascripts\/min\/analytics-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
 		},
 	"\/public\/javascripts\/bootstrap.js": {
 		"fileType": 64,
@@ -21080,6 +21124,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/public\/stylesheets\/landingStyle.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/stylesheets\/landingStyle.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/public\/stylesheets\/spectrum.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -21367,6 +21420,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/routes\/webapp\/business\/customize_theme.js",
 		"outputAbbreviatedPath": "\/routes\/webapp\/business\/min\/customize_theme-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/routes\/webapp\/business\/dashboard-peter.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/routes\/webapp\/business\/dashboard-peter.js",
+		"outputAbbreviatedPath": "\/routes\/webapp\/business\/min\/dashboard-peter-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
