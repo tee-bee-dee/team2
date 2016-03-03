@@ -76,7 +76,7 @@ module.exports = function (passport) {
                             uri: 'https://hooks.slack.com/services/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',
                             method: 'POST',
                             json: {
-                                "text": fname + " just signed. His company is: " + companyName + " and he can be reached at: " + phone
+                                "text": fname + "" + lname + " just signed up. His company is: " + companyName + " and he can be reached at: " + email
                             }
                         };
 
