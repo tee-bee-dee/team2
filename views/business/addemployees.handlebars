@@ -48,13 +48,13 @@
                                 <th>Email</th>
                                 <th>Phone</th>
                             </tr>
-                            {{#if signed}}
+                            {{#each signed}}
                             <tr>
                                 <td>{{fname}} {{lname}}</td>
                                 <td>{{email}}</td>
                                 <td>{{phone}}</td>
                             </tr>
-                            {{/if}}
+                            {{/each}}
                         </tbody>
                     </table>
                 </div>
@@ -74,13 +74,13 @@
                                 <th>Email</th>
                                 <th>Phone</th>
                             </tr>
-                            {{#if notsigned}}
+                            {{#each notsigned}}
                             <tr>
                                 <td>{{fname}} {{lname}}</td>
                                 <td>{{email}}</td>
                                 <td>{{phone}}</td>
                             </tr>
-                            {{/if}}
+                            {{/each}}
                         </tbody>
                     </table>
                 </div>
