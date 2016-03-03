@@ -11,6 +11,8 @@ exports.get = function (req, res, next) {
         buttonText: style.rgbObjectToCSS(business.style.buttonText),
         containerText: style.rgbObjectToCSS(business.style.containerText),
         containerBg: style.rgbObjectToCSS(business.style.containerBg),
-        layout: false
+        layout: false,
     });
 };
+
+

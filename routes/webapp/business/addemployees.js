@@ -34,12 +34,18 @@ exports.get = function(req,res){
             nonemployee: function(cb){
                 employeeDB.find({registrationToken: {$exists: true}, business: ObjectId(businessID)}, function (err,results){
 
+                    if (err) {
+                        console.log("Error finding nonemployees")
+                        return next(err);
+                    }
+                    if(!results) {
+                        return next(new Error('Error finding employee'));
+                    }
 
-                    if (err) { return next(err); }
-                    if(!results) { return next(new Error('Error finding employee'));}
-
-                         notemployee = results;
-                         cb();
+                     notemployee = results;
+                    //  console.log('Found some not-registered employees');
+                    //  console.log(notemployee);
+                     cb();
                 });
             }
         },

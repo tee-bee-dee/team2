@@ -2,6 +2,7 @@
 html, body {
     height: 100%;
     width: 100%;
+    font-family: 'Open Sans';
 }
 
 hr {
@@ -639,4 +640,3 @@ header .header-content .header-content-inner p {
     margin-top: -10px;
     width:500px;
 }
-

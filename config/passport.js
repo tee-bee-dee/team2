@@ -7,6 +7,10 @@ var LocalStrategy = require('passport-local').Strategy;
 var auth = require('../lib/auth');
 var ObjectId = require('mongodb').ObjectID;
 
+//For Slack Notifications
+//var querystring = require('querystring');
+//var http = require('http');
+var request = require('request');
 //need this since we are passing in a passport dependency in app.js line 22
 module.exports = function (passport) {
 
@@ -67,6 +71,23 @@ module.exports = function (passport) {
 
                         // set the user's local credentials
                         password = auth.hashPassword(password);
+
+                        var slackOptions = {
+                            uri: 'https://hooks.slack.com/services/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',
+                            method: 'POST',
+                            json: {
+                                "text": fname + " just signed. His company is: " + companyName + " and he can be reached at: " + phone
+                            }
+                        };
+
+                        request(slackOptions, function (error, response, body) {
+                            if(!error && response.statusCode == 200) {
+                                console.log(body.id);
+                            }
+                        });
+
+
+                        var options = {}
 
                         // save the user
                         businesses.insert({
