@@ -1,32 +1,32 @@
 'use strict';
 //250148758589-j9755pn3n5rhrogvjj0tu0r52rrut58m.apps.googleusercontent.com
 function initializePage() {
-	$("button.sign1Btn").click(sign1Click);
-	$("button.sign2Btn").click(sign2Click);
-	$("button.buyBtn").click(buyClick);
-	$("button.tryBtn").click(tryClick);
+  $("button.sign1Btn").click(sign1Click);
+  $("button.sign2Btn").click(sign2Click);
+  $("button.buyBtn").click(buyClick);
+  $("button.tryBtn").click(tryClick);
 }
 
 function sign1Click(e) {
-	console.log("Sign up 1 pushed.");
-	ga("send", "event", "sign1", "click");
-	  //console.log(ga.getByName('sign1'));
+  console.log("Sign up 1 pushed.");
+  ga("send", "event", "sign1", "click");
+    //console.log(ga.getByName('sign1'));
 }
 
 function sign2Click(e) {
-	console.log("Sign up 2 pushed.");
-	ga("send", "event", "sign2", "click");
+  console.log("Sign up 2 pushed.");
+  ga("send", "event", "sign2", "click");
 }
 
 function buyClick(e) {
-	console.log("Buy now pushed.");
-	ga("send", "event", "buy", "click");
-	//_trackEvent("buyc", "test");
+  console.log("Buy now pushed.");
+  ga("send", "event", "buy", "click");
+  //_trackEvent("buyc", "test");
 }
 
 function tryClick(e) {
-	console.log("Try It Today pushed.");
-	ga("send", "event", "try", "click");
+  console.log("Try It Today pushed.");
+  ga("send", "event", "try", "click");
 }
 
 //dashboard
@@ -205,13 +205,4 @@ gapi.analytics.ready(function() {
       breakdownChart.set(options).execute();
     });
   });
-
-
-report.on('success', function(response) {
-  console.log(metrics);
-});
-
-report.execute();
-
-
 });
