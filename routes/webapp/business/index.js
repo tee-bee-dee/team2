@@ -39,20 +39,14 @@ module.exports = function (passport) {
         failureFlash: true
     }));
 
-    router.get('/dashboard-admin', adminDashboard.get);
-
     router.get('/formbuilder',isLoggedIn, formbuilder.get);
 
 
     router.get('/accountSettings', isLoggedIn, accountSettings.get);
     router.post('/accountSettings', isLoggedIn, accountSettings.post);
-
-    router.get('/businesssetting', isLoggedInBusiness, businesssetting.get);
-    router.post('/businesssetting', isLoggedInBusiness,businesssetting.post);
-
-
-    router.get('/uploadlogo', isLoggedInBusiness, uploadLogo.get);
     router.post('/uploadlogo', isLoggedInBusiness, accountSettings.uploadLogo);
+
+    router.post('/businesssetting', isLoggedInBusiness,businesssetting.post);
 
     router.get('/register', register.get);
     router.post('/register',passport.authenticate('local-signup',{
@@ -62,12 +56,12 @@ module.exports = function (passport) {
 
     router.get('/dashboard', isLoggedIn, dashboard.get);
 
-    router.get('/registerdevice', isLoggedIn, registerDevice.get);
+    //router.get('/registerdevice', isLoggedIn, registerDevice.get);
 
     router.get('/addemployees',isLoggedInBusiness, addEmployees.get);
     router.post('/addemployees',isLoggedInBusiness, addEmployees.post);
 
-    router.get('/customizetheme', isLoggedIn, customizeTheme.get);
+    //router.get('/customizetheme', isLoggedIn, customizeTheme.get);
 
     router.get('/manageforms', isLoggedInBusiness, manageForms.get);
 
@@ -78,9 +72,6 @@ module.exports = function (passport) {
     }));
 
     router.get('/viewform/:id', viewForm.get);
-
-    router.get('/setdisclosure', isLoggedInBusiness, setdisclosure.get);
-    router.post('/setdisclosure', isLoggedInBusiness, setdisclosure.post);
 
 function isLoggedIn(req,res,next){
         if(req.isAuthenticated()){

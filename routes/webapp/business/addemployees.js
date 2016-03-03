@@ -19,20 +19,24 @@ exports.get = function(req,res){
         var businessID = req.user[0].business.toString();
 
         async.parallel({
-            employee: function(cb){
-                employeeDB.find({registrationToken: {$exists: false}, business: ObjectId(businessID)},function (err,results){
+            employee: function(cb) {
+                employeeDB.find({
+                    registrationToken: {$exists: false}, 
+                    business: ObjectId(businessID)
+                }, function (err,results){
 
-                    if (err) { return next(err);  }
-                    if(!results) { return next(new Error('Error finding employee'));}
+                        if (err) { return next(err);  }
+                        if(!results) { return next(new Error('Error finding employee'));}
 
-                        employeee = results;
-                        console.log(employeee);
-                       cb();
-
+                            employeee = results;
+                            console.log(employeee);
+                           cb();
                 });
             },
-            nonemployee: function(cb){
-                employeeDB.find({registrationToken: {$exists: true}, business: ObjectId(businessID)}, function (err,results){
+            nonemployee: function(cb) {
+                employeeDB.find({
+                    registrationToken: {$exists: true}, 
+                    business: ObjectId(businessID)}, function (err,results){
 
                     if (err) {
                         console.log("Error finding nonemployees")
@@ -55,7 +59,13 @@ exports.get = function(req,res){
             if(err){
                 throw err;
             }
-            res.render('business/addemployees',{title: 'Express',notsigned: notemployee, signed: employeee});
+
+            res.render('business/addemployees', {
+                title: 'Express',
+                notsigned: notemployee,
+                signed: employeee,
+                isOwner: req.user[0].admin
+            });
 
         });
 }

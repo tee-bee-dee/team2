@@ -1,23 +1,4 @@
 var auth = require ('../../../lib/auth');
-exports.get = function (req,res) {
-    var bid = req.user[0].business;
-    var db = req.db;
-    var businesses = db.get('businesses');
-    businesses.findById(bid, function (err, result) {
-        if (err) {
-                return next(err);
-            }
-        var dbBusiness = result;
-        var phone = dbBusiness.phone;
-        phone = phone.replace('1', '');
-        phone = phone.slice(0, 3) + '-' + phone.slice(3, 6) + '-' + phone.slice(6);
-        res.render('business/businesssetting', {
-            companyName: dbBusiness.companyName,
-            phone: phone
-        });
-    });
-};
-
 
 exports.post = function (req, res) {
     var db = req.db;

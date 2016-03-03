@@ -21,9 +21,18 @@ exports.get = function (req,res) {
                 return next(err);
             }
 
-            render(req, res, {
-                message: req.flash("permission")
-            });
+            if( req.user[0].peter ) {
+                render(req, res, {
+                    message: req.flash("permission"),
+                    layout: 'admin'
+                });
+            } else {
+                render(req, res, {
+                    message: req.flash("permission"),
+                    isOwner: req.user[0].admin
+                });
+            }
+            
         }
     );
 
