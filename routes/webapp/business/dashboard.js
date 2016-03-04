@@ -4,7 +4,7 @@ exports.get = function (req, res) {
 
 	var isPeter = req.user[0].peter
 	var employeeId = req.user[0]._id;
-	var employeename = req.user[0].fname;
+	var employeename = req.user[0].fname + req.user[0].lname;
 
 	if( isPeter ) {
 		res.render('business/dashboard-admin', {
