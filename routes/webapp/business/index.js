@@ -11,7 +11,6 @@ var accountSettings = require('./accountsettings');
 var uploadLogo = require('./uploadlogo');
 var register = require('./register');
 var dashboard = require('./dashboard');
-var registerDevice = require('./registerdevice');
 var addEmployees = require('./addemployees');
 var employeeRegister = require('./employeeregister');
 var viewForm = require('./viewform');
@@ -58,8 +57,6 @@ module.exports = function (passport) {
 
     router.get('/dashboard', isLoggedIn, dashboard.get);
     router.get('/visitor-list', isLoggedIn, visitorList.get);
-
-    //router.get('/registerdevice', isLoggedIn, registerDevice.get);
 
     router.get('/addemployees',isLoggedInBusiness, addEmployees.get);
     router.post('/addemployees',isLoggedInBusiness, addEmployees.post);
