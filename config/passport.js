@@ -11,7 +11,7 @@ var ObjectId = require('mongodb').ObjectID;
 //var querystring = require('querystring');
 //var http = require('http');
 var request = require('request');
-//need this since we are passing in a passport dependency in app.js line 22
+//need this since we are passing in a passport dependency in adminLTEapp.js line 22
 module.exports = function (passport) {
 
 
