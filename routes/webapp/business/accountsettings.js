@@ -313,7 +313,7 @@ function render(req, res, additionalFields) {
                 };
                 var allFields = _.extend(defaultFields, additionalFields);
 
-                res.render('business/settings', allFields);
+                res.render('business/accountsettings', allFields);
             });
         }
     );
