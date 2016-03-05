@@ -26,7 +26,7 @@ exports.get = function (req, res) {
 			businessId: req.user[0].business,
 			dashboard: "active"
 		});
-	} else
+	} else {
 		res.render('business/visitor-list', {
 			title: "Express",
 			isAdmin: req.user[0].admin,
