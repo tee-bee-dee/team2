@@ -24,13 +24,15 @@ exports.get = function (req,res) {
             if( req.user[0].peter ) {
                 render(req, res, {
                     message: req.flash("permission"),
-                    layout: 'admin'
+                    layout: 'admin',
+                    settings: "active"
                 });
             } else {
                 render(req, res, {
                     message: req.flash("permission"),
                     isOwner: req.user[0].admin,
-                    businessId: req.user[0].business
+                    businessId: req.user[0].business,
+                    settings: "active"
                 });
             }
             
@@ -92,43 +94,6 @@ exports.post = function (req, res) {
             })
         }
     }
-
-    // if (inputEmail != null)
-    // {
-    //     employees.findAndModify({_id: eid}, { $set: {email: inputEmail}}, function(err, data)
-    //     {
-    //         if (err) { return handleError(res, err);}
-
-    //         render(req, res, {
-    //             edited: 'Email successfully changed!'
-    //         });
-    //     });
-    // }
-
-    // if (inputPhone != null)
-    // {
-    //     inputPhone = inputPhone.replace(/-/g, '');
-
-    //     if (inputPhone.length === 10)
-    //     {
-    //         inputPhone = '1' + inputPhone;
-				// 		employees.findAndModify({_id: eid}, { $set: {phone: inputPhone}}, function(err, data)
-    //         {
-    //             if (err) { return handleError(res, err);}
-
-
-    //             render(req, res, {
-    //                 edited: 'Phone number successfully changed!'
-    //             });
-    //         });
-    //     }
-    //     else
-    //     {
-    //         render(req, res, {
-    //             alert: 'Incorrect phone number format'
-    //         });
-    //     }
-    // }
 
     if (inputPhone != null || inputEmail != null)
     {

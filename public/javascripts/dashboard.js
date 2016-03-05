@@ -17,7 +17,7 @@ function getDate(){
 
 	var header = $('<h1/>');
 	header.append(datetime);
-	$('#currentDate').replaceWith($header);
+	$('#currentDate').replaceWith(header);
 }
 
 function startTime() {

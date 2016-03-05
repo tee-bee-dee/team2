@@ -13,7 +13,8 @@ exports.get = function (req, res) {
 			eid: employeeId,
 			employeeName: employeename,
 			message: req.flash("permission"),
-			layout: 'admin'
+			layout: 'admin',
+			dashboard: "active"
 		});
 	} else if( isOwner ) {
 		res.render('business/dashboard-business', {
@@ -22,9 +23,10 @@ exports.get = function (req, res) {
 			employeeName: employeename,
 			message: req.flash("permission"),
 			isOwner: isOwner,
-			businessId: req.user[0].business
+			businessId: req.user[0].business,
+			dashboard: "active"
 		});
-	} else {
+	} else
 		res.redirect('/visitor-list');
 	}
 

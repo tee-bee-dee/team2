@@ -63,7 +63,8 @@ exports.get = function(req,res){
                 notsigned: notemployee,
                 signed: employeee,
                 isOwner: req.user[0].admin,
-                businessId: req.user[0].business
+                businessId: req.user[0].business,
+                employees: "active"
             });
 
         });
