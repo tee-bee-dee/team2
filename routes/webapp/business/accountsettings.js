@@ -55,12 +55,12 @@ exports.post = function (req, res) {
     var eid = req.user[0]._id;
 
     var inputOldPass = req.body.oldPassword;
-    var inputPass = req.body.editPassword;
-    var inputPass2 = req.body.editPassword2;
-    var inputEmail = req.body.editEmail;
-    var inputPhone = req.body.editPhone;
-    var textNotify = req.body.sendText;
-    var emailNotify = req.body.sendEmail;
+    var inputPass    = req.body.editPassword;
+    var inputPass2   = req.body.editPassword2;
+    var inputEmail   = req.body.editEmail;
+    var inputPhone   = req.body.editPhone;
+    var textNotify   = req.body.sendText;
+    var emailNotify  = req.body.sendEmail;
 
     if (inputPass != null)
     {
@@ -246,9 +246,7 @@ exports.uploadLogo = function(req, res, next){
             }
 
         );
-    }
-    else{
-
+    } else {
         businesses.findById(businessID,
             function (err, results){
                 if(err){
@@ -315,7 +313,7 @@ function render(req, res, additionalFields) {
                 };
                 var allFields = _.extend(defaultFields, additionalFields);
 
-                res.render('business/settings', allFields);
+                res.render('business/accountsettings', allFields);
             });
         }
     );
