@@ -27,7 +27,11 @@ exports.get = function (req, res) {
 			dashboard: "active"
 		});
 	} else
-		res.redirect('/visitor-list');
+		res.render('business/visitor-list', {
+			title: "Express",
+			isAdmin: req.user[0].admin,
+			patients: "active"
+		});
 	}
 
 };
