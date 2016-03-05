@@ -6,13 +6,13 @@ var router = express.Router();
 // Define the routes for navigating the dashboard web application
 var landing = require('./landing');
 var login = require('./login');
-var accountSettings = require('./accountSettings');
+var accountSettings = require('./accountsettings');
 var register = require('./register');
 var dashboard = require('./dashboard');
-var addEmployees = require('./addEmployees');
-var employeeRegister = require('./employeeRegister');
-var businesssetting = require('./businessSetting');
-var visitorList = require('./visitorList');
+var addEmployees = require('./addemployees');
+var employeeRegister = require('./employeeregister');
+var businesssetting = require('./businesssetting');
+var visitorList = require('./visitor-list');
 
 /*
  * TODO: Explain where this export is pointing to.
