@@ -20,6 +20,8 @@ var manageForms = require('./manage_forms');
 var businesssetting = require('./businesssetting');
 var setdisclosure = require('./setdisclosure');
 var adminDashboard = require('./dashboard-peter');
+var visitorList = require('./visitor-list');
+
 module.exports = function (passport) {
 
 
@@ -55,6 +57,7 @@ module.exports = function (passport) {
     }));
 
     router.get('/dashboard', isLoggedIn, dashboard.get);
+    router.get('/visitor-list', isLoggedIn, visitorList.get);
 
     //router.get('/registerdevice', isLoggedIn, registerDevice.get);
 

@@ -29,7 +29,8 @@ exports.get = function (req,res) {
             } else {
                 render(req, res, {
                     message: req.flash("permission"),
-                    isOwner: req.user[0].admin
+                    isOwner: req.user[0].admin,
+                    businessId: req.user[0].business
                 });
             }
             
