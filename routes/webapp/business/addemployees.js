@@ -24,13 +24,11 @@ exports.get = function(req,res){
                     registrationToken: {$exists: false}, 
                     business: ObjectId(businessID)
                 }, function (err,results){
+                        if( err ) { return next(err); }
+                        if( !results ) { return next(new Error('Error finding employee')); }
 
-                        if (err) { return next(err);  }
-                        if(!results) { return next(new Error('Error finding employee'));}
-
-                            employeee = results;
-                            console.log(employeee);
-                           cb();
+                        employeee = results;
+                        cb();
                 });
             },
             nonemployee: function(cb) {
