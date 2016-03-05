@@ -21,8 +21,15 @@
             </li>
             {{else}}
             <li class="active treeview">
-                <a href="/dashboard">
+                <a href="/visitor-list">
                     <i class="fa fa-navicon"></i> <span>Patients</span>
+                </a>
+            </li>
+            {{/if}}
+            {{#if isOwner}}
+             <li class="active treeview">
+                <a href="/office/{{businessId}}/checkin">
+                    <i class="fa fa-navicon"></i> <span>Sign In Screen</span>
                 </a>
             </li>
             {{/if}}

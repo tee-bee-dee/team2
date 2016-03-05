@@ -2,9 +2,10 @@ var auth = require('../../../lib/auth');
 
 exports.get = function (req, res) {
 
-	var isPeter = req.user[0].peter
+	var isPeter = req.user[0].peter;
+	var isOwner = req.user[0].admin;
 	var employeeId = req.user[0]._id;
-	var employeename = req.user[0].fname + req.user[0].lname;
+	var employeename = req.user[0].fname + ' ' + req.user[0].lname;
 
 	if( isPeter ) {
 		res.render('business/dashboard-admin', {
@@ -14,14 +15,17 @@ exports.get = function (req, res) {
 			message: req.flash("permission"),
 			layout: 'admin'
 		});
-	} else {
+	} else if( isOwner ) {
 		res.render('business/dashboard-business', {
 			title: 'Express',
 			eid: employeeId,
 			employeeName: employeename,
 			message: req.flash("permission"),
-			isOwner: req.user[0].admin
+			isOwner: isOwner,
+			businessId: req.user[0].business
 		});
+	} else {
+		res.redirect('/visitor-list');
 	}
 
 };
