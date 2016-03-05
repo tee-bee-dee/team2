@@ -22,8 +22,6 @@ module.exports = function (passport) {
     router.get('/', landing.get);
     router.post('/', landing.post);
 
-    router.get('/theming', isLoggedInBusiness, theming.get);
-
     router.get('/login', login.get);
     router.post('/login', passport.authenticate('local-login',{
         successRedirect : '/dashboard',
