@@ -17,8 +17,7 @@ var viewForm = require('./viewform');
 var customizeTheme = require('./customize_theme');
 var manageForms = require('./manage_forms');
 var businesssetting = require('./businesssetting');
-var setdisclosure = require('./setdisclosure');
-var adminDashboard = require('./dashboard-peter');
+var adminDashboard = require('./dashboard-admin');
 var visitorList = require('./visitor-list');
 
 module.exports = function (passport) {
