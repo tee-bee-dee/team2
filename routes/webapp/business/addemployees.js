@@ -24,13 +24,11 @@ exports.get = function(req,res){
                     registrationToken: {$exists: false}, 
                     business: ObjectId(businessID)
                 }, function (err,results){
+                        if( err ) { return next(err); }
+                        if( !results ) { return next(new Error('Error finding employee')); }
 
-                        if (err) { return next(err);  }
-                        if(!results) { return next(new Error('Error finding employee'));}
-
-                            employeee = results;
-                            console.log(employeee);
-                           cb();
+                        employeee = results;
+                        cb();
                 });
             },
             nonemployee: function(cb) {
@@ -65,7 +63,8 @@ exports.get = function(req,res){
                 notsigned: notemployee,
                 signed: employeee,
                 isOwner: req.user[0].admin,
-                businessId: req.user[0].business
+                businessId: req.user[0].business,
+                employees: "active"
             });
 
         });

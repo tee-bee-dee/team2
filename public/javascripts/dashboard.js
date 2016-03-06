@@ -1,14 +1,4 @@
-$(function(){
-
-  getDate();
-  $(startTime);
-  $(table);
-  $(poll);
-
-
-});
-
-function dateToString(date) {
+function dateToString( date ) {
 	var monthNames = [ 'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December' ];
     var month = date.getMonth() ;
@@ -16,9 +6,8 @@ function dateToString(date) {
     var dateOfString = (('' + month).length < 2 ? '' : '') +  monthNames[month] + ' ';
     dateOfString += (('' + day).length < 2 ? '0' : '') + day + ' ';
     dateOfString += date.getFullYear();
+    
     return dateOfString;
-
-
 }
 
 function getDate(){
@@ -26,112 +15,36 @@ function getDate(){
 	var datetime= '';
 	datetime += dateToString(currentdate );
 
-
-	var $header = $('<h1/>');
-	 $header.append(datetime);
-	$('#currentDate').replaceWith($header);
-
+	var header = $('<h1/>');
+	header.append(datetime);
+	$('#currentDate').replaceWith(header);
 }
 
 function startTime() {
-    var today=new Date();
-    var h=today.getHours();
-    var m=today.getMinutes();
-    var s=today.getSeconds();
-    var dn='AM';
-	if (h>12){
-		dn='PM';
-		h=h-12;
+  var today = new Date();
+  var h     = today.getHours();
+  var m     = today.getMinutes();
+  var s     = today.getSeconds();
+  var dn    = 'AM';
+
+	if( h > 12 ) {
+		dn = 'PM';
+		h  = h-12;
 	}
-    m = checkTime(m);
-    s = checkTime(s);
-    $('#txt').html('Current Time: ' +h+':'+m+':'+s+ ' '+ dn);
-    setTimeout(function(){startTime();},500);
+
+  m = checkTime(m);
+  s = checkTime(s);
+  $('#txt').html('Current Time: ' +h+':'+m+':'+s+ ' '+ dn);
+  setTimeout(function(){startTime();},500);
 }
 
-function checkTime(i) {
-    if (i<10) {i = '0' + i;}  // add zero in front of numbers < 10
+function checkTime( i ) {
+    if( i < 10 ) { i = '0' + i; }  // add zero in front of numbers < 10
     return i;
 }
 
-function table() {
-
-    var cols,$btn;
-
-    $.get('/api/employee/'+eid+'/appointments/today', function( data ){
-
-        var count = 0;
-        //empty's the table
-        $('#tblBody').empty();
-
-        //for loop to reload the table
-        for(var i=0; i<data.length; i++){
-
-            if(data[i].state == 'done'){
-              continue;
-            }
-
-            var $img = $('<img id="Image" src="http://placehold.it/50x50" />');
-            count++;
-
-            var appTime = getAppDate(data[i].date);
-
-
-            if (data[i].state === 'checkedIn' || data[i].state === 'roomed') {
-
-                var url = '/viewform/' + data[i]._id;
-                var $form = $('<a href="'+url+'" onclick="window.open(\''+url+'\', \'newwindow\', \'width=600, height=400\'); return false;" >View Forms</a>');
-
-                if (data[i].state === 'checkedIn'){
-                    var $check = $('<input type="checkbox">').data('appid',data[i]._id);
-                    $check.change(function(){
-                        var $appid = $(this).data('appid');
-
-                        $.ajax({
-                            url :  '/api/appointments/'+$appid+'/state',
-                            type : 'PUT'
-                        });
-                    });
-
-                     cols = [count,data[i].fname + ' ' + data[i].lname,$form,appTime,data[i].state,$check,$img,""];
-                }
-
-                else if(data[i].state === 'roomed') {
-                    $btn = $('<button class="btn btn-primary"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></button>');
-                    var x = data[i]._id;
-                     $btn.click(function() {
-                        $.ajax({
-                            url: '/api/appointments/'+x+'/state',
-                            type: 'PUT',
-                         });
-                    });
-
-                     cols = [count,data[i].fname + ' ' + data[i].lname,$form,appTime,data[i].state,$btn,$img,""];
-
-                }
-            }
-
-            else {
-                cols = [count,data[i].fname + ' ' + data[i].lname,$btn = false,appTime,data[i].state,$btn = false,$img,""];
-            }
-
-            insRow(cols);
-        }//end of for loop
-
-    });//end of $get()
-}//end of table()
-
-
-function poll() {
-    setTimeout(function(){
-        table();
-
-        poll();
-    },20000);//checks every 1000 millisecond
-}
-
 //function to get the appointment's time in a formatted string
-function getAppDate(date){
+function getAppDate( date ){
   var appDate = new Date(date);
   //parsing to get time
   var fhours = appDate.getHours();
@@ -156,23 +69,7 @@ function getAppDate(date){
   return appTime;
 }
 
-// JQuery Insert Row
-function insRow(cols) {
-  var $row = $('<tr/>'); // Create a r
-
-  // Loop through data
-  for (var i = 0; i < cols.length; i++) {
-    var $col;
-
-    if(i===cols.length-1 && cols[4]=="checkedIn"){
-        $col = $('<td/style="background-color:#00FF00;width:1px">'); // Create a column
-    } else{
-        $col= $('<td/>');
-    }
-
-    $col.append(cols[i]); // Append column data to column
-    $row.append($col); // Append column to row
-  }
-
-  $('#tblBody').append($row); // Append to top of element using prepend
-}
+$(function() {
+  getDate();
+  $(startTime);
+});
