@@ -514,6 +514,7 @@ header .header-content .header-content-inner p {
     background-color: rgba(50,50,50, .01);
     font-weight:600;
     text-shadow: 0px 1px 0px rgba(250,250,250, .75);
+    font-size: 24px;
 }
 
 .price.panel-red>.panel-heading {
@@ -539,6 +540,7 @@ header .header-content .header-content-inner p {
     background-color: rgba(50,50,50, .01);
     font-weight:600;
     text-shadow: 0px 1px 0px rgba(250,250,250, .75);
+    font-size: 24px;
 }
 
 #chartCheck {
@@ -661,7 +663,9 @@ header .header-content .header-content-inner p {
         text-align: left;
         font-size: 30px;
     }
-
+    h3{
+        font-size: 32px;
+    }
     .btn{
         font-size: 30px !important;
     }
