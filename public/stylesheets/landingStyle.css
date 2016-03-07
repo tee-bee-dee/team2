@@ -322,7 +322,32 @@ footer a{
     margin-right: 5px;
 }
 
+/***Contact form***/
+.btn-warning{
+    background-color: #071C33;
+}
 
+.btn-warning:hover{
+    color: #071C33;
+    background-color: #fff;
+}
+
+.control-label{
+    color: #fff;
+    text-shadow: 1px 0 #071C33, 0 1px #071C33, 1px 0 #071C33, 0 1px #071C33;
+}
+
+.form-color{
+    border: 3px solid #071C33 !important;
+}
+
+.input-group-addon{
+    border: 3px solid #071C33;
+}
+
+textarea.form-control {
+    height: 100px;
+}
 /*** HEADER**/
 
 header {
