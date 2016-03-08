@@ -267,6 +267,7 @@ function render(req, res, additionalFields) {
                     title: 'Express',
                     fname: emp.fname,
                     lname: emp.lname,
+                    isAdmin: emp.admin,
                     password: emp.password,
                     phone: phone,
                     email: emp.email,
