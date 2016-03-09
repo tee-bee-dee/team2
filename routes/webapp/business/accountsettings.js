@@ -59,6 +59,7 @@ exports.post = function (req, res) {
     var inputOldPass = req.body.oldPassword;
     var inputPass    = req.body.editPassword;
     var inputPass2   = req.body.editPassword2;
+    var inputName    = req.body.editName;
     var inputEmail   = req.body.editEmail;
     var inputPhone   = req.body.editPhone;
     var textNotify   = req.body.sendText;
@@ -71,6 +72,7 @@ exports.post = function (req, res) {
             render(req, res, {
                 alert: 'Passwords do not match'
             })
+            return;
         } else {
 
             employees.find({_id: eid}, function (err2, result) {
@@ -95,12 +97,12 @@ exports.post = function (req, res) {
         }
     }
 
-    if (inputPhone != null || inputEmail != null)
+    if (inputPhone != null || inputEmail != null || inputName != null)
     {
     
 
 
-        var phoneAndEmail = {};
+        var setContactInfo = {};
 
         if (inputPhone != null) {
             inputPhone = inputPhone.replace(/-/g, '');
@@ -110,15 +112,29 @@ exports.post = function (req, res) {
                 render(req, res, {
                     alert: 'Incorrect phone number format'
                 });
+                return;
             }
-            phoneAndEmail.phone = inputPhone;
+            setContactInfo.phone = inputPhone;
         }
 
         if (inputEmail != null) {
-            phoneAndEmail.email = inputEmail;
+            setContactInfo.email = inputEmail;
         }
 
-        employees.findAndModify({_id: eid}, { $set: phoneAndEmail}, function(err, data)
+        if (inputName != null) {
+            var splitName = inputName.split(' ');
+            if (splitName.length === 2) {
+                setContactInfo.fname = splitName[0];
+                setContactInfo.lname = splitName[1];
+            } else {
+                render(req, res, {
+                    alert: 'Please format name as <firstname> <lastname>'
+                });
+                return;
+            }
+        }
+
+        employees.findAndModify({_id: eid}, { $set: setContactInfo}, function(err, data)
         {
             if (err) { return handleError(res, err);}
 
