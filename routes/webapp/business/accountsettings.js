@@ -276,6 +276,7 @@ function render(req, res, additionalFields) {
                     title: 'Settings',
                     fname: emp.fname,
                     lname: emp.lname,
+                    employeeName: emp.fname+' '+emp.lname,
                     isAdmin: emp.admin,
                     password: emp.password,
                     phone: phone,
