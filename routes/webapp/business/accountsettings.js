@@ -284,7 +284,9 @@ function render(req, res, additionalFields) {
                     emailNotify: emp.emailNotify,
                     admin: emp.admin,
                     logo: business.logo ? business.logo : null,
-                    bg: business.style.bg ? business.style.bg : null
+                    bg: business.style.bg ? business.style.bg : null,
+                    companyName: business.companyName,
+                    companyPhone: business.phone
                 };
 
                 var allFields = _.extend(defaultFields, additionalFields);
