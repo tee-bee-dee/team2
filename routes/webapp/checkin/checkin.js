@@ -22,21 +22,21 @@ var request = require('request');
 
 exports.get = function (req, res, next) {
     var business = req.session.business;
-
-    var slackOptions = {
-        uri: 'https://hooks.slack.com/services/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',
-        method: 'POST',
-        json: {
-            "channel": "#bobsburgers",
-            "text": "A new client just checked in!"
-        }
-    };
-
-    request(slackOptions, function (error, response, body) {
-        if(!error && response.statusCode == 200) {
-            console.log(body.id);
-        }
-    });
+    //
+    //var slackOptions = {
+    //    uri: 'https://hooks.slack.com/services/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',
+    //    method: 'POST',
+    //    json: {
+    //        "channel": "#bobsburgers",
+    //        "text": "A new client just checked in!"
+    //    }
+    //};
+    //
+    //request(slackOptions, function (error, response, body) {
+    //    if(!error && response.statusCode == 200) {
+    //        console.log(body.id);
+    //    }
+    //});
 
     res.render('checkin/checkin', {
         companyName: business.companyName,
@@ -217,6 +217,25 @@ exports.post = function (req, res, next) {
     inputDOB = inputMonth + '/' + inputDay + '/' + inputYear;
 
     appointments.find({business: ObjectID(req.params.id), fname: inputFirst, lname: inputLast, dob: inputDOB}, function(err, result) {
+
+        //TODO: Uncomment this when front end is actually tied to the DB and checking if the appointment is valid
+        //TODO: Also need to take out the slack request from the done.js file in the same directory as checkin
+        //var slackOptions = {
+        //    uri: 'https://hooks.slack.com/services/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',
+        //    method: 'POST',
+        //    json: {
+        //        "channel": "#bobsburgers",
+        //        "text": inputFirst + " " + inputLast + " just checked in."
+        //    }
+        //};
+        //
+        //request(slackOptions, function (error, response, body) {
+        //    if(!error && response.statusCode == 200) {
+        //        console.log(body.id);
+        //    }
+        //});
+
+
         console.log(req.params.id, inputFirst, inputLast, inputDOB);
         if (result.length === 0) {
             res.render('checkin/checkin', {
