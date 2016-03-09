@@ -21,20 +21,9 @@ exports.get = function (req,res) {
                 return next(err);
             }
 
-            if( req.user[0].peter ) {
-                render(req, res, {
-                    message: req.flash("permission"),
-                    layout: 'admin',
-                    settings: "active"
-                });
-            } else {
-                render(req, res, {
-                    message: req.flash("permission"),
-                    isOwner: req.user[0].admin,
-                    businessId: req.user[0].business,
-                    settings: "active"
-                });
-            }
+            render(req, res, {
+                message: req.flash("permission"),
+            });
             
         }
     );
@@ -59,6 +48,7 @@ exports.post = function (req, res) {
     var inputOldPass = req.body.oldPassword;
     var inputPass    = req.body.editPassword;
     var inputPass2   = req.body.editPassword2;
+    var inputName    = req.body.editName;
     var inputEmail   = req.body.editEmail;
     var inputPhone   = req.body.editPhone;
     var textNotify   = req.body.sendText;
@@ -71,6 +61,7 @@ exports.post = function (req, res) {
             render(req, res, {
                 alert: 'Passwords do not match'
             })
+            return;
         } else {
 
             employees.find({_id: eid}, function (err2, result) {
@@ -79,6 +70,7 @@ exports.post = function (req, res) {
                     render(req, res, {
                         alert: 'Incorrect password'
                     })
+                    return;
                 } else {
 
                     employees.findAndModify({_id: eid}, {$set: {password: hashedInputPass}}, function (err, data) {
@@ -89,18 +81,19 @@ exports.post = function (req, res) {
                         render(req, res, {
                             edited: 'Password successfully changed!'
                         });
+                        return;
                     });
                 }
             })
         }
     }
 
-    if (inputPhone != null || inputEmail != null)
+    if (inputPhone != null || inputEmail != null || inputName != null)
     {
     
 
 
-        var phoneAndEmail = {};
+        var setContactInfo = {};
 
         if (inputPhone != null) {
             inputPhone = inputPhone.replace(/-/g, '');
@@ -110,15 +103,29 @@ exports.post = function (req, res) {
                 render(req, res, {
                     alert: 'Incorrect phone number format'
                 });
+                return;
             }
-            phoneAndEmail.phone = inputPhone;
+            setContactInfo.phone = inputPhone;
         }
 
         if (inputEmail != null) {
-            phoneAndEmail.email = inputEmail;
+            setContactInfo.email = inputEmail;
         }
 
-        employees.findAndModify({_id: eid}, { $set: phoneAndEmail}, function(err, data)
+        if (inputName != null) {
+            var splitName = inputName.split(' ');
+            if (splitName.length === 2) {
+                setContactInfo.fname = splitName[0];
+                setContactInfo.lname = splitName[1];
+            } else {
+                render(req, res, {
+                    alert: 'Please format name as <firstname> <lastname>'
+                });
+                return;
+            }
+        }
+
+        employees.findAndModify({_id: eid}, { $set: setContactInfo}, function(err, data)
         {
             if (err) { return handleError(res, err);}
 
@@ -126,6 +133,7 @@ exports.post = function (req, res) {
             render(req, res, {
                 edited: 'Contact info saved.'
             });
+            return;
         });
     }
 
@@ -264,7 +272,8 @@ function render(req, res, additionalFields) {
                         phone = phone.slice(0, 3) + '-' + phone.slice(3, 6) + '-' + phone.slice(6);
 
                 var defaultFields = {
-                    title: 'Express',
+                    settings: 'active',
+                    title: 'Settings',
                     fname: emp.fname,
                     lname: emp.lname,
                     isAdmin: emp.admin,
@@ -277,7 +286,19 @@ function render(req, res, additionalFields) {
                     logo: business.logo ? business.logo : null,
                     bg: business.style.bg ? business.style.bg : null
                 };
+
                 var allFields = _.extend(defaultFields, additionalFields);
+
+                if( req.user[0].peter ) {
+                    _.extend(allFields, {
+                        layout: 'admin'
+                    });
+                } else {
+                    _.extend(allFields, {
+                        isOwner: req.user[0].admin,
+                        businessId: req.user[0].business
+                    });
+                }
 
                 res.render('business/accountsettings', allFields);
             });
