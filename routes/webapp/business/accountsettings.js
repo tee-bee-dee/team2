@@ -21,20 +21,9 @@ exports.get = function (req,res) {
                 return next(err);
             }
 
-            if( req.user[0].peter ) {
-                render(req, res, {
-                    message: req.flash("permission"),
-                    layout: 'admin',
-                    settings: "active"
-                });
-            } else {
-                render(req, res, {
-                    message: req.flash("permission"),
-                    isOwner: req.user[0].admin,
-                    businessId: req.user[0].business,
-                    settings: "active"
-                });
-            }
+            render(req, res, {
+                message: req.flash("permission"),
+            });
             
         }
     );
@@ -81,6 +70,7 @@ exports.post = function (req, res) {
                     render(req, res, {
                         alert: 'Incorrect password'
                     })
+                    return;
                 } else {
 
                     employees.findAndModify({_id: eid}, {$set: {password: hashedInputPass}}, function (err, data) {
@@ -91,6 +81,7 @@ exports.post = function (req, res) {
                         render(req, res, {
                             edited: 'Password successfully changed!'
                         });
+                        return;
                     });
                 }
             })
@@ -142,6 +133,7 @@ exports.post = function (req, res) {
             render(req, res, {
                 edited: 'Contact info saved.'
             });
+            return;
         });
     }
 
@@ -280,7 +272,8 @@ function render(req, res, additionalFields) {
                         phone = phone.slice(0, 3) + '-' + phone.slice(3, 6) + '-' + phone.slice(6);
 
                 var defaultFields = {
-                    title: 'Express',
+                    settings: 'active',
+                    title: 'Settings',
                     fname: emp.fname,
                     lname: emp.lname,
                     isAdmin: emp.admin,
@@ -293,7 +286,19 @@ function render(req, res, additionalFields) {
                     logo: business.logo ? business.logo : null,
                     bg: business.style.bg ? business.style.bg : null
                 };
+
                 var allFields = _.extend(defaultFields, additionalFields);
+
+                if( req.user[0].peter ) {
+                    _.extend(allFields, {
+                        layout: 'admin'
+                    });
+                } else {
+                    _.extend(allFields, {
+                        isOwner: req.user[0].admin,
+                        businessId: req.user[0].business
+                    });
+                }
 
                 res.render('business/accountsettings', allFields);
             });
