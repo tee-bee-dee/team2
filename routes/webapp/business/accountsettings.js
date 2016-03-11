@@ -181,6 +181,53 @@ exports.post = function (req, res) {
 
 };
 
+exports.setCompanyInfo = function (req, res) {
+
+
+    var db = req.db;
+    var businesses = db.get('businesses');
+    var bid = req.user[0].business;
+
+    var companyName = req.body.companyName;
+    var phone = req.body.phone;
+
+
+    if (companyName != null || phone != null)
+    {
+
+        var setCompanyInfo = {};
+
+        if (phone != null) {
+            phone = phone.replace(/-/g, '');
+            if (phone.length === 10) {
+                phone = '1' + phone;
+            } else {
+                render(req, res, {
+                    alert: 'Incorrect phone number format'
+                });
+                return;
+            }
+            setCompanyInfo.phone = phone;
+        }
+
+        if (companyName != null) {
+            setCompanyInfo.companyName = companyName;
+        }
+
+        businesses.update({_id: bid}, { $set: setCompanyInfo}, function(err, data)
+        {
+            if (err) { return handleError(res, err);}
+
+
+            render(req, res, {
+                edited: 'Company info saved.'
+            });
+            return;
+        });
+    }
+
+};
+
 
 exports.uploadLogo = function(req, res, next){
 
@@ -270,6 +317,10 @@ function render(req, res, additionalFields) {
                 var phone = emp.phone;
                 phone = phone.replace('1', '');
                         phone = phone.slice(0, 3) + '-' + phone.slice(3, 6) + '-' + phone.slice(6);
+                var companyPhone = business.phone;
+                companyPhone = (companyPhone.length === 11) ? companyPhone.replace('1', '') : companyPhone;
+                        companyPhone = companyPhone.slice(0, 3) + '-' + companyPhone.slice(3, 6) + '-' + companyPhone.slice(6);
+
 
                 var defaultFields = {
                     settings: 'active',
@@ -287,7 +338,7 @@ function render(req, res, additionalFields) {
                     logo: business.logo ? business.logo : null,
                     bg: business.style.bg ? business.style.bg : null,
                     companyName: business.companyName,
-                    companyPhone: business.phone
+                    companyPhone: companyPhone
                 };
 
                 var allFields = _.extend(defaultFields, additionalFields);
