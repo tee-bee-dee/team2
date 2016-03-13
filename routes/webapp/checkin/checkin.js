@@ -17,6 +17,13 @@ var ObjectID = require('mongodb').ObjectID;
 var style = require('./../../../lib/style.js');
 
 var request = require('request');
+var io = require('socket.io')(4005);
+
+io.on('connection', function (socket) {
+    console.log("New connection joining patient-queue room");
+    socket.join('patient-queue');
+});
+
 
 
 
@@ -55,16 +62,21 @@ exports.post = function (req, res, next) {
 
     var appointments = db.get('appointments');
     var businesses = db.get('businesses');
+    var employees = db.get('employees');
 
-    var dobFormatErr = 'Please enter your Date of Birth in MM/DD/YYYY format';
+    /*var dobFormatErr = 'Please enter your Date of Birth in MM/DD/YYYY format';
     var monthValErr = 'Please enter MM value between 01 and 12';
-    var dayValErr = 'Please enter DD value between 01 and 31';
+    var dayValErr = 'Please enter DD value between 01 and 31';*/
 
     var business = req.session.business;
 
     var inputFirst = req.body.inputFirst;
     var inputLast = req.body.inputLast;
-    var inputDOB = req.body.inputDOB;
+    var inputPhone = req.body.inputPhone.replace(/[\(\)-\s]/g, '');
+
+
+
+    /*var inputDOB = req.body.inputDOB;
     var dobSubStr = req.body.inputDOB;
     var numSlash = inputDOB.match(/\//g);
 
@@ -214,9 +226,14 @@ exports.post = function (req, res, next) {
         inputDay = '0' + inputDay;
     }
 
-    inputDOB = inputMonth + '/' + inputDay + '/' + inputYear;
+    inputDOB = inputMonth + '/' + inputDay + '/' + inputYear;*/
 
-    appointments.find({business: ObjectID(req.params.id), fname: inputFirst, lname: inputLast, dob: inputDOB}, function(err, result) {
+    appointments.find({
+        business: ObjectID(req.params.id), 
+        fname: inputFirst, 
+        lname: inputLast, 
+        phone: inputPhone
+    }, function(err, result) {
 
         //TODO: Uncomment this when front end is actually tied to the DB and checking if the appointment is valid
         //TODO: Also need to take out the slack request from the done.js file in the same directory as checkin
@@ -236,13 +253,13 @@ exports.post = function (req, res, next) {
         //});
 
 
-        console.log(req.params.id, inputFirst, inputLast, inputDOB);
+        //console.log(req.params.id, inputFirst, inputLast, inputDOB);
         if (result.length === 0) {
             res.render('checkin/checkin', {
                 error: 'No appointment found',
                 inputFirst: inputFirst,
                 inputLast: inputLast,
-                inputDOB: inputDOB,
+                inputPhone: inputPhone,
                 bg: business.style.bg,
                 buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
                 buttonText: style.rgbObjectToCSS(business.style.buttonText),
@@ -254,18 +271,30 @@ exports.post = function (req, res, next) {
         else {
             var appt = result[0];
             var apptID = appt._id;
+
+
+
+            console.log('Current time is:', new Date(appt.date));
             req.session.appointmentId = apptID;
             req.session.save(function (err) {
                 if (err) {
                     console.error('Session save error:', err);
                 }
 
+                io.to('patient-queue').emit('checkin', {
+                    visitor: inputFirst + " " + inputLast,
+                    doctor: "Gev",
+                    apptTime: new Date(appt.date).toString(),
+                    currentTime: "10:47AM",
+                    status: 'Lobby'
+                });
+
                 res.redirect('done');
             });
                     //Update the state of the appointment
             req.db.get('appointments').updateById(req.session.appointmentId, {
                 $set: {
-                    state: 'checkedIn'
+                    state: 'lobby'
                 }
             }, function (err) {
                 if (err) {

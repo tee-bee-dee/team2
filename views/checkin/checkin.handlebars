@@ -73,35 +73,40 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Check In</h3>
             </div>
+            {{#if error}}
+                <div class="alert alert-danger">{{error}}</div>
+            {{/if}}
             <div class="box-body">
-                <div class="form-group">
-                    <label class="control-label inputFirst">First Name</label>
-                    <input type="firstName" id="inputFirst" name="inputFirst" value="{{ inputFirst }}" class="form-control" required autofocus>
-                </div>
-                <div class="form-group">
-                    <label class="control-label inputLast">Last Name</label>
-                    <input type="lastName" id="inputLast" name="inputLast" value="{{ inputLast }}" class="form-control" required autofocus>
-                </div>
-                <div class="form-group">
-                    <label class="control-label inputDOB">Phone Number</label>
-                    <input type="phone" id="inputPhone" name="inputPhone" value="{{ inputDOB }}" class="form-control" placeholder='(xxx) xxx-xxxx' required autofocus>
-                </div>
-                <div class="checkbox">
-                    <label>
-                    <!-- <label class="control-label inputDOB">New Patient?</label> -->
-                    <input type="checkbox" id="new-patient" name="new-patient" value="{{ newPatient }}">
-                    New Patient?
-                </label>
-                </div>
-                <!-- <div class="form-group">
-                    <label class="control-label inputDOB">Phone Number</label>
-                    <input type="phone" id="inputPhone" name="inputPhone" value="{{ inputDOB }}" class="form-control" placeholder='(xxx) xxx-xxxx' required autofocus>
-                </div> -->
-                <div class="box-footer">
-                    <a type="button" class="btn btn-lg btn-primary center-block" href="done">Check In</a>
-                    <!-- <a type="button" class="btn custom checkinbutton" href="done">Check In -->
-                    <!-- </a> -->
-                </div>
+                <form method="POST">
+                    <div class="form-group">
+                        <label class="control-label inputFirst">First Name</label>
+                        <input type="firstName" id="inputFirst" name="inputFirst" value="{{ inputFirst }}" class="form-control" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label inputLast">Last Name</label>
+                        <input type="lastName" id="inputLast" name="inputLast" value="{{ inputLast }}" class="form-control" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label inputDOB">Phone Number</label>
+                        <input type="phone" id="inputPhone" name="inputPhone" value="{{ inputPhone }}" class="form-control" placeholder='(xxx) xxx-xxxx' required autofocus>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                        <!-- <label class="control-label inputDOB">New Patient?</label> -->
+                        <input type="checkbox" id="new-patient" name="new-patient" value="{{ newPatient }}">
+                        New Patient?
+                        </label>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label class="control-label inputDOB">Phone Number</label>
+                        <input type="phone" id="inputPhone" name="inputPhone" value="{{ inputDOB }}" class="form-control" placeholder='(xxx) xxx-xxxx' required autofocus>
+                    </div> -->
+                    <div class="box-footer">
+                        <input type="submit" id="checkin" class="btn btn-lg btn-primary center-block" value="Check In" >
+                        <!-- <a type="button" class="btn custom checkinbutton" href="done">Check In -->
+                        <!-- </a> -->
+                    </div>
+                </form>
             </div>
         </div>
     </div>
