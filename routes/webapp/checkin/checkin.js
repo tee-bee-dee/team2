@@ -280,13 +280,19 @@ exports.post = function (req, res, next) {
                 if (err) {
                     console.error('Session save error:', err);
                 }
-
-                io.to('patient-queue').emit('checkin', {
+                var newAppointment = {
                     visitor: inputFirst + " " + inputLast,
-                    doctor: "Gev",
-                    apptTime: new Date(appt.date).toString(),
-                    currentTime: "10:47AM",
+                    apptTime: new Date(appt.date).toTimeString(),
+                    currentTime: new Date().toTimeString(),
                     status: 'Lobby'
+                }
+
+                employees.find({
+                    business: appt.business,
+                    _id: appt.employee
+                }, function (err, results) {
+                    newAppointment.doctor = results[0].fname;
+                    io.to('patient-queue').emit('checkin', newAppointment);
                 });
 
                 res.redirect('done');
