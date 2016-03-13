@@ -17,17 +17,9 @@ var ObjectID = require('mongodb').ObjectID;
 var style = require('./../../../lib/style.js');
 
 var request = require('request');
-var io = require('socket.io')(4005);
-
-io.on('connection', function (socket) {
-    console.log("New connection joining patient-queue room");
-    socket.join('patient-queue');
-});
-
-
-
 
 exports.get = function (req, res, next) {
+
     var business = req.session.business;
     //
     //var slackOptions = {
@@ -59,174 +51,19 @@ exports.get = function (req, res, next) {
 
 exports.post = function (req, res, next) {
     var db = req.db;
+    var io = req.app.io;
+    
+
 
     var appointments = db.get('appointments');
     var businesses = db.get('businesses');
     var employees = db.get('employees');
-
-    /*var dobFormatErr = 'Please enter your Date of Birth in MM/DD/YYYY format';
-    var monthValErr = 'Please enter MM value between 01 and 12';
-    var dayValErr = 'Please enter DD value between 01 and 31';*/
 
     var business = req.session.business;
 
     var inputFirst = req.body.inputFirst;
     var inputLast = req.body.inputLast;
     var inputPhone = req.body.inputPhone.replace(/[\(\)-\s]/g, '');
-
-
-
-    /*var inputDOB = req.body.inputDOB;
-    var dobSubStr = req.body.inputDOB;
-    var numSlash = inputDOB.match(/\//g);
-
-
-
-    if (numSlash !== null && numSlash.length !== 2) {
-        res.render('checkin/checkin', {
-            error: dobFormatErr,
-            inputFirst: inputFirst,
-            inputLast: inputLast,
-            inputDOB: inputDOB,
-            bg: business.style.bg,
-            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
-            buttonText: style.rgbObjectToCSS(business.style.buttonText),
-            containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
-        });
-        return;
-    }
-
-    var firstSep = dobSubStr.indexOf('/');
-    var inputMonth = dobSubStr.substring(0, firstSep);
-
-    if (inputMonth.length > 2 || inputMonth.length <= 0) {
-        res.render('checkin/checkin', {
-            error: dobFormatErr,
-            inputFirst: inputFirst,
-            inputLast: inputLast,
-            inputDOB: inputDOB,
-            bg: business.style.bg,
-            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
-            buttonText: style.rgbObjectToCSS(business.style.buttonText),
-            containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
-        });
-        return;
-    }
-
-    dobSubStr = dobSubStr.substring(firstSep+1);
-    var secondSep = dobSubStr.indexOf('/');
-    var inputDay = dobSubStr.substring(0, secondSep);
-
-    if (inputDay.length > 2 || inputDay.length <= 0) {
-        res.render('checkin/checkin', {
-            error: dobFormatErr,
-            inputFirst: inputFirst,
-            inputLast: inputLast,
-            inputDOB: inputDOB,
-            bg: business.style.bg,
-            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
-            buttonText: style.rgbObjectToCSS(business.style.buttonText),
-            containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
-        });
-        return;
-    }
-
-    var inputYear = dobSubStr.substring(secondSep+1);
-
-    if (inputYear.length !== 4)
-    {
-        res.render('checkin/checkin', {
-            error: dobFormatErr,
-            inputFirst: inputFirst,
-            inputLast: inputLast,
-            inputDOB: inputDOB,
-            bg: business.style.bg,
-            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
-            buttonText: style.rgbObjectToCSS(business.style.buttonText),
-            containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
-        });
-        return;
-    }
-
-    try {
-        var monthInt = parseInt(inputMonth);
-    } catch (e) {
-        res.render('checkin/checkin', {
-            error: monthValErr,
-            inputFirst: inputFirst,
-            inputLast: inputLast,
-            inputDOB: inputDOB,
-            bg: business.style.bg,
-            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
-            buttonText: style.rgbObjectToCSS(business.style.buttonText),
-            containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
-        });
-        return;
-    }
-
-    if (monthInt < 1 || monthInt > 12)
-    {
-        res.render('checkin/checkin', {
-            error: monthValErr,
-            inputFirst: inputFirst,
-            inputLast: inputLast,
-            inputDOB: inputDOB,
-            bg: business.style.bg,
-            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
-            buttonText: style.rgbObjectToCSS(business.style.buttonText),
-            containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
-        });
-        return;
-    }
-    else if (monthInt < 10 && inputMonth.length === 1)
-    {
-        inputMonth = '0' + inputMonth;
-    }
-
-    try {
-        var dayInt = parseInt(inputDay);
-    } catch (e) {
-        res.render('checkin/checkin', {
-            error: dayValErr,
-            inputFirst: inputFirst,
-            inputLast: inputLast,
-            inputDOB: inputDOB,
-            bg: business.style.bg,
-            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
-            buttonText: style.rgbObjectToCSS(business.style.buttonText),
-            containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
-        });
-        return;
-    }
-
-    if (dayInt < 1 || dayInt > 31)
-    {
-        res.render('checkin/checkin', {
-            error: dayValErr,
-            inputFirst: inputFirst,
-            inputLast: inputLast,
-            inputDOB: inputDOB,
-            bg: business.style.bg,
-            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
-            buttonText: style.rgbObjectToCSS(business.style.buttonText),
-            containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
-        });
-        return;
-    }
-    else if (dayInt < 10 && inputDay.length === 1)
-    {
-        inputDay = '0' + inputDay;
-    }
-
-    inputDOB = inputMonth + '/' + inputDay + '/' + inputYear;*/
 
     appointments.find({
         business: ObjectID(req.params.id), 
@@ -237,20 +74,20 @@ exports.post = function (req, res, next) {
 
         //TODO: Uncomment this when front end is actually tied to the DB and checking if the appointment is valid
         //TODO: Also need to take out the slack request from the done.js file in the same directory as checkin
-        //var slackOptions = {
-        //    uri: 'https://hooks.slack.com/services/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',
-        //    method: 'POST',
-        //    json: {
-        //        "channel": "#bobsburgers",
-        //        "text": inputFirst + " " + inputLast + " just checked in."
-        //    }
-        //};
-        //
-        //request(slackOptions, function (error, response, body) {
-        //    if(!error && response.statusCode == 200) {
-        //        console.log(body.id);
-        //    }
-        //});
+        var slackOptions = {
+           uri: 'https://hooks.slack.com/services/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',
+           method: 'POST',
+           json: {
+               "channel": "#bobsburgers",
+               "text": inputFirst + " " + inputLast + " just checked in."
+           }
+        };
+        
+        request(slackOptions, function (error, response, body) {
+           if(!error && response.statusCode == 200) {
+               console.log(body.id);
+           }
+        });
 
 
         //console.log(req.params.id, inputFirst, inputLast, inputDOB);
@@ -292,7 +129,7 @@ exports.post = function (req, res, next) {
                     _id: appt.employee
                 }, function (err, results) {
                     newAppointment.doctor = results[0].fname;
-                    io.to('patient-queue').emit('checkin', newAppointment);
+                    io.emit('checkin', newAppointment);
                 });
 
                 res.redirect('done');

@@ -10,10 +10,12 @@ var multer = require('multer');
 var passport = require('passport');
 var async = require('async');
 var exphbs = require('express3-handlebars');
+
 //Database
 var monk = require('monk');
 
 var app = express();
+app.io = require('socket.io')();
 /*var hbs = exphbs({
     helpers: {
         ifThird: function( index, options ) {
@@ -131,7 +133,6 @@ app.use(function(req, res, next) {
 
     next();
 });
-
 
 
 // Set Webapp Routes

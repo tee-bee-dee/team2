@@ -63,7 +63,11 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  var socket = io('http://team-fubar.herokuapp.com:4005');
+  var socket = io(window.location.origin);
+  socket.on('test', function() {
+    console.log("works!");
+  });
+  
   socket.on('checkin', function (data) {
     console.log(data);
 
