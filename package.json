@@ -57,6 +57,7 @@
     "gulp-nodemon": "^1.0.5",
     "gulp-open": "^0.3.2",
     "gulp-shell": "^0.3.0",
+    "imgur": "^0.1.7",
     "jasmine-core": "^2.2.0",
     "jshint-stylish": "^1.0.1",
     "karma": "^0.12.31",

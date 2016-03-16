@@ -1,6 +1,9 @@
 var auth = require('../../../lib/auth');
 var _ = require('underscore');
 var fs = require('fs');
+var imgur = require('imgur');
+
+imgur.setClientId('b67dffd2dbe1ea5');
 
 /**
  * Takes an req parameter and res parameter and returns the details of a particular employee.
@@ -247,25 +250,31 @@ exports.uploadLogo = function(req, res, next){
                 fs.unlink('public/'+results.logo);
             }
         );
+        imgur.uploadFile(req.files.userLogo.path)
+            .then(function (json) {
+                businesses.updateById(businessID, {
+                        $set: {
+                            logo: json.data.link
+                        }
+                    },{
+                        upsert: true
+                    }, function (err){
+                        if (err) {
+                            return next(err);
+                        }
 
-        businesses.updateById(businessID, {
-                $set: {
-                    logo: '/images/uploads/' + req.files.userLogo.name
-                }
-            },{
-                upsert: true
-            }, function (err){
-                if (err) {
-                    return next(err);
-                }
+                        render(req, res, {
+                            edited:'Succesfully uploaded file: '+req.files.userLogo.originalname,
+                            logo: json.data.link
+                        });
+                    }
 
-                render(req, res, {
-                    edited:'Succesfully uploaded file: '+req.files.userLogo.originalname,
-                    logo:'/images/uploads/'+req.files.userLogo.name
-                });
-            }
+                );
+            })
+            .catch(function (caughtErr) {
+                return next(caughtErr);
+            });
 
-        );
     } else {
         businesses.findById(businessID,
             function (err, results){
