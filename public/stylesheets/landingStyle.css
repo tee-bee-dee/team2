@@ -609,7 +609,7 @@ header .header-content .header-content-inner p {
 /******** Login Page Form ****/
 .form-control{
     margin: 0 auto;
-    width: 50%;
+    width: 19%;
     border:3px solid #071C33;
 }
 
@@ -650,6 +650,7 @@ header .header-content .header-content-inner p {
 
 .regTitleColor{
     color: #fff;
+    text-shadow: 1px 0 #071C33, 0 1px #071C33, 1px 0 #071C33, 0 1px #071C33;
 }
 
 .custom-center {
