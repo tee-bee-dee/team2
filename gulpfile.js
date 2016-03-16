@@ -7,6 +7,7 @@ var child_process = require('child_process');
 //var uglify = require('gulp-uglify');
 //var rename = require('gulp-rename');
 var server = require('gulp-express');
+var Server = require('karma').Server;
 var browserSync = require('browser-sync');
 var mongobackup = require('mongobackup');
 
@@ -48,6 +49,16 @@ function execute(command, callback) {
 
 
 //// begin of additional plugins
+
+/**
+ * Run test once and exit
+ */
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js'
+  }, done).start();
+});
+
 gulp.task('clean', function () {
   return gulp.src('build', {read: false})
     .pipe(plugins.clean());
