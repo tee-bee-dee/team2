@@ -15,7 +15,7 @@ function getDate(){
 	var datetime= '';
 	datetime += dateToString(currentdate );
 
-	var header = $('<div/>');
+	var header = $('<h5/>');
 	header.append(datetime);
 	$('#currentDate').replaceWith(header);
 }
