@@ -89,8 +89,6 @@ exports.post = function (req, res, next) {
            }
         });
 
-
-        //console.log(req.params.id, inputFirst, inputLast, inputDOB);
         if (result.length === 0) {
             res.render('checkin/checkin', {
                 error: 'No appointment found',
@@ -109,18 +107,17 @@ exports.post = function (req, res, next) {
             var appt = result[0];
             var apptID = appt._id;
 
-
-
-            console.log('Current time is:', new Date(appt.date));
             req.session.appointmentId = apptID;
+            var currentTime = new Date();
             req.session.save(function (err) {
                 if (err) {
                     console.error('Session save error:', err);
                 }
+
                 var newAppointment = {
                     visitor: inputFirst + " " + inputLast,
                     apptTime: new Date(appt.date).toTimeString(),
-                    currentTime: new Date().toTimeString(),
+                    currentTime: currentTime,
                     status: 'Lobby'
                 }
 
@@ -137,7 +134,8 @@ exports.post = function (req, res, next) {
                     //Update the state of the appointment
             req.db.get('appointments').updateById(req.session.appointmentId, {
                 $set: {
-                    state: 'lobby'
+                    state: 'lobby',
+                    checkin: currentTime
                 }
             }, function (err) {
                 if (err) {
