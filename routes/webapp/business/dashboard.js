@@ -42,10 +42,10 @@ exports.get = function (req, res) {
 				return elem.state !== "scheduled";
 			});
 
-			console.log(filteredAppts);
 			var itemsProcessed = 0;
 
-			filteredAppts.forEach( function (elem, i, arr) {
+			if( filteredAppts.length ) {
+				filteredAppts.forEach( function (elem, i, arr) {
 				var apptInfo = {};
 				apptInfo.visitor = elem.fname + ' ' + elem.lname;
 				apptInfo.apptTime = elem.date;
@@ -60,12 +60,14 @@ exports.get = function (req, res) {
 					patientList.push(apptInfo);
 					itemsProcessed++;
 					if( itemsProcessed == arr.length ) {
-						renderDashboard();
+						
 					}
 				});
-				
 			});
+			} else {
+				renderDashboard();
 			
+			}
 		});
 
 		function renderDashboard () {
