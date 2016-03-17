@@ -64,9 +64,6 @@
 <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io(window.location.origin);
-  socket.on('test', function() {
-    console.log("works!");
-  });
   
   socket.on('checkin', function (data) {
     console.log(data);
