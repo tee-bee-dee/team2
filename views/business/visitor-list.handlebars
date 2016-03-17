@@ -1,8 +1,11 @@
 <section class="content-header">
-    <h1>Dashboard </h1>
-    <div id="txt" class="pull-right"></div>
-    <h1 class="pull-right" id="currentDate"></h1>
+    <h1 style="display: inline-block;">Visitor Queue</h1>
+    <div class="pull-right">
+        <p id="txt"></p>
+        <p id="currentDate"></p>
+    </div>
 </section>
+
 <section class="content">
     {{#if message}}
         <div class="alert alert-danger">{{message}}</div>
@@ -11,15 +14,6 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Patient List</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
-                                class="fa fa-minus"></i>
-                        </button>
-                    </div>
-                </div>
                 <!-- /.box-header -->
                 <div class="box-body">
                     <div class="table-responsive">
@@ -60,7 +54,7 @@
     </div>
 </section>
 
-<script src="../../business/visitor-list.js"></script>
+<script src="/javascripts/visitor-list.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io(window.location.origin);
