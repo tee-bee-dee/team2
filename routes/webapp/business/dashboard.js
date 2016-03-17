@@ -52,8 +52,6 @@ exports.get = function (req, res) {
 				apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
 				apptInfo.currentTime = new Date().toTimeString();
 
-				console.log("grabbing DB material");
-
 				employees.find({
 					business: req.user[0].business,
 					_id: elem.employee
