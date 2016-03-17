@@ -16,7 +16,6 @@ exports.get = function (req, res) {
 
     var end = new Date();
     end.setHours(23, 59, 59, 999);
-
     appointments.find({
         employee: ObjectID(req.params.eid),
         date: {

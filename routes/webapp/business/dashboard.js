@@ -7,7 +7,7 @@ exports.get = function (req, res) {
 	var isOwner = req.user[0].admin;
 	var employeeId = req.user[0]._id;
 	var employeename = req.user[0].fname + ' ' + req.user[0].lname;
-
+ 
 	if( isPeter ) {
 		res.render('business/dashboard-admin', {
 			title: 'Express',
@@ -28,6 +28,7 @@ exports.get = function (req, res) {
 			dashboard: "active"
 		});
 	} else {
+
 		var db = req.db;
 		var appointments = db.get('appointments');
 		var employees = db.get('employees');
