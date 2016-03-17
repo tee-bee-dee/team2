@@ -11,6 +11,7 @@ var done = require('./done');
 
 //Setup the routes
 router.get('/:id/checkin', updateBusiness, checkin.get);
+router.post('/:id/checkin', updateBusiness, checkin.post);
 
 // router.get('/:id/nocode', updateBusiness, nocode.get);
 // router.post('/:id/nocode', updateBusiness, nocode.post);

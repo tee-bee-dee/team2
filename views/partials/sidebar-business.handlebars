@@ -5,34 +5,34 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             {{#if isOwner}}
-            <li class="treeview">
+            <li class="{{dashboard}} treeview">
                 <a href="/dashboard">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
             {{else}}
-            <li class="active treeview">
-                <a href="/visitor-list">
+            <li class="{{patients}} treeview">
+                <a href="/dashboard">
                     <i class="fa fa-navicon"></i> <span>Patients</span>
                 </a>
             </li>
             {{/if}}
             {{#if isOwner}}
-             <li class="active treeview">
+             <li class="treeview">
                 <a href="/office/{{businessId}}/checkin">
                     <i class="fa fa-navicon"></i> <span>Sign In Screen</span>
                 </a>
             </li>
             {{/if}}
             {{#if isOwner}}
-            <li class="treeview">
+            <li class="{{employees}} treeview">
                 <a href="/addemployees">
                     <i class="fa fa-group"></i>
                     <span>Employees</span>
                 </a>
             </li>
             {{/if}}
-            <li class="treeview">
+            <li class="{{settings}} treeview">
                 <a href="/accountSettings">
                     <i class="fa fa-cog"></i>
                     <span>Settings</span>

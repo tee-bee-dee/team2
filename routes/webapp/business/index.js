@@ -12,7 +12,6 @@ var dashboard = require('./dashboard');
 var addEmployees = require('./addemployees');
 var employeeRegister = require('./employeeregister');
 var businesssetting = require('./businesssetting');
-var visitorList = require('./visitor-list');
 
 /*
  * TODO: Explain where this export is pointing to.
@@ -33,7 +32,7 @@ module.exports = function (passport) {
     router.post('/accountSettings', isLoggedIn, accountSettings.post);
     router.post('/uploadlogo', isLoggedInBusiness, accountSettings.uploadLogo);
 
-    router.post('/businesssetting', isLoggedInBusiness,businesssetting.post);
+    router.post('/businesssetting', isLoggedInBusiness,accountSettings.setCompanyInfo);
 
     router.get('/register', register.get);
     router.post('/register', passport.authenticate('local-signup', {
@@ -42,7 +41,6 @@ module.exports = function (passport) {
     }));
 
     router.get('/dashboard', isLoggedIn, dashboard.get);
-    router.get('/visitor-list', isLoggedIn, visitorList.get);
 
     router.get('/addemployees', isLoggedInBusiness, addEmployees.get);
     router.post('/addemployees', isLoggedInBusiness, addEmployees.post);

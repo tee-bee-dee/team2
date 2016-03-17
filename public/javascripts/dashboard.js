@@ -15,9 +15,9 @@ function getDate(){
 	var datetime= '';
 	datetime += dateToString(currentdate );
 
-	var header = $('<h1/>');
+	var header = $('<h5/>');
 	header.append(datetime);
-	$('#currentDate').replaceWith($header);
+	$('#currentDate').replaceWith(header);
 }
 
 function startTime() {
@@ -34,7 +34,7 @@ function startTime() {
 
   m = checkTime(m);
   s = checkTime(s);
-  $('#txt').html('Current Time: ' +h+':'+m+':'+s+ ' '+ dn);
+  $('#txt').html(h+':'+m+':'+s+ ' '+ dn);
   setTimeout(function(){startTime();},500);
 }
 

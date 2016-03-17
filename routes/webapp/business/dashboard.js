@@ -1,4 +1,5 @@
 var auth = require('../../../lib/auth');
+var async = require('async');
 
 exports.get = function (req, res) {
 
@@ -13,7 +14,8 @@ exports.get = function (req, res) {
 			eid: employeeId,
 			employeeName: employeename,
 			message: req.flash("permission"),
-			layout: 'admin'
+			layout: 'admin',
+			dashboard: "active"
 		});
 	} else if( isOwner ) {
 		res.render('business/dashboard-business', {
@@ -22,10 +24,60 @@ exports.get = function (req, res) {
 			employeeName: employeename,
 			message: req.flash("permission"),
 			isOwner: isOwner,
-			businessId: req.user[0].business
+			businessId: req.user[0].business,
+			dashboard: "active"
 		});
 	} else {
-		res.redirect('/visitor-list');
+		var db = req.db;
+		var appointments = db.get('appointments');
+		var employees = db.get('employees');
+
+		var patientList = [];
+
+		appointments.find({
+			business: req.user[0].business
+		}, function (errAppt, resultAppts) {
+			var filteredAppts = resultAppts.filter( function (elem, i, arr) {
+				return elem.state !== "scheduled";
+			});
+
+			console.log(filteredAppts);
+			var itemsProcessed = 0;
+
+			filteredAppts.forEach( function (elem, i, arr) {
+				var apptInfo = {};
+				apptInfo.visitor = elem.fname + ' ' + elem.lname;
+				apptInfo.apptTime = elem.date;
+				apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
+				apptInfo.currentTime = new Date().toTimeString();
+
+				console.log("grabbing DB material");
+
+				employees.find({
+					business: req.user[0].business,
+					_id: elem.employee
+				}, function (errEmployee, employee) {
+					apptInfo.doctor = employee[0].fname;
+					patientList.push(apptInfo);
+					itemsProcessed++;
+					if( itemsProcessed == arr.length ) {
+						renderDashboard();
+					}
+				});
+				
+			});
+			
+		});
+
+		function renderDashboard () {
+			console.log("callback made????");
+			res.render('business/visitor-list', {
+				title: "Express",
+				isAdmin: req.user[0].admin,
+				patients: patientList
+			});
+		}
+		
 	}
 
 };

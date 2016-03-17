@@ -55,7 +55,7 @@
                        </li>
 
                        <li>
-                           <a class="page-scroll" href="#support">Contact</a>
+                           <a class="page-scroll" href="#contact_us">Contact Us</a>
                        </li>
 
                        <li>
@@ -96,7 +96,7 @@
                         <h4>Sign Up For An Account</h4>
                         <i class="fa fa-pencil-square-o fa-5x" style="color:#ffae00"></i>
                         <br><br>
-                        <p class="overviewColor">
+                        <p class="overviewColor align-overview-mobile">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
                             uectetur tortor id, pharetra lorem.
                         </p>
@@ -106,7 +106,7 @@
                         <h4>Customize Your Own Forms </h4>
                         <i class="fa fa-file-text-o fa-5x" style="color:#ffae00"></i>
                         <br><br>
-                        <p class="overviewColor">
+                        <p class="overviewColor align-overview-mobile">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
                             uectetur tortor id, pharetra lorem.
                         </p>
@@ -116,7 +116,7 @@
                         <h4>Deploy Onto Device </h4>
                         <i class="fa fa-tablet fa-5x" style="color:#ffae00"></i>
                         <br><br>
-                        <p class="overviewColor">
+                        <p class="overviewColor align-overview-mobile">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
                             uectetur tortor id, pharetra lorem.
                         </p>
@@ -126,7 +126,7 @@
                         <h4>Manage Your Customers </h4>
                         <i class="fa fa-users fa-5x" style="color: #ffae00;"></i>
                         <br><br>
-                        <p class="overviewColor">
+                        <p class="overviewColor align-overview-mobile">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat purus in ferment
                             uectetur tortor id, pharetra lorem.
                         </p>
@@ -265,19 +265,81 @@
                 </div>
             </div>
         </section>
-        <!--
-        <section id="support" style="background-color: #d3d3d3;">
+
+        <!--Contact Form-->
+        <section id = "contact_us" style="background-color: #ffae00;">
             <div class="container">
-                <div class="row">
+                <div class = "row rowPadding">
                     <div class="col-lg-12 text-center">
-                        <h1>Contact Us!</h1>
-                        <h4>Email us at: fubar@fubar.co</h4>
-                        <h4>Call us at: 605-475-6968 </h4>
+                        <h1 id="h1Custom">Contact Us!</h1>
+                        <hr id="custom_hr2">
                     </div>
                 </div>
             </div>
-        </section> -->
-        <footer class = "text-center" id="support">
+
+            <div class="container">
+                <div class = "row">
+                    <form class="form-horizontal" action="" method="post"  id="contact_form">
+                        <fieldset>
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Name</label>
+
+                                <div class="col-md-6 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input name="name" placeholder="Name" class="form-control form-color" type="text">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+
+                                <label class="col-md-3 control-label">E-Mail</label>
+
+                                <div class="col-md-6 inputGroupContainer">
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                        <input name="email" placeholder="E-Mail Address" class="form-control form-color"  type="text">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Text area -->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Message</label>
+                                <div class="col-md-6 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                        <textarea class="form-control form-color" name="message" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Success message -->
+                            <!--
+                            <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you as soon as possible.</div>
+                            -->
+                            <!-- Button -->
+
+                            <div class="form-group">
+                                <label class="col-md-8 control-label"></label>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class = "text-center">
             <div class ="footer-above">
                 <div class = "container">
                     <div class = "row">
@@ -316,6 +378,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="footer-below">
                 <div class="container">
                     <div class="row">
@@ -333,7 +396,6 @@
                 offset: 51
             })
         </script>
-
         {{> googleAnalytics}}
     </body>
 </html>

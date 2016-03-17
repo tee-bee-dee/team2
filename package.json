@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "build": "gulp",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "gulp test"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -19,6 +20,7 @@
     "express": "~4.11.1",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.10.3",
+    "express.io": "^1.1.13",
     "express3-handlebars": "^0.5.2",
     "gm": "^1.17.0",
     "gulp-clean": "^0.3.1",
@@ -27,6 +29,7 @@
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.4",
     "hjs": "~0.0.6",
+    "imgur": "^0.1.7",
     "mongodb": "*",
     "monk": "*",
     "morgan": "~1.5.1",
@@ -39,6 +42,7 @@
     "request": "^2.69.0",
     "sendgrid": "^1.6.0",
     "serve-favicon": "^2.2.1",
+    "socket.io": "^1.4.5",
     "underscore": "^1.8.1"
   },
   "devDependencies": {

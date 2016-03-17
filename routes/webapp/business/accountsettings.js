@@ -1,6 +1,9 @@
 var auth = require('../../../lib/auth');
 var _ = require('underscore');
 var fs = require('fs');
+var imgur = require('imgur');
+
+imgur.setClientId('b67dffd2dbe1ea5');
 
 /**
  * Takes an req parameter and res parameter and returns the details of a particular employee.
@@ -21,18 +24,9 @@ exports.get = function (req,res) {
                 return next(err);
             }
 
-            if( req.user[0].peter ) {
-                render(req, res, {
-                    message: req.flash("permission"),
-                    layout: 'admin'
-                });
-            } else {
-                render(req, res, {
-                    message: req.flash("permission"),
-                    isOwner: req.user[0].admin,
-                    businessId: req.user[0].business
-                });
-            }
+            render(req, res, {
+                message: req.flash("permission"),
+            });
             
         }
     );
@@ -57,6 +51,7 @@ exports.post = function (req, res) {
     var inputOldPass = req.body.oldPassword;
     var inputPass    = req.body.editPassword;
     var inputPass2   = req.body.editPassword2;
+    var inputName    = req.body.editName;
     var inputEmail   = req.body.editEmail;
     var inputPhone   = req.body.editPhone;
     var textNotify   = req.body.sendText;
@@ -69,6 +64,7 @@ exports.post = function (req, res) {
             render(req, res, {
                 alert: 'Passwords do not match'
             })
+            return;
         } else {
 
             employees.find({_id: eid}, function (err2, result) {
@@ -77,6 +73,7 @@ exports.post = function (req, res) {
                     render(req, res, {
                         alert: 'Incorrect password'
                     })
+                    return;
                 } else {
 
                     employees.findAndModify({_id: eid}, {$set: {password: hashedInputPass}}, function (err, data) {
@@ -87,55 +84,19 @@ exports.post = function (req, res) {
                         render(req, res, {
                             edited: 'Password successfully changed!'
                         });
+                        return;
                     });
                 }
             })
         }
     }
 
-    // if (inputEmail != null)
-    // {
-    //     employees.findAndModify({_id: eid}, { $set: {email: inputEmail}}, function(err, data)
-    //     {
-    //         if (err) { return handleError(res, err);}
-
-    //         render(req, res, {
-    //             edited: 'Email successfully changed!'
-    //         });
-    //     });
-    // }
-
-    // if (inputPhone != null)
-    // {
-    //     inputPhone = inputPhone.replace(/-/g, '');
-
-    //     if (inputPhone.length === 10)
-    //     {
-    //         inputPhone = '1' + inputPhone;
-				// 		employees.findAndModify({_id: eid}, { $set: {phone: inputPhone}}, function(err, data)
-    //         {
-    //             if (err) { return handleError(res, err);}
-
-
-    //             render(req, res, {
-    //                 edited: 'Phone number successfully changed!'
-    //             });
-    //         });
-    //     }
-    //     else
-    //     {
-    //         render(req, res, {
-    //             alert: 'Incorrect phone number format'
-    //         });
-    //     }
-    // }
-
-    if (inputPhone != null || inputEmail != null)
+    if (inputPhone != null || inputEmail != null || inputName != null)
     {
     
 
 
-        var phoneAndEmail = {};
+        var setContactInfo = {};
 
         if (inputPhone != null) {
             inputPhone = inputPhone.replace(/-/g, '');
@@ -145,15 +106,29 @@ exports.post = function (req, res) {
                 render(req, res, {
                     alert: 'Incorrect phone number format'
                 });
+                return;
             }
-            phoneAndEmail.phone = inputPhone;
+            setContactInfo.phone = inputPhone;
         }
 
         if (inputEmail != null) {
-            phoneAndEmail.email = inputEmail;
+            setContactInfo.email = inputEmail;
         }
 
-        employees.findAndModify({_id: eid}, { $set: phoneAndEmail}, function(err, data)
+        if (inputName != null) {
+            var splitName = inputName.split(' ');
+            if (splitName.length === 2) {
+                setContactInfo.fname = splitName[0];
+                setContactInfo.lname = splitName[1];
+            } else {
+                render(req, res, {
+                    alert: 'Please format name as <firstname> <lastname>'
+                });
+                return;
+            }
+        }
+
+        employees.findAndModify({_id: eid}, { $set: setContactInfo}, function(err, data)
         {
             if (err) { return handleError(res, err);}
 
@@ -161,6 +136,7 @@ exports.post = function (req, res) {
             render(req, res, {
                 edited: 'Contact info saved.'
             });
+            return;
         });
     }
 
@@ -208,6 +184,53 @@ exports.post = function (req, res) {
 
 };
 
+exports.setCompanyInfo = function (req, res) {
+
+
+    var db = req.db;
+    var businesses = db.get('businesses');
+    var bid = req.user[0].business;
+
+    var companyName = req.body.companyName;
+    var phone = req.body.phone;
+
+
+    if (companyName != null || phone != null)
+    {
+
+        var setCompanyInfo = {};
+
+        if (phone != null) {
+            phone = phone.replace(/-/g, '');
+            if (phone.length === 10) {
+                phone = '1' + phone;
+            } else {
+                render(req, res, {
+                    alert: 'Incorrect phone number format'
+                });
+                return;
+            }
+            setCompanyInfo.phone = phone;
+        }
+
+        if (companyName != null) {
+            setCompanyInfo.companyName = companyName;
+        }
+
+        businesses.update({_id: bid}, { $set: setCompanyInfo}, function(err, data)
+        {
+            if (err) { return handleError(res, err);}
+
+
+            render(req, res, {
+                edited: 'Company info saved.'
+            });
+            return;
+        });
+    }
+
+};
+
 
 exports.uploadLogo = function(req, res, next){
 
@@ -227,25 +250,31 @@ exports.uploadLogo = function(req, res, next){
                 fs.unlink('public/'+results.logo);
             }
         );
+        imgur.uploadFile(req.files.userLogo.path)
+            .then(function (json) {
+                businesses.updateById(businessID, {
+                        $set: {
+                            logo: json.data.link
+                        }
+                    },{
+                        upsert: true
+                    }, function (err){
+                        if (err) {
+                            return next(err);
+                        }
 
-        businesses.updateById(businessID, {
-                $set: {
-                    logo: '/images/uploads/' + req.files.userLogo.name
-                }
-            },{
-                upsert: true
-            }, function (err){
-                if (err) {
-                    return next(err);
-                }
+                        render(req, res, {
+                            edited:'Succesfully uploaded file: '+req.files.userLogo.originalname,
+                            logo: json.data.link
+                        });
+                    }
 
-                render(req, res, {
-                    edited:'Succesfully uploaded file: '+req.files.userLogo.originalname,
-                    logo:'/images/uploads/'+req.files.userLogo.name
-                });
-            }
+                );
+            })
+            .catch(function (caughtErr) {
+                return next(caughtErr);
+            });
 
-        );
     } else {
         businesses.findById(businessID,
             function (err, results){
@@ -297,11 +326,18 @@ function render(req, res, additionalFields) {
                 var phone = emp.phone;
                 phone = phone.replace('1', '');
                         phone = phone.slice(0, 3) + '-' + phone.slice(3, 6) + '-' + phone.slice(6);
+                var companyPhone = business.phone;
+                companyPhone = (companyPhone.length === 11) ? companyPhone.replace('1', '') : companyPhone;
+                        companyPhone = companyPhone.slice(0, 3) + '-' + companyPhone.slice(3, 6) + '-' + companyPhone.slice(6);
+
 
                 var defaultFields = {
-                    title: 'Express',
+                    settings: 'active',
+                    title: 'Settings',
                     fname: emp.fname,
                     lname: emp.lname,
+                    employeeName: emp.fname+' '+emp.lname,
+                    isAdmin: emp.admin,
                     password: emp.password,
                     phone: phone,
                     email: emp.email,
@@ -309,9 +345,23 @@ function render(req, res, additionalFields) {
                     emailNotify: emp.emailNotify,
                     admin: emp.admin,
                     logo: business.logo ? business.logo : null,
-                    bg: business.style.bg ? business.style.bg : null
+                    bg: business.style.bg ? business.style.bg : null,
+                    companyName: business.companyName,
+                    companyPhone: companyPhone
                 };
+
                 var allFields = _.extend(defaultFields, additionalFields);
+
+                if( req.user[0].peter ) {
+                    _.extend(allFields, {
+                        layout: 'admin'
+                    });
+                } else {
+                    _.extend(allFields, {
+                        isOwner: req.user[0].admin,
+                        businessId: req.user[0].business
+                    });
+                }
 
                 res.render('business/accountsettings', allFields);
             });
