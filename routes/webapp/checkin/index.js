@@ -67,6 +67,18 @@ function updateBusiness(req, res, next) {
             });
         });
     } else { //Everything looks good, do nothing
-        next();
+        //next();
+        req.db.get('businesses').findById(req.params.id, function (err, business) {
+            if (err) {
+                return next(err);
+            }
+            req.session.business = business;
+            req.session.save(function (err) {
+                if (err) {
+                    return next(err);
+                }
+                next();
+            });
+        });
     }
 }

@@ -609,7 +609,7 @@ header .header-content .header-content-inner p {
 /******** Login Page Form ****/
 .form-control{
     margin: 0 auto;
-    width: 19%;
+    width: 300px;
     border:3px solid #071C33;
 }
 
