@@ -46,7 +46,7 @@ function updateBusiness(req, res, next) {
                 next();
             });
         });
-    } else if (req.session.business._id !== req.params.id) {
+    } else /*if (req.session.business._id !== req.params.id)*/ {
         //This means the business was switched which could be part of a security attack
         //Destroy the session and then get the new business to be safe
         req.session.destroy(function (err) {
@@ -66,7 +66,7 @@ function updateBusiness(req, res, next) {
                 });
             });
         });
-    } else { //Everything looks good, do nothing
+    } /*else { //Everything looks good, do nothing
         next();
-    }
+    }*/
 }
