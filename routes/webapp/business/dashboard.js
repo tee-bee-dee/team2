@@ -48,10 +48,12 @@ exports.get = function (req, res) {
 			if( filteredAppts.length ) {
 				filteredAppts.forEach( function (elem, i, arr) {
 					var apptInfo = {};
+					
+
 					apptInfo.visitor = elem.fname + ' ' + elem.lname;
-					apptInfo.apptTime = elem.date;
+					apptInfo.apptTime = formatDate(elem.date);
 					apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
-					apptInfo.currentTime = new Date().toTimeString();
+					apptInfo.currentTime = formatDate(elem.checkin);
 
 					employees.find({
 						business: req.user[0].business,
@@ -67,19 +69,26 @@ exports.get = function (req, res) {
 				});
 			} else {
 				renderDashboard();
-			
 			}
 		});
 
 		function renderDashboard () {
-			console.log("callback made????");
 			res.render('business/visitor-list', {
 				title: "Express",
 				isAdmin: req.user[0].admin,
 				patients: patientList
 			});
 		}
-		
+
+		function formatDate (date) {
+            var unformattedApptTime = new Date(date);
+            var formattedHour = unformattedApptTime.getHours() > 12 ? unformattedApptTime.getHours() % 12 : unformattedApptTime.getHours();
+            var formattedMinutes = unformattedApptTime.getMinutes();
+            var ampm = unformattedApptTime.getHours() > 12 ? " PM" : " AM";
+            var formattedApptTime = formattedHour + ":" + formattedMinutes + ampm;
+
+            return formattedApptTime;
+        }
 	}
 
 };
