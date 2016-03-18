@@ -32,6 +32,15 @@
                 </a>
             </li>
             {{/if}}
+            {{#if isOwner}}
+            <li class="{{forms}} treeview">
+                <a href="/forms">
+                    <i class="fa fa-group"></i>
+                    <span>Form Editor</span>
+                </a>
+            </li>
+            {{/if}}
+
             <li class="{{settings}} treeview">
                 <a href="/accountSettings">
                     <i class="fa fa-cog"></i>

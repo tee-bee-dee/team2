@@ -52,7 +52,9 @@ exports.get = function (req, res, next) {
 exports.post = function (req, res, next) {
     var db = req.db;
     var io = req.app.io;
-    
+
+    console.log("");
+
 
 
     var appointments = db.get('appointments');
