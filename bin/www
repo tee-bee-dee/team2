@@ -24,7 +24,6 @@ var server = http.Server(app);
 app.io.attach(server);
 
 app.io.on('connection', function (socket) {
-    console.log('Connection successful!!!');
     //socket.emit('test');
 })
 

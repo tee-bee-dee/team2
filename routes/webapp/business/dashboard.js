@@ -43,27 +43,28 @@ exports.get = function (req, res) {
 			});
 
 			var itemsProcessed = 0;
+			console.log(filteredAppts);
 
 			if( filteredAppts.length ) {
 				filteredAppts.forEach( function (elem, i, arr) {
-				var apptInfo = {};
-				apptInfo.visitor = elem.fname + ' ' + elem.lname;
-				apptInfo.apptTime = elem.date;
-				apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
-				apptInfo.currentTime = new Date().toTimeString();
+					var apptInfo = {};
+					apptInfo.visitor = elem.fname + ' ' + elem.lname;
+					apptInfo.apptTime = elem.date;
+					apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
+					apptInfo.currentTime = new Date().toTimeString();
 
-				employees.find({
-					business: req.user[0].business,
-					_id: elem.employee
-				}, function (errEmployee, employee) {
-					apptInfo.doctor = employee[0].fname;
-					patientList.push(apptInfo);
-					itemsProcessed++;
-					if( itemsProcessed == arr.length ) {
-						
-					}
+					employees.find({
+						business: req.user[0].business,
+						_id: elem.employee
+					}, function (errEmployee, employee) {
+						apptInfo.doctor = employee[0].fname;
+						patientList.push(apptInfo);
+						itemsProcessed++;
+						if( itemsProcessed == arr.length ) {
+							renderDashboard();
+						}
+					});
 				});
-			});
 			} else {
 				renderDashboard();
 			

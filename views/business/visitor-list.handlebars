@@ -74,15 +74,9 @@
     appointment.appendChild(doctorField);
 
     var apptTime = document.createElement("td");
-      var unformattedApptTime = new Date(data.apptTime);
-      var formattedHour = unformattedApptTime.getHours() > 12 ? unformattedApptTime.getHours() % 12 : unformattedApptTime.getHours();
-      var formattedMinutes = unformattedApptTime.getMinutes();
-      var ampm = unformattedApptTime.getHours() > 12 ? " PM" : " AM";
-      var formattedApptTime = formattedHour + ":" + formattedMinutes + ampm;
-    apptTime.appendChild( document.createTextNode(formattedApptTime) );
+    apptTime.appendChild( document.createTextNode(data.apptTime) );
     appointment.appendChild(apptTime);
 
-    var time = new Date();
     var currTime = document.createElement("td");
     currTime.appendChild( document.createTextNode(data.currentTime) );
     appointment.appendChild(currTime);
