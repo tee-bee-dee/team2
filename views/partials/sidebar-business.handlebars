@@ -13,7 +13,7 @@
             {{else}}
             <li class="{{patients}} treeview">
                 <a href="/dashboard">
-                    <i class="fa fa-navicon"></i> <span>Patients</span>
+                    <i class="fa fa-navicon"></i> <span>Visitor Queue</span>
                 </a>
             </li>
             {{/if}}
@@ -32,6 +32,15 @@
                 </a>
             </li>
             {{/if}}
+            {{#if isOwner}}
+            <li class="{{forms}} treeview">
+                <a href="/forms">
+                    <i class="fa fa-group"></i>
+                    <span>Form Editor</span>
+                </a>
+            </li>
+            {{/if}}
+
             <li class="{{settings}} treeview">
                 <a href="/accountSettings">
                     <i class="fa fa-cog"></i>

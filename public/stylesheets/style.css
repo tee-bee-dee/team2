@@ -6,6 +6,12 @@
   width: 100%;
 }
 
+.welcome-message {
+  margin: 0;
+  padding: 12px;
+  border-left: 1px solid white;
+}
+
 .header {
   position: relative;
   width: 100%;

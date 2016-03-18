@@ -52,7 +52,9 @@ exports.get = function (req, res, next) {
 exports.post = function (req, res, next) {
     var db = req.db;
     var io = req.app.io;
-    
+
+    console.log("");
+
 
 
     var appointments = db.get('appointments');
@@ -89,15 +91,16 @@ exports.post = function (req, res, next) {
            }
         });
 
-
-        //console.log(req.params.id, inputFirst, inputLast, inputDOB);
         if (result.length === 0) {
             res.render('checkin/checkin', {
                 error: 'No appointment found',
                 inputFirst: inputFirst,
                 inputLast: inputLast,
                 inputPhone: inputPhone,
+                layout: false,
+                companyName: business.companyName,
                 bg: business.style.bg,
+                logo: business.logo,
                 buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
                 buttonText: style.rgbObjectToCSS(business.style.buttonText),
                 containerText: style.rgbObjectToCSS(business.style.containerText),
@@ -109,18 +112,17 @@ exports.post = function (req, res, next) {
             var appt = result[0];
             var apptID = appt._id;
 
-
-
-            console.log('Current time is:', new Date(appt.date));
             req.session.appointmentId = apptID;
+            var currentTime = new Date();
             req.session.save(function (err) {
                 if (err) {
                     console.error('Session save error:', err);
                 }
+
                 var newAppointment = {
                     visitor: inputFirst + " " + inputLast,
-                    apptTime: new Date(appt.date).toTimeString(),
-                    currentTime: new Date().toTimeString(),
+                    apptTime: formatDate(appt.date),
+                    currentTime: formatDate(currentTime),
                     status: 'Lobby'
                 }
 
@@ -137,13 +139,24 @@ exports.post = function (req, res, next) {
                     //Update the state of the appointment
             req.db.get('appointments').updateById(req.session.appointmentId, {
                 $set: {
-                    state: 'lobby'
+                    state: 'lobby',
+                    checkin: currentTime
                 }
             }, function (err) {
                 if (err) {
                     return next(err);
                 }
             });
+        }
+
+        function formatDate (date) {
+            var unformattedApptTime = new Date(date);
+            var formattedHour = unformattedApptTime.getHours() > 12 ? unformattedApptTime.getHours() % 12 : unformattedApptTime.getHours();
+            var formattedMinutes = unformattedApptTime.getMinutes();
+            var ampm = unformattedApptTime.getHours() > 12 ? " PM" : " AM";
+            var formattedApptTime = formattedHour + ":" + formattedMinutes + ampm;
+
+            return formattedApptTime;
         }
 
     });

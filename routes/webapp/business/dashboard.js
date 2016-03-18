@@ -7,7 +7,7 @@ exports.get = function (req, res) {
 	var isOwner = req.user[0].admin;
 	var employeeId = req.user[0]._id;
 	var employeename = req.user[0].fname + ' ' + req.user[0].lname;
-
+ 
 	if( isPeter ) {
 		res.render('business/dashboard-admin', {
 			title: 'Express',
@@ -28,6 +28,7 @@ exports.get = function (req, res) {
 			dashboard: "active"
 		});
 	} else {
+
 		var db = req.db;
 		var appointments = db.get('appointments');
 		var employees = db.get('employees');
@@ -41,32 +42,33 @@ exports.get = function (req, res) {
 				return elem.state !== "scheduled";
 			});
 
-			console.log(filteredAppts);
 			var itemsProcessed = 0;
+			console.log(filteredAppts);
 
-			filteredAppts.forEach( function (elem, i, arr) {
-				var apptInfo = {};
-				apptInfo.visitor = elem.fname + ' ' + elem.lname;
-				apptInfo.apptTime = elem.date;
-				apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
-				apptInfo.currentTime = new Date().toTimeString();
+			if( filteredAppts.length ) {
+				filteredAppts.forEach( function (elem, i, arr) {
+					var apptInfo = {};
+					apptInfo.visitor = elem.fname + ' ' + elem.lname;
+					apptInfo.apptTime = elem.date;
+					apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
+					apptInfo.currentTime = new Date().toTimeString();
 
-				console.log("grabbing DB material");
-
-				employees.find({
-					business: req.user[0].business,
-					_id: elem.employee
-				}, function (errEmployee, employee) {
-					apptInfo.doctor = employee[0].fname;
-					patientList.push(apptInfo);
-					itemsProcessed++;
-					if( itemsProcessed == arr.length ) {
-						renderDashboard();
-					}
+					employees.find({
+						business: req.user[0].business,
+						_id: elem.employee
+					}, function (errEmployee, employee) {
+						apptInfo.doctor = employee[0].fname;
+						patientList.push(apptInfo);
+						itemsProcessed++;
+						if( itemsProcessed == arr.length ) {
+							renderDashboard();
+						}
+					});
 				});
-				
-			});
+			} else {
+				renderDashboard();
 			
+			}
 		});
 
 		function renderDashboard () {

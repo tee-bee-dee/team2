@@ -10,9 +10,9 @@ exports.put = function (req, res, next) {
     // query the collection
     appt.find({_id:req.params.id},function(err,data){
         var myState = {};
-        if (data[0].state == 'checkedIn'){
-            myState = {$set: {state : "roomed"}};
-        } else if (data[0].state == 'roomed'){
+        if (data[0].state == 'lobby'){
+            myState = {$set: {state : "checked in"}};
+        } else if (data[0].state == 'checked in'){
             myState = {$set: {state : "done"}};
         }
 
