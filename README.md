@@ -32,9 +32,9 @@ Logging in as Peter
 ----------------------------
 In order to login as peter, use the following credentials
 
-	$ username: peter@enque.com
-	$ password: peter
+	username: peter@enque.com
+	password: peter
 	
 The live app can be found here
 
-	$ http://team-fubar.herokuapp.com/
+	http://team-fubar.herokuapp.com/
