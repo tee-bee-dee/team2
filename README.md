@@ -42,10 +42,10 @@ Slack Integration can be found here
 
 Access to CI platform on Codeship
 ----------------------------
-1. Go to the [Codeship](http://codeship.io) website.
-2. Use the following credentials:
+Go to the [Codeship](http://codeship.io) website.
+Use the following credentials:
 
 	username: gev@ucsd.edu
 	password: teamfubar
-	
-3. Click the restart button on the latest build to rebuild it.
+
+Click the restart button on the latest build to rebuild it.
