@@ -31,7 +31,7 @@ In order to login as peter, use the following credentials
 	
 The live app can be found here
 
-	http://team-fubar.herokuapp.com/
+	[http://team-fubar.herokuapp.com/](http://team-fubar.herokuapp.com/)
 	
 Slack Integration can be found here
 
