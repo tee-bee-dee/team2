@@ -28,5 +28,10 @@ exports.get = function(req,res,next){
     var inputPhone = req.body.inputPhone;
 
 
-        res.render('business/forms');
+        res.render('business/forms', {
+        title: 'Form Editor',
+        isOwner: req.user[0].admin,
+        businessId: req.user[0].business,
+        employees: "active"
+    });
 }
