@@ -2,31 +2,25 @@
 
 First Run
 ----------------------------
-1. Install [MongoDB](https://www.mongodb.org/downloads)
+1. Setup Account with [mLab](https://mlab.com/)
+2. Copy mongoDB access point into app.js:
+
+        $ var mongoURI = process.env.MONGOLAB_URI || 'YOUR MONGODB CONNECTION ON mLAB';
+        
 2. Install [Node.js](http://nodejs.org/download/)
-3. Navigate to the web-app directory
+3. Navigate to the root directory
 4. Install npm dependencies:
 
         $ npm install
         $ npm install --global gulp
 
-5. Create a folder for the MongoDB server with
-
-        $ mkdir db
-
-6. Use ``gulp`` to run the application (it will automatically start Mongo)
+6. Use ``gulp`` to run the application
 7. Navigate your browser to [http://localhost:4000](http://localhost:4000/)
 
 Push to testing environment
 ----------------------------
-1. Install git and heroku toolbelt (https://toolbelt.heroku.com/)
-2. git config --global user.name "John Doe"
-3. git config --global user.email johndoe@example.com
-4. if want to only temporarily be login to git (http://stackoverflow.com/questions/5343068/is-there-a-way-to-skip-password-typing-when-using-https-github)
-5. if want permanent storage of git password (https://help.github.com/articles/caching-your-github-password-in-git/)
-6. heroku login
-7. gulp stage OR gulp stage --test [stage number]
-
+1. Simply push your experimental changes to the ``develop`` branch.
+2. Changes may be view on the [staging site](http://fubar-staging.herokuapp.com/).
 
 Logging in as Peter
 ----------------------------
@@ -45,3 +39,13 @@ Slack Integration can be found here
 	
 	username: gev@ucsd.edu
 	password: teamfubar
+
+Access to CI platform on Codeship
+----------------------------
+1. Go to the [Codeship](http://codeship.io) website.
+2. Use the following credentials:
+
+	username: gev@ucsd.edu
+	password: teamfubar
+	
+3. Click the restart button on the latest build to rebuild it.
