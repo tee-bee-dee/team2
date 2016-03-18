@@ -38,3 +38,10 @@ In order to login as peter, use the following credentials
 The live app can be found here
 
 	http://team-fubar.herokuapp.com/
+	
+Slack Integration can be found here
+
+	team-fubar.slack.com
+	
+	username: gev@ucsd.edu
+	password: teamfubar
