@@ -54,40 +54,6 @@
     </div>
 </section>
 
-<script src="/javascripts/visitor-list.js"></script>
 <script src="/socket.io/socket.io.js"></script>
-<script>
-  var socket = io(window.location.origin);
-  
-  socket.on('checkin', function (data) {
-    console.log(data);
+<script src="/javascripts/visitor-list.js"></script>
 
-    var apptList = document.getElementById('appointment-list');
-    var appointment = document.createElement("tr");
-
-    var visitorField = document.createElement("td");
-    visitorField.appendChild( document.createTextNode(data.visitor) );
-    appointment.appendChild(visitorField);
-
-    var doctorField = document.createElement("td");
-    doctorField.appendChild( document.createTextNode(data.doctor) );
-    appointment.appendChild(doctorField);
-
-    var apptTime = document.createElement("td");
-    apptTime.appendChild( document.createTextNode(data.apptTime) );
-    appointment.appendChild(apptTime);
-
-    var currTime = document.createElement("td");
-    currTime.appendChild( document.createTextNode(data.currentTime) );
-    appointment.appendChild(currTime);
-
-    var status = document.createElement("td");
-    status.appendChild( document.createTextNode(data.status) );
-    appointment.appendChild(status);
-
-    apptList.appendChild(appointment);
-    
-  });
-
-
-</script>
