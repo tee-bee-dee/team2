@@ -30,8 +30,8 @@ app.io = require('socket.io')();
 
 global.__base = __dirname + '/';
 
-//var mongoURI = process.env.MONGOLAB_URI || 'mongodb://admin:pass@clusterhelloworld-shard-00-00-imnmz.mongodb.net:27017,clusterhelloworld-shard-00-01-imnmz.mongodb.net:27017,clusterhelloworld-shard-00-02-imnmz.mongodb.net:27017/test?ssl=true&replicaSet=ClusterHelloWorld-shard-0&authSource=admin'; 
-var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/team2local'; 
+//var mongoURI = process.env.MONGOLAB_URI || 'mongodb://admin:pass@clusterhelloworld-shard-00-00-imnmz.mongodb.net:27017,clusterhelloworld-shard-00-01-imnmz.mongodb.net:27017,clusterhelloworld-shard-00-02-imnmz.mongodb.net:27017/test?ssl=true&replicaSet=ClusterHelloWorld-shard-0&authSource=admin';
+var mongoURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/team2'; 
 //var mongoURI = process.env.MONGOLAB_URI || 'mongodb://admin:admin@ds061335.mongolab.com:61335/heroku_w9bxpzpc';
 console.log('Connecting to DB: ' + mongoURI);
 var db = monk(mongoURI);

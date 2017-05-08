@@ -7,7 +7,8 @@
   "scripts": {
     "build": "gulp",
     "start": "node ./bin/www",
-    "test": "gulp test"
+    "unit": "gulp test",
+    "e2e": "./node_modules/.bin/nightwatch"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -48,6 +49,7 @@
   "devDependencies": {
     "browser-sync": "^2.1.1",
     "check-pages": "^0.7.1",
+    "chromedriver": "^2.29.0",
     "gulp": "^3.8.11",
     "gulp-apidoc": "^0.1.2",
     "gulp-connect": "^2.2.0",
@@ -66,6 +68,7 @@
     "karma-jasmine": "^0.3.5",
     "mongobackup": "^0.1.8",
     "nightwatch": "^0.9.15",
+    "selenium-server": "^3.4.0",
     "yargs": "^3.4.4"
   },
   "engines": {
