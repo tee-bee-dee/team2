@@ -1,0 +1,32 @@
+sudo: required
+dist: trusty
+language: java
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+jdk:
+  -oraclejdk8
+node_js:
+  - 6
+before_install:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY-:99.0
+  - sh -e /etc/init.d/xvfb start
+  - nvm install 6.10.3
+install:
+  - npm install
+before_script:
+  - npm build
+  - npm build-concat
+script:
+  - npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: UiGS8prHXCAxVyhoq1ZndI5r9dhEJxdFf8NkksA4NwH3YP+DpINdAU4FVa1jJe0etN+qOkivGBzyc4lDKDfUvbvHaQWCZyiEU9pPiXDIl1EaozMEDHxxLl5kb05DZzOqePqTE6tZ08ij/XVTboo79hgB7JvUJNu8mrTA3+twMJJfg15ogJm6XROiW5QvLqEuA0eEKKrS3pLxM0X0ERAD7QAb1+9d9sVYoegS5SfHLhIWK08gHiP6eCoQwjCXPbxrgoN53LqQephfb8qki0xA3IEYlxPcrJERisHtFgprwuIBH8yzzAOr+dlnxMjva7IaWAVE5PPfR7dB/0zRR5sDH1cuJEtuWJOJVs1Ckz4Euvtv47Cf+oZrWkg2q/O0JJTXw0ipO99DVm2cAwUf32Cps4C1+SOgTbGFPW+z+Aw2SMRs2PDck/jaO4LRXC8uqYJhFlmAvDQLxNJk3pGpGPKiuV0wH5FHizx7kpczGPzx0jjrecDrCZqSkllPLTTHBJPJ114/cKp1+iCzN3dG1IH3v882nCauMLI7ylMURcDZ1LMhIan04SBGhxhCSno+E4UX/o2KA1JYfqdfBOLFVMXOTlPwDmDE3hyz4LSMyHOOXGvPTvyZ96sCHSZjREo07bkg66rUCoMf3VJ/vDI/W9QLY4uQ8ogfAN4psCERjBOnF0A=
+  app: tbd-team2
+  on:
+    repo: tee-bee-dee/team2
