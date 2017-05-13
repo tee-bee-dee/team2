@@ -8,6 +8,7 @@
     "build": "gulp",
     "start": "node ./bin/www",
     "unit": "gulp test",
+    "test": "npm run unit && npm run e2e",
     "e2e": "./node_modules/.bin/nightwatch"
   },
   "dependencies": {
