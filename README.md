@@ -5,8 +5,8 @@ First Run
 1. Setup Account with [mLab](https://mlab.com/)
 2. Copy mongoDB access point into app.js:
 
-        $ var mongoURI = process.env.MONGOLAB_URI || 'YOUR MONGODB CONNECTION ON mLAB';
-        
+        $ var mongoURI = process.env.MONGODB_URI || 'YOUR MONGODB CONNECTION ON mLAB';
+
 2. Install [Node.js](http://nodejs.org/download/)
 3. Navigate to the root directory
 4. Install npm dependencies:
@@ -28,13 +28,13 @@ In order to login as peter, use the following credentials
 
 	username: peter@enque.com
 	password: peter
-	
+
 The live app can be found [here](http://team-fubar.herokuapp.com/).
-	
+
 Slack Integration can be found here
 
 	team-fubar.slack.com
-	
+
 	username: gev@ucsd.edu
 	password: teamfubar
 
