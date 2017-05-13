@@ -3,3 +3,4 @@ db/*
 .idea/*
 config.codekit
 *.log
+test/e2e/reports
