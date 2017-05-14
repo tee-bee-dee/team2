@@ -29,3 +29,5 @@ deploy:
   app: tbd-team2
   on:
     repo: tee-bee-dee/team2
+notifications:
+  slack: tee-bee-dee:CQdORKgM0mkEpeMlHtvIx1Io
