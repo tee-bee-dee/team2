@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for team2/routes/api/form/form.controller.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">team2/routes/api/form/</a> form.controller.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.7% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>4/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">8.7% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Using Rails-like standard naming convention for endpoints.
+ * GET     /users              -&gt;  index
+ * POST    /users              -&gt;  create
+ * GET     /users/:id          -&gt;  show
+ * PUT     /users/:id          -&gt;  update
+ * DELETE  /users/:id          -&gt;  destroy
+ */
+&nbsp;
+'use strict';
+&nbsp;
+var _ = require('underscore');
+&nbsp;
+/**
+ * Request a form.
+ * GET /api/m/form/:id
+ *
+ * @param req req.db A database object.
+ * @param req req.mobileToken.business An id associated with a business.
+ * @param req req.params.id An id associated with a form.
+ * @param res Respond with '404' (form not found) or a JSON representation of
+ *        the form.
+ * @param next Used to handle any errors encountered when querying the
+ *        database.
+ * @returns {JSON} An array of fieldObjects representing the form.
+ */
+exports.show = <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+    // grab our db object from the request
+<span class="cstat-no" title="statement not covered" >    var db = req.db;</span>
+<span class="cstat-no" title="statement not covered" >    var forms = db.get('forms');</span>
+&nbsp;
+    // acquire the token for the appropriate business
+<span class="cstat-no" title="statement not covered" >    var business = forms.id(req.mobileToken.business);</span>
+<span class="cstat-no" title="statement not covered" >    console.log('BusinessID: ' + req.mobileToken.business);</span>
+    // query the database for the correct forms
+<span class="cstat-no" title="statement not covered" >    forms.find({'business': business}, <span class="fstat-no" title="function not covered" >function (err, doc) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            return next(err);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (!doc) {</span>
+<span class="cstat-no" title="statement not covered" >            return res.sendStatus(404);</span>
+        }// res.send is deprecated
+<span class="cstat-no" title="statement not covered" >        return res.json(doc);</span>
+    });
+};
+&nbsp;
+/**
+ * Create a form.
+ * PUT /api/m/form/
+ *
+ * @param req req.body The form in JSON format
+ * @param res Respond with '201' upon successful insert.
+ * @param next Used to handle any errors encountered when querying the
+ *        database.
+ * @returns {JSON} A JSON object containing the created form.
+ */
+exports.createForm = <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+&nbsp;
+    // grab our db object from the request
+<span class="cstat-no" title="statement not covered" >    var db = req.db;</span>
+<span class="cstat-no" title="statement not covered" >    var forms = db.get('forms');</span>
+&nbsp;
+    // query to create entry in collection
+<span class="cstat-no" title="statement not covered" >    forms.insert(req.body, <span class="fstat-no" title="function not covered" >function (err, doc) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            return next(err);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return res.json(201, doc);</span>
+    });
+};
+&nbsp;
+&nbsp;
+/**
+ * Send a form response.
+ * POST /api/m/form/formResponse/
+ *
+ * @param req req.db A database object.
+ * @param req req.mobileToken.business An id associated with a business.
+ * @param req req.body.answers A fieldObject containing the user's responses
+ *        to the form.
+ * @param res Respond with a '500' (no business id), '400' (malformed response)
+ *         or a '200'(everything is OK).
+ * @param next Used to handle any errors encountered when querying the
+ *        database.
+ * @returns N/A
+ */
+exports.createResponse = <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+&nbsp;
+    // grab our db object from the request
+<span class="cstat-no" title="statement not covered" >    var db = req.db;</span>
+<span class="cstat-no" title="statement not covered" >    var forms = db.get('forms');</span>
+&nbsp;
+    // make sure that we have a business id
+<span class="cstat-no" title="statement not covered" >    if (!req.mobileToken.business) {</span>
+<span class="cstat-no" title="statement not covered" >        return res.status(500).send('The mobileToken not set!');</span>
+    }
+<span class="cstat-no" title="statement not covered" >    var businessId = req.mobileToken.business;</span>
+&nbsp;
+    // query the database for the business using the business's id
+<span class="cstat-no" title="statement not covered" >    forms.find({business: forms.id(businessId)}, <span class="fstat-no" title="function not covered" >function (err, results) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            return next(err);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var form = results[0];</span>
+&nbsp;
+        // create array of form fields
+<span class="cstat-no" title="statement not covered" >        var formList = [];</span>
+<span class="cstat-no" title="statement not covered" >        _.each(form.fields, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
+<span class="cstat-no" title="statement not covered" >            formList.push(value.label);</span>
+        });
+&nbsp;
+        // create array of user responses to form
+<span class="cstat-no" title="statement not covered" >        var responseList = [];</span>
+<span class="cstat-no" title="statement not covered" >        _.each(req.body.answers, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
+<span class="cstat-no" title="statement not covered" >            responseList.push(value.label);</span>
+        });
+&nbsp;
+        // make sure that fields from formResponse match with the actual form
+<span class="cstat-no" title="statement not covered" >        var unionList = _.union(_.difference(formList, responseList), _.difference(responseList, formList));</span>
+<span class="cstat-no" title="statement not covered" >        if (unionList.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return res.status(400).send('Malformed Requests, fields from formResponse is different from the actual form.');</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            var formResponses = db.get('formResponses');</span>
+<span class="cstat-no" title="statement not covered" >            var formResponse = {</span>
+                answers: []
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            _.each(form.fields, <span class="fstat-no" title="function not covered" >function (field, index) {</span></span>
+<span class="cstat-no" title="statement not covered" >                formResponse.answers.push({</span>
+                    label: field.label,
+                    response: req.body.answers[index].response
+                });
+            });
+&nbsp;
+            // insert the user's responses into the database
+<span class="cstat-no" title="statement not covered" >            formResponses.insert(formResponse, <span class="fstat-no" title="function not covered" >function (err, data) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                    return next(err);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return res.json(200, data);</span>
+            });
+        }
+    });
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2017 17:32:00 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

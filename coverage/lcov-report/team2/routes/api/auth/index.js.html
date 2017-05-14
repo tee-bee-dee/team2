@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for team2/routes/api/auth/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">team2/routes/api/auth/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">17.95% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/39</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var express = require('express');
+var router = express.Router();
+var auth = require('../../../lib/auth');
+&nbsp;
+/**
+ * Takes an HTTP Basic Auth String and returns the username and password parts of it.
+ *
+ * @param authString The auth string with "Basic " already removed from beginning,
+ * @returns {Object|Boolean} An object with fields `email` and `password` or the value `false`
+ * indicating that the auth string is not valid.
+ */
+<span class="fstat-no" title="function not covered" >function decodeAuthString(authString) {</span>
+<span class="cstat-no" title="statement not covered" >    var buffer = new Buffer(authString, 'base64');</span>
+<span class="cstat-no" title="statement not covered" >    var s = buffer.toString();</span>
+&nbsp;
+    //Split into 2 parts at the first instance of the : . We know that the first
+    //: will be the separator since emails cannot contain ports
+<span class="cstat-no" title="statement not covered" >    var parts = s.split(':');</span>
+    //If it doesn't have two parts it's an error
+<span class="cstat-no" title="statement not covered" >    if (parts.length &lt; 2) {</span>
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    var email = parts[0];</span>
+<span class="cstat-no" title="statement not covered" >    var password = parts.slice(1).join(':');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return {</span>
+        email: email,
+        password: password
+    };
+}
+&nbsp;
+/**
+ * @api {post} /authTest/ Test Your Authentication
+ * @apiName authTest
+ * @apiGroup Authentication
+ * @apiPermission Admin
+ *
+ * @apiHeader {String} api_token returned from api/auth
+&nbsp;
+ * @apiHeaderExample {json} Header-Example:
+ *     {
+ *       "Authentication": "Token 550286024ae861626c9235f4"
+ *     }
+ *
+* @apiExample Example usage:
+curl -X POST -i http://localhost:3000/api/authTest \
+-H "Authorization: Token 550286024ae861626c9235f4"
+ *
+ * @apiSuccessExample Success-Response (example):
+ * HTTP/1.1 200 OK
+ *
+ * @apiErrorExample Error-Response (example):
+ *     HTTP/1.1 401 Not Authenticated
+ */
+router.post('/api/authTest', <span class="fstat-no" title="function not covered" >function (req, res) {</span>
+<span class="cstat-no" title="statement not covered" >    auth.isValidToken(req.db, req.headers.authorization, <span class="fstat-no" title="function not covered" >function (result) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (!result) {</span>
+<span class="cstat-no" title="statement not covered" >            res.send(401);</span>
+        } else {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            res.json(200,result);</span>
+        }
+    });
+});
+&nbsp;
+/**
+ * @api {post} /auth/ Get Authenticated
+ * @apiName postAuth
+ * @apiGroup Authentication
+ *
+ * @apiHeader {String} Authentication The api_token created from a base64 encoded
+ string with email appended to password semicolon. ex. "email:password"
+ *
+ * @apiParam {String} name Name of the employee to be authenticated
+ *
+ * @apiExample Example usage:
+ curl -X POST -i http://localhost:3000/api/auth \
+ -H "Authorization: Basic bm9ydGh3b29kLmRlbnRhbEBnbWFpbC5jb206cGFzc3dvcmQ=" \
+ -H "Content-Type: application/json" \
+ -d '{"name":"Frodo"}'
+&nbsp;
+ * @apiSuccessExample {json} Success-Response (example):
+ * HTTP/1.1 200 OK
+ *     {
+ *       "api_token": "WW9sbzp5b2xv"
+ *     }
+ *
+ * @apiErrorExample Error-Response (example):
+ *     HTTP/1.1 401 Not Authenticated
+ */
+router.post('/api/auth', <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!req.headers.authorization) {</span>
+<span class="cstat-no" title="statement not covered" >        return res.send(400, 'Basic HTTP Auth required');</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var authString = req.headers.authorization;</span>
+<span class="cstat-no" title="statement not covered" >    var matches = authString.split(' ');</span>
+&nbsp;
+    //Check that it's basic auth in right format
+<span class="cstat-no" title="statement not covered" >    if (matches.length !== 2 || matches[0] !== 'Basic') {</span>
+<span class="cstat-no" title="statement not covered" >        return res.send(400, 'Basic HTTP Auth required.');</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var user = decodeAuthString(matches[1]);</span>
+    // Validates user's email and password
+<span class="cstat-no" title="statement not covered" >    auth.validateLogin(req.db, user.email, user.password, <span class="fstat-no" title="function not covered" >function (result) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (result) {</span>
+<span class="cstat-no" title="statement not covered" >            var name = req.body.name;</span>
+            // Checks if name field is blank
+<span class="cstat-no" title="statement not covered" >            if (name === '' || !name) {</span>
+<span class="cstat-no" title="statement not covered" >                return res.send(400, 'Name field required');</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (!result.business) {</span>
+<span class="cstat-no" title="statement not covered" >                return res.send(404, 'Business not found. Name or password maybe wrong.');</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var mobileTokens = req.db.get('mobileTokens');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            mobileTokens.insert({</span>
+                business: result.business,
+                name: name
+            }, <span class="fstat-no" title="function not covered" >function (err, results) {</span>
+<span class="cstat-no" title="statement not covered" >                if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                    return next(err);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                res.json(200, {</span>
+                    api_token: results._id
+                });
+            });
+        } else {
+<span class="cstat-no" title="statement not covered" >            res.send(401);</span>
+        }
+    });
+});
+&nbsp;
+module.exports = router;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2017 17:32:00 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

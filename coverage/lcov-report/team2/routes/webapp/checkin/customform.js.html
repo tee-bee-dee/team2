@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for team2/routes/webapp/checkin/customform.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">team2/routes/webapp/checkin/</a> customform.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.7% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>11/94</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.7% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/94</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var ObjectID = require('mongodb').ObjectID;
+var _ = require('underscore');
+var style = require('./../../../lib/style.js');
+var sms = require('./../../../lib/sms.js');
+&nbsp;
+//Custom Form
+<span class="fstat-no" title="function not covered" >function makeDropdown(options, name, body) {</span>
+<span class="cstat-no" title="statement not covered" >    var s = '&lt;select class="form-control" name="'+name+'" id="'+name+'"&gt;';</span>
+<span class="cstat-no" title="statement not covered" >    _.each(options, <span class="fstat-no" title="function not covered" >function (option) {</span></span>
+<span class="cstat-no" title="statement not covered" >        s += '&lt;option value="'+option+'" ' + (body[name] === option ? 'selected' : '') + '&gt;'+option+'&lt;/option&gt; ';</span>
+    });
+<span class="cstat-no" title="statement not covered" >    s+= '&lt;/select&gt;';</span>
+<span class="cstat-no" title="statement not covered" >    return s;</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function makeTextfield(name, body) {</span>
+<span class="cstat-no" title="statement not covered" >    return'&lt;input type="text" class="form-control form-width-custom" name="'+name+'" id="' + name + '"value="' + (body[name] || '') + '"&gt;';</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function makeFormGroup(field, index, body) {</span>
+<span class="cstat-no" title="statement not covered" >    var name = '_' + index;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var s = '&lt;div class="form-group"&gt;';</span>
+<span class="cstat-no" title="statement not covered" >    s += '&lt;label for="' + name + '" class="col-md-4 control-label"&gt;' + field.label + '&lt;/label&gt;';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    s += '&lt;div class="col-md-8"&gt;';</span>
+<span class="cstat-no" title="statement not covered" >    if (field.type === 'textfield') {</span>
+<span class="cstat-no" title="statement not covered" >        s += makeTextfield(name, body);</span>
+    } else <span class="cstat-no" title="statement not covered" >if (field.type === 'dropdown') {</span>
+<span class="cstat-no" title="statement not covered" >        s += makeDropdown(field.options, name, body);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    s += '&lt;/div&gt;';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    s += '&lt;/div&gt;';</span>
+<span class="cstat-no" title="statement not covered" >    return s;</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function makeSubmitButton() {</span>
+<span class="cstat-no" title="statement not covered" >    var s = '&lt;div class="form-group"&gt;';</span>
+<span class="cstat-no" title="statement not covered" >    s += '&lt;div&gt;';</span>
+<span class="cstat-no" title="statement not covered" >    s += '&lt;button type="submit" class="btn btn-lg btn-block custom-button custom-center"&gt;Submit&lt;/button&gt;';</span>
+<span class="cstat-no" title="statement not covered" >    s += '&lt;/div&gt;';</span>
+<span class="cstat-no" title="statement not covered" >    s += '&lt;/div&gt;';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return s;</span>
+}
+/**
+ *
+ *
+ * @param db The MongoDB object
+ * @param businessId The id for the business
+ * @param body The form body (used to prefill form)
+ * @param fn Callback function `fn(formHtml)`
+ */
+<span class="fstat-no" title="function not covered" >function makeForm(db, businessId, body, fn) {</span>
+<span class="cstat-no" title="statement not covered" >    var businesses = db.get('businesses');</span>
+<span class="cstat-no" title="statement not covered" >    var forms = db.get('forms');</span>
+&nbsp;
+    //Find the business and get their form
+<span class="cstat-no" title="statement not covered" >    businesses.findById(businessId, <span class="fstat-no" title="function not covered" >function (err, business) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            return fn(err);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (!business) {</span>
+<span class="cstat-no" title="statement not covered" >            return fn(new Error('Business not found: ' + businessId));</span>
+        }
+<span class="cstat-no" title="statement not covered" >        forms.findOne({business: business._id}, <span class="fstat-no" title="function not covered" >function (err, form) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                return fn(err);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (!form) {</span>
+<span class="cstat-no" title="statement not covered" >                return fn(new Error('Form not found for business: ' + businessId));</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var formHtml = '&lt;form class="form-horizontal" method="post" action="customform" enctype="application/x-www-form-urlencoded"&gt;';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            _.each(form.fields, <span class="fstat-no" title="function not covered" >function (field, index) {</span></span>
+<span class="cstat-no" title="statement not covered" >                formHtml += makeFormGroup(field, index, body);</span>
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            formHtml += makeSubmitButton();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            formHtml += '&lt;/form&gt;';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            fn(null, formHtml);</span>
+        });
+    });
+}
+&nbsp;
+exports.get = <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >    var business = req.session.business;</span>
+<span class="cstat-no" title="statement not covered" >    makeForm(req.db, req.params.id, {}, <span class="fstat-no" title="function not covered" >function (err, formHtml) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            return next(err);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        res.render('checkin/customform', {</span>
+            formHtml: formHtml,
+            companyName: business.companyName,
+            bg: business.style.bg,
+            logo: business.logo,
+            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
+            buttonText: style.rgbObjectToCSS(business.style.buttonText),
+            containerText: style.rgbObjectToCSS(business.style.containerText),
+            containerBg: style.rgbObjectToCSS(business.style.containerBg)
+        });
+    });
+};
+&nbsp;
+exports.post = <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >    var db = req.db;</span>
+<span class="cstat-no" title="statement not covered" >    var forms = db.get('forms');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var business = req.session.business;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    forms.findOne({business: ObjectID(business._id)}, <span class="fstat-no" title="function not covered" >function (err, form) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            return next(err);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (!form) {</span>
+<span class="cstat-no" title="statement not covered" >            return next(new Error('Form for business not found: ' + business._id));</span>
+        }
+&nbsp;
+        //Ensure that there are all the responses
+<span class="cstat-no" title="statement not covered" >        var valid = _.every(form.fields, <span class="fstat-no" title="function not covered" >function (field, index) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var name = '_' + index;</span>
+            //TODO: Validation for dropdowns
+<span class="cstat-no" title="statement not covered" >            return name in req.body &amp;&amp; req.body[name].trim() !== '';</span>
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!valid) {</span>
+<span class="cstat-no" title="statement not covered" >            makeForm(db, req.params.id, req.body, <span class="fstat-no" title="function not covered" >function (formHtml) {</span></span>
+<span class="cstat-no" title="statement not covered" >                res.render('checkin/customform', {</span>
+                    formHtml: formHtml,
+                    formError: 'You are missing required fields.',
+                    companyName: business.companyName,
+                    bg: business.style.bg,
+                    logo: business.logo,
+                    buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
+                    buttonText: style.rgbObjectToCSS(business.style.buttonText),
+                    containerText: style.rgbObjectToCSS(business.style.containerText),
+                    containerBg: style.rgbObjectToCSS(business.style.containerBg)
+                });
+            });
+        } else { //Form is valid, let's put it into the DB
+<span class="cstat-no" title="statement not covered" >            var formResponses = db.get('formResponses');</span>
+<span class="cstat-no" title="statement not covered" >            var formResponse = {</span>
+                appointment: req.session.appointmentId,
+                answers: []
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            _.each(form.fields, <span class="fstat-no" title="function not covered" >function (field, index) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var name = '_' + index;</span>
+<span class="cstat-no" title="statement not covered" >                formResponse.answers.push({</span>
+                    label: field.label,
+                    response: req.body[name]
+                });
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            formResponses.insert(formResponse, <span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                    return next(err);</span>
+                }
+&nbsp;
+                //Update the state of the appointment
+<span class="cstat-no" title="statement not covered" >                var appointmentId = req.session.appointmentId;</span>
+<span class="cstat-no" title="statement not covered" >                db.get('appointments').findAndModify({_id: appointmentId}, {</span>
+                    $set: {
+                        state: 'formDone'
+                    }
+                }, <span class="fstat-no" title="function not covered" >function (err, appt) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                        return next(err);</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if (!appt) {</span>
+<span class="cstat-no" title="statement not covered" >                        return next(new Error('Appointment not found'));</span>
+                    }
+&nbsp;
+                    //Find the employee this appointment belongs to
+<span class="cstat-no" title="statement not covered" >                    db.get('employees').findById(appt.employee, <span class="fstat-no" title="function not covered" >function (err, employee) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                            return next(err);</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        if (!employee) {</span>
+<span class="cstat-no" title="statement not covered" >                            return next(new Error('Employee not found'));</span>
+                        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        sms.sendText(employee.phone, 'Your patient ' + appt.fname + ' ' + appt.lname + ' has checked in.', <span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                                return next(err);</span>
+                            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            res.redirect('sign');</span>
+                        });
+                    });
+                });
+            });
+        }
+    });
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2017 17:32:00 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>
