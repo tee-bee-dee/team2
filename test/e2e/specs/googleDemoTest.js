@@ -15,7 +15,7 @@
 module.exports = {
   'Demo test Localhost' : function (client) {
     client
-      .url('http://localhost:4000/')
+      .url('https://tbd-team2.herokuapp.com')
       .waitForElementVisible('body', 10000)
       .assert.title('Landing Page')
       // .waitForElementVisible('ul:first-child', 1000)
@@ -28,8 +28,6 @@ module.exports = {
       .waitForElementVisible('input[type=email]', 1000)
       .setValue('input[type=email]', 'ashish@enque.com') //invalid login test
       .setValue('input[type=password]', 'test123') //invalid login test)
-      .pause(1000)
-      .click('button[type=submit]')
       .pause(10000) //pausing 10 secs instead
       .end();
   }
