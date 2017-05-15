@@ -1,0 +1,18 @@
+==================================
+
+Welcome to Codebrag v2.2!
+
+* INSTALL GUIDE -> https://github.com/softwaremill/codebrag/wiki/Installation
+
+==================================
+
+Need help? Questions? We are here:
+
+* http://codebrag.com
+
+* Twitter -> https://twitter.com/codebrag
+
+* FAQ -> https://github.com/softwaremill/codebrag/wiki/FAQ
+* User Group -> https://groups.google.com/forum/#!forum/codebrag-users
+
+==================================

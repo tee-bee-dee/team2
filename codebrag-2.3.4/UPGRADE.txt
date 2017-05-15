@@ -1,0 +1,9 @@
+==================================
+
+Hey, great to see you again!
+
+* UPGRADE INSTRUCTIONS -> https://github.com/softwaremill/codebrag/wiki/Upgrade-from-2.2-to-2.3
+
+Ping us at ask@codebrag.com if you need any help with the upgrade process.
+
+==================================
