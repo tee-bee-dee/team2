@@ -1,12 +1,12 @@
 var assert = require("assert"); 
 
 
-// describe('Login Functionality', function() {
-//   describe('#validateLogin()', function() {
-//     it('Verifies that a login is valid before calling a function', function() {
-//       var auth = require('../../lib/auth.js');
-
-//       	assert.equal(auth.validateLogin(db,"test@email.com","1234",test), true);
+// describe('Authentication', function() {
+//   describe('#decodeAuthString()', function() {
+//     it('Decodes Authentication String', function() {
+//       var auth = require('../../routes/api/auth/index.js');
+//       	assert.equal(auth.decodeAuthString("a"), false);
+//       	assert.equal(auth.decodeAuthString("test@gmail.com:password"), {email: "test@gmail.com",password: "password"});
 //     	});
 // 	});
 // });
