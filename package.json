@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gulp",
     "start": "node ./bin/www",
-    "unit": "mocha ./test/unit",
+    "unit": "nyc mocha ./test/unit",
     "test": "npm run unit && npm run e2e",
     "e2e": "./node_modules/.bin/nightwatch"
   },
@@ -71,6 +71,7 @@
     "karma-jasmine": "^0.3.5",
     "mongobackup": "^0.1.8",
     "nightwatch": "^0.9.15",
+    "nyc": "^10.3.2",
     "selenium-server": "^3.4.0",
     "yargs": "^3.4.4"
   },
