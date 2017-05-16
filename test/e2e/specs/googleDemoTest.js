@@ -17,7 +17,7 @@ module.exports = {
     client
       .url('https://tbd-team2.herokuapp.com')
       .waitForElementVisible('body', 10000)
-      .assert.title('Test Should Fail')
+      .assert.title('Test To Fail')
       // .waitForElementVisible('ul:first-child', 1000)
       .waitForElementVisible('ul:first-child li:nth-child(5)', 1000)
       .assert.containsText('ul li:nth-child(5)', 'LOG IN')
