@@ -23,6 +23,7 @@ install:
 before_script:
   - npm install -g gulp
   - npm install -g istanbul
+  - npm install -g mocha
 script:
   - npm test
   - istanbul cover app.js

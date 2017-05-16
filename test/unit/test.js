@@ -1,12 +1,10 @@
 var assert = require("assert"); 
 
-
-// describe('Authentication', function() {
-//   describe('#decodeAuthString()', function() {
-//     it('Decodes Authentication String', function() {
-//       var auth = require('../../routes/api/auth/index.js');
-//       	assert.equal(auth.decodeAuthString("a"), false);
-//       	assert.equal(auth.decodeAuthString("test@gmail.com:password"), {email: "test@gmail.com",password: "password"});
+// describe('SMS Send Text', function() {
+//   describe('#sendText()', function() {
+//     it('Send A Text Message', function() {
+//       var auth = require('../../lib/sms.js');
+//       	assert.equal(auth.sendText("8155555555","This is a test.",function(){return 0;}), false);
 //     	});
 // 	});
 // });
