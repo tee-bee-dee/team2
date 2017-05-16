@@ -26,7 +26,6 @@ before_script:
   - npm install -g mocha
 script:
   - npm test
-  - istanbul cover app.js
 after_success:
   - npm install -g codeclimate-test-reporter
   - codeclimate-test-reporter < ./coverage/lcov.info

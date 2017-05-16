@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gulp",
     "start": "node ./bin/www",
-    "unit": "nyc mocha ./test/unit",
+    "unit": "nyc --reporter=lcov mocha ./test/unit",
     "test": "npm run unit && npm run e2e",
     "e2e": "./node_modules/.bin/nightwatch"
   },
