@@ -3,7 +3,7 @@
   "version": "0.6.0",
   "description": "Mobile REST API",
   "title": "Robobetty",
-  "url" : "https://www.robobetty.com/api",
+  "url" : "https://www.example1.com/api",
   "header": {
     "title": "Introduction",
     "filename": "apidoc_header.md"
