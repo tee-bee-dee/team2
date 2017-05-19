@@ -24,6 +24,7 @@ before_script:
   - npm install -g gulp
   - npm install -g istanbul
   - npm install -g mocha
+  - npm install -g nyc
 script:
   - npm test
 after_success:
