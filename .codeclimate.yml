@@ -4,13 +4,20 @@ engines:
     config:
       languages:
         - javascript
+ratings:
+  paths:
+    - bin/**
+    - client/**
+    - public/javascripts/**
+    - routes/**
+    - server/**
 exclude_paths:
     - "node_modules/"
     - "apidoc/"
-    - "bin/"
     - "client/"
     - "config/"
     - "coverage/"
+    - "dist/"
     - "test/"
     - "gulpfile.js"
     - "karma.conf.js"
