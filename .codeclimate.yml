@@ -1,0 +1,11 @@
+exclude_paths:
+    - "node_modules/"
+    - "apidoc/"
+    - "bin/"
+    - "client/"
+    - "config/"
+    - "coverage/"
+    - "test/"
+    - "gulpfile.js"
+    - "karma.conf.js"
+    - "nightwatch.conf.js"
