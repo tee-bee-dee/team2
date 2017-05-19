@@ -86,8 +86,10 @@
       "client",
       "config",
       "coverage",
-      "lib",
-      "test"
+      "test",
+      "gulpfile.js",
+      "karma.conf.js",
+      "nightwatch.conf.js"
     ]
   }
 }
