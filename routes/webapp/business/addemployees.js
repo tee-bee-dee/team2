@@ -2,7 +2,7 @@ var crypto = require('crypto');
 var baby = require('babyparse');
 var async = require('async');
 // var sendgrid  = require('sendgrid')('robobetty', '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');
-var sendgrid = require('sendgrid')('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');
+var sendgrid = require('sendgrid')('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');
 var ObjectId = require('mongodb').ObjectID;
 
  /**
@@ -21,7 +21,7 @@ exports.get = function(req,res){
         async.parallel({
             employee: function(cb) {
                 employeeDB.find({
-                    registrationToken: {$exists: false}, 
+                    registrationToken: {$exists: false},
                     business: ObjectId(businessID)
                 }, function (err,results){
                         if( err ) { return next(err); }
@@ -33,7 +33,7 @@ exports.get = function(req,res){
             },
             nonemployee: function(cb) {
                 employeeDB.find({
-                    registrationToken: {$exists: true}, 
+                    registrationToken: {$exists: true},
                     business: ObjectId(businessID)}, function (err,results){
 
                     if (err) {
@@ -103,7 +103,7 @@ exports.post = function(req,res,next){
             // need to create a randomly generated bCrypted Password
         });
         // can't use variables in an object's field. Instead, create the field outside, then put it as the text argument in sendgrid
-        var emailContent = 'Hello ' + name + ', \n\n' + 'Please click on the following link, or paste this into your browser to complete sign-up the process: ' + 'http://team-fubar.herokuapp.com/employeeregister?token=' + token;
+        var emailContent = 'Hello ' + name + ', \n\n' + 'Please click on the following link, or paste this into your browser to complete sign-up the process: ' + 'http://tbd-team2.herokuapp.com/employeeregister?token=' + token;
 
         sendgrid.send({
             to: inputEmail,
