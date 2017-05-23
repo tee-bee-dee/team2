@@ -41,7 +41,7 @@ module.exports = {
           .setValue('input[type=password]', 'peter') //invalid login test)
           .pause(10000) //pausing 10 secs instead
           .click('.btn')
-          .pause(2000)
+          .pause(3000)
 
           //wait for body to be visible
           .waitForElementVisible('.skin-blue', 1000)
