@@ -12,7 +12,7 @@
 //       .end();
 //   }
 // };
-module.exports = {
+/*module.exports = {
   'Demo test Localhost' : function (client) {
     client
       .url('https://tbd-team2.herokuapp.com')
@@ -31,6 +31,6 @@ module.exports = {
       .pause(10000) //pausing 10 secs instead
       .end();
   }
-};
+};*/
 
       // .expect.element('#navbar').to.be.visible
