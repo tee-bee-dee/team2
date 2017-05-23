@@ -35,7 +35,7 @@
     "imgur": "^0.1.7",
     "istanbul": "^0.4.5",
     "mongodb": "*",
-    "monk": "*",
+    "monk": "^4.1.0",
     "morgan": "~1.5.1",
     "multer": "^0.1.8",
     "newrelic": "^1.16.4",
