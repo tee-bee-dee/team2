@@ -1,7 +1,7 @@
 exports.get = function(req, res) {
   var employees = req.db.get('employees');
 
-  employees.find({ business: req.user[0].business }, function(err, result) {
+  employees.find({ business: req.user[0].business, admin: false }, function(err, result) {
     res.render('business/scheduleappointment', {
       title: 'Express',
       isOwner: req.user[0].admin,
