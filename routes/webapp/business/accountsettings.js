@@ -27,7 +27,7 @@ exports.get = function (req,res) {
             render(req, res, {
                 message: req.flash("permission"),
             });
-            
+
         }
     );
 
@@ -93,7 +93,7 @@ exports.post = function (req, res) {
 
     if (inputPhone != null || inputEmail != null || inputName != null)
     {
-    
+
 
 
         var setContactInfo = {};
@@ -154,7 +154,7 @@ exports.post = function (req, res) {
         employees.findAndModify({_id: eid}, { $set: {smsNotify: smsSet}}, function(err, data)
         {
             if (err) { return handleError(res, err);}
-	        
+
             render(req, res, {
                 edited: 'SMS notification settings successfully changed!'
             });
@@ -246,8 +246,6 @@ exports.uploadLogo = function(req, res, next){
                 if(err){
                     return next(err);
                 }
-
-                fs.unlink('public/'+results.logo);
             }
         );
         imgur.uploadFile(req.files.userLogo.path)
