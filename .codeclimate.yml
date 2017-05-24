@@ -14,10 +14,8 @@ ratings:
 exclude_paths:
     - "node_modules/"
     - "apidoc/"
-    - "client/"
     - "config/"
     - "coverage/"
-    - "dist/"
     - "public/"
     - "test/"
     - "gulpfile.js"
