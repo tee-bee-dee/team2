@@ -7,7 +7,7 @@ exports.get = function (req, res) {
 	var isOwner = req.user[0].admin;
 	var employeeId = req.user[0]._id;
 	var employeename = req.user[0].fname + ' ' + req.user[0].lname;
- 
+
 	if( isPeter ) {
 		res.render('business/dashboard-admin', {
 			title: 'Express',
@@ -48,7 +48,7 @@ exports.get = function (req, res) {
 			if( filteredAppts.length ) {
 				filteredAppts.forEach( function (elem, i, arr) {
 					var apptInfo = {};
-					
+
 
 					apptInfo.visitor = elem.fname + ' ' + elem.lname;
 					apptInfo.apptTime = formatDate(elem.date);
@@ -83,7 +83,7 @@ exports.get = function (req, res) {
 		function formatDate (date) {
             var unformattedApptTime = new Date(date);
             var formattedHour = unformattedApptTime.getHours() > 12 ? unformattedApptTime.getHours() % 12 : unformattedApptTime.getHours();
-            var formattedMinutes = unformattedApptTime.getMinutes();
+            var formattedMinutes = (unformattedApptTime.getMinutes()<10?'0':'') + unformattedApptTime.getMinutes();
             var ampm = unformattedApptTime.getHours() > 12 ? " PM" : " AM";
             var formattedApptTime = formattedHour + ":" + formattedMinutes + ampm;
 

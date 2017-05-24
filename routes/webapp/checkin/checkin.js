@@ -68,9 +68,9 @@ exports.post = function (req, res, next) {
     var inputPhone = req.body.inputPhone.replace(/[\(\)-\s]/g, '');
 
     appointments.find({
-        business: ObjectID(req.params.id), 
-        fname: inputFirst, 
-        lname: inputLast, 
+        business: ObjectID(req.params.id),
+        fname: inputFirst,
+        lname: inputLast,
         phone: inputPhone
     }, function(err, result) {
 
@@ -84,7 +84,7 @@ exports.post = function (req, res, next) {
                "text": inputFirst + " " + inputLast + " just checked in."
            }
         };
-        
+
         request(slackOptions, function (error, response, body) {
            if(!error && response.statusCode == 200) {
                console.log(body.id);
