@@ -25,6 +25,13 @@
       </li>
       {{/if}}
       {{#if isOwner}}
+      <li class="treeview">
+        <a href="">
+          <i class="fa fa-navicon"></i> <span>Appointments</span>
+        </a>
+      </li>
+      {{/if}}
+      {{#if isOwner}}
       <li class="{{employees}} treeview">
         <a href="/addemployees">
           <i class="fa fa-group"></i>
@@ -40,7 +47,6 @@
         </a>
       </li>
       {{/if}}
-
       <li class="{{settings}} treeview">
         <a href="/accountSettings">
           <i class="fa fa-cog"></i>
