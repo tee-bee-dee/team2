@@ -10,24 +10,25 @@ var accountSettings = require('./accountsettings');
 var register = require('./register');
 var dashboard = require('./dashboard');
 var addEmployees = require('./addemployees');
+var scheduleAppointment = require('./scheduleappointment');
 var employeeRegister = require('./employeeregister');
 var businesssetting = require('./businesssetting');
 var formbuilder = require('./forms');
 
-/*
- * TODO: Explain where this export is pointing to.
- */
 module.exports = function (passport) {
     //Setup the routes
     router.get('/', landing.get);
     router.post('/', landing.post);
 
     router.get('/login', login.get);
-    router.post('/login', passport.authenticate('local-login',{
+    router.post('/login', passport.authenticate('local-login', {
         successRedirect : '/dashboard',
         failureRedirect : '/login',
         failureFlash: true
     }));
+
+    router.get('/scheduleappointment', isLoggedInBusiness, scheduleAppointment.get);
+    router.post('/scheduleappointment', isLoggedInBusiness, scheduleAppointment.post);
 
     router.get('/accountSettings', isLoggedIn, accountSettings.get);
     router.post('/accountSettings', isLoggedIn, accountSettings.post);
@@ -54,9 +55,8 @@ module.exports = function (passport) {
     }));
 
     function isLoggedIn(req,res,next){
-        if(req.isAuthenticated()){
+        if (req.isAuthenticated())
             return next();
-        }
 
         res.redirect('/');
     }
@@ -64,14 +64,13 @@ module.exports = function (passport) {
     // route middleware to make sure a user is logged in
     function isLoggedInBusiness(req, res, next) {
         // if user is authenticated in the session, carry on
-        if (req.isAuthenticated()&& (req.user[0].admin === true)){
+        if (req.isAuthenticated() && (req.user[0].admin === true))
             return next();
-        }
+
         req.flash("permission", "You do not have permission to access that page");
         // if they aren't redirect them to the home page
         res.redirect('back');
     }
-
 
     return router;
 };
