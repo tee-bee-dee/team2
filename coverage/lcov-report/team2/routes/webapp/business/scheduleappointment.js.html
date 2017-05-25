@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for team2/routes/webapp/business/landing.js</title>
+    <title>Code coverage report for team2/routes/webapp/business/scheduleappointment.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../../index.html">All files</a> / <a href="index.html">team2/routes/webapp/business</a> landing.js
+      <a href="../../../../index.html">All files</a> / <a href="index.html">team2/routes/webapp/business</a> scheduleappointment.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">13.33% </span>
+        <span class="strong">18.18% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/15</span>
+        <span class='fraction'>2/11</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>0/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">13.33% </span>
+        <span class="strong">18.18% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/15</span>
+        <span class='fraction'>2/11</span>
       </div>
     </div>
   </div>
@@ -77,23 +77,15 @@
 32
 33
 34
-35
-36
-37
-38
-39</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+35</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -101,14 +93,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -116,48 +101,51 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">exports.get = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res, next) {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">exports.get = <span class="fstat-no" title="function not covered" >fu</span>nction(req, res) {
+  var employees = <span class="cstat-no" title="statement not covered" >req.db.get('employees');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	req.session.companyName = null;</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >	req.session.save(<span class="fstat-no" title="function not covered" >fu</span>nction (err) {</span>
-            
-<span class="cstat-no" title="statement not covered" >            if (err) {</span>
-                
-<span class="cstat-no" title="statement not covered" >                return next(err);</span>
-            }
-        });
-    
-<span class="cstat-no" title="statement not covered" >    res.render('business/landing', {</span>
-        title: 'Landing Page',
-        layout: false
+<span class="cstat-no" title="statement not covered" >  employees.find({ business: req.user[0].business, admin: false }, <span class="fstat-no" title="function not covered" >fu</span>nction(err, result) {</span>
+<span class="cstat-no" title="statement not covered" >    res.render('business/scheduleappointment', {</span>
+      title: 'Express',
+      isOwner: req.user[0].admin,
+      employees: result,
+      businessId: req.user[0].business,
+      appointments: "active"
     });
+  });
 };
 &nbsp;
-exports.post = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res, next) {
-    var companyName = <span class="cstat-no" title="statement not covered" >req.body.companyName;</span>
+exports.post = <span class="fstat-no" title="function not covered" >fu</span>nction(req, res) {
+  var patient = <span class="cstat-no" title="statement not covered" >req.body;</span>
+  var business = <span class="cstat-no" title="statement not covered" >req.user[0].business;</span>
+  var employee = <span class="cstat-no" title="statement not covered" >req.user[0]._id;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (companyName === '') {</span>
-        
-<span class="cstat-no" title="statement not covered" >        res.redirect('/register');</span>
-    } else {
-        
-<span class="cstat-no" title="statement not covered" >        req.session.companyName = companyName;</span>
+  var appointments = <span class="cstat-no" title="statement not covered" >req.db.get('appointments');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        req.session.save(<span class="fstat-no" title="function not covered" >fu</span>nction (err) {</span>
-        
-<span class="cstat-no" title="statement not covered" >            if (err) {</span>
-        
-<span class="cstat-no" title="statement not covered" >                return next(err);</span>
-            }
-        
-<span class="cstat-no" title="statement not covered" >            res.redirect('/register');</span>
-        });
-    }
-};</pre></td></tr>
+<span class="cstat-no" title="statement not covered" >  appointments.insert({</span>
+    business: business,
+    date: new Date('Thu, 01 Jan 1970 13:00:00 GMT-0500'),
+    employee: employee,
+    state: 'scheduled',
+    fname: patient.inputFirstName,
+    lname: patient.inputLastName,
+    phone: patient.inputPhone,
+    email: patient.inputEmail
+  });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  res.redirect('/scheduleappointment');</span>
+};
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->

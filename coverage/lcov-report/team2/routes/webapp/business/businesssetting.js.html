@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../../index.html">all files</a> / <a href="index.html">team2/routes/webapp/business/</a> businesssetting.js
+      <a href="../../../../index.html">All files</a> / <a href="index.html">team2/routes/webapp/business</a> businesssetting.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -155,9 +155,9 @@
 110
 111
 112
-113</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+113</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -269,22 +269,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var auth = require ('../../../lib/auth');
 &nbsp;
-exports.post = <span class="fstat-no" title="function not covered" >function (req, res) {</span>
-<span class="cstat-no" title="statement not covered" >    var db = req.db;</span>
-<span class="cstat-no" title="statement not covered" >    var businesses = db.get('businesses');</span>
-<span class="cstat-no" title="statement not covered" >    var bid = req.user[0].business;</span>
+exports.post = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {
+    var db = <span class="cstat-no" title="statement not covered" >req.db;</span>
+    var businesses = <span class="cstat-no" title="statement not covered" >db.get('businesses');</span>
+    var bid = <span class="cstat-no" title="statement not covered" >req.user[0].business;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var companyName = req.body.companyName;</span>
-<span class="cstat-no" title="statement not covered" >    var phone = req.body.phone;</span>
-<span class="cstat-no" title="statement not covered" >    var oldPassword = req.body.oldPassword;</span>
-<span class="cstat-no" title="statement not covered" >    var newPassword = req.body.newPassword;</span>
-<span class="cstat-no" title="statement not covered" >    var confirmPassword = req.body.confirmPassword;</span>
-<span class="cstat-no" title="statement not covered" >    businesses.findById(bid, <span class="fstat-no" title="function not covered" >function (err, result) {</span></span>
+    var companyName = <span class="cstat-no" title="statement not covered" >req.body.companyName;</span>
+    var phone = <span class="cstat-no" title="statement not covered" >req.body.phone;</span>
+    var oldPassword = <span class="cstat-no" title="statement not covered" >req.body.oldPassword;</span>
+    var newPassword = <span class="cstat-no" title="statement not covered" >req.body.newPassword;</span>
+    var confirmPassword = <span class="cstat-no" title="statement not covered" >req.body.confirmPassword;</span>
+<span class="cstat-no" title="statement not covered" >    businesses.findById(bid, <span class="fstat-no" title="function not covered" >fu</span>nction (err, result) {</span>
 <span class="cstat-no" title="statement not covered" >        if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                return next(err);</span>
             }
-<span class="cstat-no" title="statement not covered" >        var dbBusiness = result;</span>
-<span class="cstat-no" title="statement not covered" >        var dbPassword = result.password;</span>
+        var dbBusiness = <span class="cstat-no" title="statement not covered" >result;</span>
+        var dbPassword = <span class="cstat-no" title="statement not covered" >result.password;</span>
          //checks and makes sure to only perform a name, phone email setting
 <span class="cstat-no" title="statement not covered" >        if(phone  &amp;&amp; companyName) {</span>
             //if input fields are empty
@@ -336,7 +336,7 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
 &nbsp;
         //performs only if password submit is pressed
         else <span class="cstat-no" title="statement not covered" >if (oldPassword &amp;&amp; newPassword &amp;&amp; confirmPassword) {</span>
-<span class="cstat-no" title="statement not covered" >                var boolPsw = auth.validPassword(dbPassword, oldPassword);</span>
+                var boolPsw = <span class="cstat-no" title="statement not covered" >auth.validPassword(dbPassword, oldPassword);</span>
 <span class="cstat-no" title="statement not covered" >                if (boolPsw &amp;&amp;  newPassword === confirmPassword) {</span>
 <span class="cstat-no" title="statement not covered" >                    newPassword = auth.hashPassword(newPassword);</span>
 <span class="cstat-no" title="statement not covered" >                    businesses.update({_id:bid}, {</span>
@@ -385,7 +385,7 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2017 17:32:00 GMT-0700 (PDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 24 2017 22:58:50 GMT-0700 (PDT)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

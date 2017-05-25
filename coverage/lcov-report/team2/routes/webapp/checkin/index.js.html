@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../../index.html">all files</a> / <a href="index.html">team2/routes/webapp/checkin/</a> index.js
+      <a href="../../../../index.html">All files</a> / <a href="index.html">team2/routes/webapp/checkin</a> index.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">38.3% </span>
+        <span class="strong">36.96% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>18/47</span>
+        <span class='fraction'>17/46</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">38.3% </span>
+        <span class="strong">36.96% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>18/47</span>
+        <span class='fraction'>17/46</span>
       </div>
     </div>
   </div>
@@ -127,40 +127,40 @@
 82
 83
 84
-85</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+85</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -244,15 +244,15 @@ module.exports = router;
 /**
  * Middleware to ensure that req.session.business contains info about the current business
  */
-<span class="fstat-no" title="function not covered" >function updateBusiness(req, res, next) {</span>
+function <span class="fstat-no" title="function not covered" >updateBusiness(</span>req, res, next) {
     //Simple case: first time on the page
 <span class="cstat-no" title="statement not covered" >    if (!req.session.business) {</span>
-<span class="cstat-no" title="statement not covered" >        req.db.get('businesses').findById(req.params.id, <span class="fstat-no" title="function not covered" >function (err, business) {</span></span>
+<span class="cstat-no" title="statement not covered" >        req.db.get('businesses').findById(req.params.id, <span class="fstat-no" title="function not covered" >fu</span>nction (err, business) {</span>
 <span class="cstat-no" title="statement not covered" >            if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                return next(err);</span>
             }
 <span class="cstat-no" title="statement not covered" >            req.session.business = business;</span>
-<span class="cstat-no" title="statement not covered" >            req.session.save(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >            req.session.save(<span class="fstat-no" title="function not covered" >fu</span>nction (err) {</span>
 <span class="cstat-no" title="statement not covered" >                if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                    return next(err);</span>
                 }
@@ -262,16 +262,16 @@ module.exports = router;
     } else <span class="cstat-no" title="statement not covered" >if (req.session.business._id !== req.params.id) {</span>
         //This means the business was switched which could be part of a security attack
         //Destroy the session and then get the new business to be safe
-<span class="cstat-no" title="statement not covered" >        req.session.destroy(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >        req.session.destroy(<span class="fstat-no" title="function not covered" >fu</span>nction (err) {</span>
 <span class="cstat-no" title="statement not covered" >            if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                return next(err);</span>
             }
-<span class="cstat-no" title="statement not covered" >            req.db.get('businesses').findById(req.params.id, <span class="fstat-no" title="function not covered" >function (err, business) {</span></span>
+<span class="cstat-no" title="statement not covered" >            req.db.get('businesses').findById(req.params.id, <span class="fstat-no" title="function not covered" >fu</span>nction (err, business) {</span>
 <span class="cstat-no" title="statement not covered" >                if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                    return next(err);</span>
                 }
 <span class="cstat-no" title="statement not covered" >                req.session.business = business;</span>
-<span class="cstat-no" title="statement not covered" >                req.session.save(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >                req.session.save(<span class="fstat-no" title="function not covered" >fu</span>nction (err) {</span>
 <span class="cstat-no" title="statement not covered" >                    if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                        return next(err);</span>
                     }
@@ -281,12 +281,12 @@ module.exports = router;
         });
     } else { //Everything looks good, do nothing
         //next();
-<span class="cstat-no" title="statement not covered" >        req.db.get('businesses').findById(req.params.id, <span class="fstat-no" title="function not covered" >function (err, business) {</span></span>
+<span class="cstat-no" title="statement not covered" >        req.db.get('businesses').findById(req.params.id, <span class="fstat-no" title="function not covered" >fu</span>nction (err, business) {</span>
 <span class="cstat-no" title="statement not covered" >            if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                return next(err);</span>
             }
 <span class="cstat-no" title="statement not covered" >            req.session.business = business;</span>
-<span class="cstat-no" title="statement not covered" >            req.session.save(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >            req.session.save(<span class="fstat-no" title="function not covered" >fu</span>nction (err) {</span>
 <span class="cstat-no" title="statement not covered" >                if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                    return next(err);</span>
                 }
@@ -301,7 +301,7 @@ module.exports = router;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2017 17:32:00 GMT-0700 (PDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 24 2017 22:58:50 GMT-0700 (PDT)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

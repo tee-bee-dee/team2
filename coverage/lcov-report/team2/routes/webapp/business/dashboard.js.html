@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../../index.html">all files</a> / <a href="index.html">team2/routes/webapp/business/</a> dashboard.js
+      <a href="../../../../index.html">All files</a> / <a href="index.html">team2/routes/webapp/business</a> dashboard.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">11.63% </span>
+        <span class="strong">7.32% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/43</span>
+        <span class='fraction'>3/41</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/12</span>
+        <span class='fraction'>0/14</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">11.63% </span>
+        <span class="strong">7.32% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/43</span>
+        <span class='fraction'>3/41</span>
       </div>
     </div>
   </div>
@@ -137,24 +137,15 @@
 92
 93
 94
-95</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+95</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -165,6 +156,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,7 +211,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -219,7 +219,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -234,13 +234,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var auth = require('../../../lib/auth');
 var async = require('async');
 &nbsp;
-exports.get = <span class="fstat-no" title="function not covered" >function (req, res) {</span>
+exports.get = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res) {
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	var isPeter = req.user[0].peter;</span>
-<span class="cstat-no" title="statement not covered" >	var isOwner = req.user[0].admin;</span>
-<span class="cstat-no" title="statement not covered" >	var employeeId = req.user[0]._id;</span>
-<span class="cstat-no" title="statement not covered" >	var employeename = req.user[0].fname + ' ' + req.user[0].lname;</span>
- 
+	var isPeter = <span class="cstat-no" title="statement not covered" >req.user[0].peter;</span>
+	var isOwner = <span class="cstat-no" title="statement not covered" >req.user[0].admin;</span>
+	var employeeId = <span class="cstat-no" title="statement not covered" >req.user[0]._id;</span>
+	var employeename = <span class="cstat-no" title="statement not covered" >req.user[0].fname + ' ' + req.user[0].lname;</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >	if( isPeter ) {</span>
 <span class="cstat-no" title="statement not covered" >		res.render('business/dashboard-admin', {</span>
 			title: 'Express',
@@ -262,26 +262,26 @@ exports.get = <span class="fstat-no" title="function not covered" >function (req
 		});
 	} else {
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var db = req.db;</span>
-<span class="cstat-no" title="statement not covered" >		var appointments = db.get('appointments');</span>
-<span class="cstat-no" title="statement not covered" >		var employees = db.get('employees');</span>
+		var db = <span class="cstat-no" title="statement not covered" >req.db;</span>
+		var appointments = <span class="cstat-no" title="statement not covered" >db.get('appointments');</span>
+		var employees = <span class="cstat-no" title="statement not covered" >db.get('employees');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >		var patientList = [];</span>
+		var patientList = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >		appointments.find({</span>
 			business: req.user[0].business
-		}, <span class="fstat-no" title="function not covered" >function (errAppt, resultAppts) {</span>
-<span class="cstat-no" title="statement not covered" >			var filteredAppts = resultAppts.filter( <span class="fstat-no" title="function not covered" >function (elem, i, arr) {</span></span>
+		}, <span class="fstat-no" title="function not covered" >fu</span>nction (errAppt, resultAppts) {
+			var filteredAppts = <span class="cstat-no" title="statement not covered" >resultAppts.filter( <span class="fstat-no" title="function not covered" >fu</span>nction (elem, i, arr) {</span>
 <span class="cstat-no" title="statement not covered" >				return elem.state !== "scheduled";</span>
 			});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			var itemsProcessed = 0;</span>
+			var itemsProcessed = <span class="cstat-no" title="statement not covered" >0;</span>
 <span class="cstat-no" title="statement not covered" >			console.log(filteredAppts);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >			if( filteredAppts.length ) {</span>
-<span class="cstat-no" title="statement not covered" >				filteredAppts.forEach( <span class="fstat-no" title="function not covered" >function (elem, i, arr) {</span></span>
-<span class="cstat-no" title="statement not covered" >					var apptInfo = {};</span>
-					
+<span class="cstat-no" title="statement not covered" >				filteredAppts.forEach( <span class="fstat-no" title="function not covered" >fu</span>nction (elem, i, arr) {</span>
+					var apptInfo = <span class="cstat-no" title="statement not covered" >{};</span>
+&nbsp;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >					apptInfo.visitor = elem.fname + ' ' + elem.lname;</span>
 <span class="cstat-no" title="statement not covered" >					apptInfo.apptTime = formatDate(elem.date);</span>
@@ -291,7 +291,7 @@ exports.get = <span class="fstat-no" title="function not covered" >function (req
 <span class="cstat-no" title="statement not covered" >					employees.find({</span>
 						business: req.user[0].business,
 						_id: elem.employee
-					}, <span class="fstat-no" title="function not covered" >function (errEmployee, employee) {</span>
+					}, <span class="fstat-no" title="function not covered" >fu</span>nction (errEmployee, employee) {
 <span class="cstat-no" title="statement not covered" >						apptInfo.doctor = employee[0].fname;</span>
 <span class="cstat-no" title="statement not covered" >						patientList.push(apptInfo);</span>
 <span class="cstat-no" title="statement not covered" >						itemsProcessed++;</span>
@@ -305,7 +305,7 @@ exports.get = <span class="fstat-no" title="function not covered" >function (req
 			}
 		});
 &nbsp;
-<span class="fstat-no" title="function not covered" >		function renderDashboard () {</span>
+		function <span class="fstat-no" title="function not covered" >renderDashboard </span>() {
 <span class="cstat-no" title="statement not covered" >			res.render('business/visitor-list', {</span>
 				title: "Express",
 				isAdmin: req.user[0].admin,
@@ -313,12 +313,12 @@ exports.get = <span class="fstat-no" title="function not covered" >function (req
 			});
 		}
 &nbsp;
-<span class="fstat-no" title="function not covered" >		function formatDate (date) {</span>
-<span class="cstat-no" title="statement not covered" >            var unformattedApptTime = new Date(date);</span>
-<span class="cstat-no" title="statement not covered" >            var formattedHour = unformattedApptTime.getHours() &gt; 12 ? unformattedApptTime.getHours() % 12 : unformattedApptTime.getHours();</span>
-<span class="cstat-no" title="statement not covered" >            var formattedMinutes = unformattedApptTime.getMinutes();</span>
-<span class="cstat-no" title="statement not covered" >            var ampm = unformattedApptTime.getHours() &gt; 12 ? " PM" : " AM";</span>
-<span class="cstat-no" title="statement not covered" >            var formattedApptTime = formattedHour + ":" + formattedMinutes + ampm;</span>
+		function <span class="fstat-no" title="function not covered" >formatDate </span>(date) {
+            var unformattedApptTime = <span class="cstat-no" title="statement not covered" >new Date(date);</span>
+            var formattedHour = <span class="cstat-no" title="statement not covered" >unformattedApptTime.getHours() &gt; 12 ? unformattedApptTime.getHours() % 12 : unformattedApptTime.getHours();</span>
+            var formattedMinutes = <span class="cstat-no" title="statement not covered" >(unformattedApptTime.getMinutes()&lt;10?'0':'') + unformattedApptTime.getMinutes();</span>
+            var ampm = <span class="cstat-no" title="statement not covered" >unformattedApptTime.getHours() &gt; 12 ? " PM" : " AM";</span>
+            var formattedApptTime = <span class="cstat-no" title="statement not covered" >formattedHour + ":" + formattedMinutes + ampm;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >            return formattedApptTime;</span>
         }
@@ -331,7 +331,7 @@ exports.get = <span class="fstat-no" title="function not covered" >function (req
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2017 17:32:00 GMT-0700 (PDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 24 2017 22:58:50 GMT-0700 (PDT)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

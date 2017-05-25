@@ -51,6 +51,8 @@
   },
   "devDependencies": {
     "browser-sync": "^2.1.1",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "check-pages": "^0.7.1",
     "chromedriver": "^2.29.0",
     "gulp": "^3.8.11",

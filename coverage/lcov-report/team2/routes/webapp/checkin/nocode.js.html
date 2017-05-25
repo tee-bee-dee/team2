@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../../index.html">all files</a> / <a href="index.html">team2/routes/webapp/checkin/</a> nocode.js
+      <a href="../../../../index.html">All files</a> / <a href="index.html">team2/routes/webapp/checkin</a> nocode.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -265,11 +265,11 @@
 220
 221
 222
-223</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+223</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -283,7 +283,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -491,8 +491,8 @@
 var style = require('./../../../lib/style.js');
 &nbsp;
 &nbsp;
-exports.get = <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
-<span class="cstat-no" title="statement not covered" >    var business = req.session.business;</span>
+exports.get = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res, next) {
+    var business = <span class="cstat-no" title="statement not covered" >req.session.business;</span>
 <span class="cstat-no" title="statement not covered" >    res.render('checkin/nocode', {</span>
         companyName: business.companyName,
         bg: business.style.bg,
@@ -505,23 +505,23 @@ exports.get = <span class="fstat-no" title="function not covered" >function (req
     });
 };
 &nbsp;
-exports.post = <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
-<span class="cstat-no" title="statement not covered" >    var db = req.db;</span>
+exports.post = <span class="fstat-no" title="function not covered" >fu</span>nction (req, res, next) {
+    var db = <span class="cstat-no" title="statement not covered" >req.db;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var appointments = db.get('appointments');</span>
-<span class="cstat-no" title="statement not covered" >    var businesses = db.get('businesses');</span>
+    var appointments = <span class="cstat-no" title="statement not covered" >db.get('appointments');</span>
+    var businesses = <span class="cstat-no" title="statement not covered" >db.get('businesses');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var dobFormatErr = 'Please enter your Date of Birth in MM/DD/YYYY format';</span>
-<span class="cstat-no" title="statement not covered" >    var monthValErr = 'Please enter MM value between 01 and 12';</span>
-<span class="cstat-no" title="statement not covered" >    var dayValErr = 'Please enter DD value between 01 and 31';</span>
+    var dobFormatErr = <span class="cstat-no" title="statement not covered" >'Please enter your Date of Birth in MM/DD/YYYY format';</span>
+    var monthValErr = <span class="cstat-no" title="statement not covered" >'Please enter MM value between 01 and 12';</span>
+    var dayValErr = <span class="cstat-no" title="statement not covered" >'Please enter DD value between 01 and 31';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var business = req.session.business;</span>
+    var business = <span class="cstat-no" title="statement not covered" >req.session.business;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var inputFirst = req.body.inputFirst;</span>
-<span class="cstat-no" title="statement not covered" >    var inputLast = req.body.inputLast;</span>
-<span class="cstat-no" title="statement not covered" >    var inputDOB = req.body.inputDOB;</span>
-<span class="cstat-no" title="statement not covered" >    var dobSubStr = req.body.inputDOB;</span>
-<span class="cstat-no" title="statement not covered" >    var numSlash = inputDOB.match(/\//g);</span>
+    var inputFirst = <span class="cstat-no" title="statement not covered" >req.body.inputFirst;</span>
+    var inputLast = <span class="cstat-no" title="statement not covered" >req.body.inputLast;</span>
+    var inputDOB = <span class="cstat-no" title="statement not covered" >req.body.inputDOB;</span>
+    var dobSubStr = <span class="cstat-no" title="statement not covered" >req.body.inputDOB;</span>
+    var numSlash = <span class="cstat-no" title="statement not covered" >inputDOB.match(/\//g);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (numSlash !== null &amp;&amp; numSlash.length !== 2) {</span>
 <span class="cstat-no" title="statement not covered" >        res.render('checkin/nocode', {</span>
@@ -538,8 +538,8 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
 <span class="cstat-no" title="statement not covered" >        return;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var firstSep = dobSubStr.indexOf('/');</span>
-<span class="cstat-no" title="statement not covered" >    var inputMonth = dobSubStr.substring(0, firstSep);</span>
+    var firstSep = <span class="cstat-no" title="statement not covered" >dobSubStr.indexOf('/');</span>
+    var inputMonth = <span class="cstat-no" title="statement not covered" >dobSubStr.substring(0, firstSep);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (inputMonth.length &gt; 2 || inputMonth.length &lt;= 0) {</span>
 <span class="cstat-no" title="statement not covered" >        res.render('checkin/nocode', {</span>
@@ -557,8 +557,8 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    dobSubStr = dobSubStr.substring(firstSep+1);</span>
-<span class="cstat-no" title="statement not covered" >    var secondSep = dobSubStr.indexOf('/');</span>
-<span class="cstat-no" title="statement not covered" >    var inputDay = dobSubStr.substring(0, secondSep);</span>
+    var secondSep = <span class="cstat-no" title="statement not covered" >dobSubStr.indexOf('/');</span>
+    var inputDay = <span class="cstat-no" title="statement not covered" >dobSubStr.substring(0, secondSep);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (inputDay.length &gt; 2 || inputDay.length &lt;= 0) {</span>
 <span class="cstat-no" title="statement not covered" >        res.render('checkin/nocode', {</span>
@@ -575,7 +575,7 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
 <span class="cstat-no" title="statement not covered" >        return;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var inputYear = dobSubStr.substring(secondSep+1);</span>
+    var inputYear = <span class="cstat-no" title="statement not covered" >dobSubStr.substring(secondSep+1);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (inputYear.length !== 4)</span>
     {
@@ -594,7 +594,7 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        var monthInt = parseInt(inputMonth);</span>
+        var monthInt = <span class="cstat-no" title="statement not covered" >parseInt(inputMonth);</span>
     } catch (e) {
 <span class="cstat-no" title="statement not covered" >        res.render('checkin/nocode', {</span>
             error: monthValErr,
@@ -631,7 +631,7 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        var dayInt = parseInt(inputDay);</span>
+        var dayInt = <span class="cstat-no" title="statement not covered" >parseInt(inputDay);</span>
     } catch (e) {
 <span class="cstat-no" title="statement not covered" >        res.render('checkin/nocode', {</span>
             error: dayValErr,
@@ -669,7 +669,7 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    inputDOB = inputMonth + '/' + inputDay + '/' + inputYear;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    appointments.find({business: ObjectID(req.params.id), fname: inputFirst, lname: inputLast, dob: inputDOB}, <span class="fstat-no" title="function not covered" >function(err, result) {</span></span>
+<span class="cstat-no" title="statement not covered" >    appointments.find({business: ObjectID(req.params.id), fname: inputFirst, lname: inputLast, dob: inputDOB}, <span class="fstat-no" title="function not covered" >fu</span>nction(err, result) {</span>
 <span class="cstat-no" title="statement not covered" >        console.log(req.params.id, inputFirst, inputLast, inputDOB);</span>
 <span class="cstat-no" title="statement not covered" >        if (result.length === 0) {</span>
 <span class="cstat-no" title="statement not covered" >            res.render('checkin/nocode', {</span>
@@ -686,10 +686,10 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
 <span class="cstat-no" title="statement not covered" >            return;</span>
         }
         else {
-<span class="cstat-no" title="statement not covered" >            var appt = result[0];</span>
-<span class="cstat-no" title="statement not covered" >            var apptID = appt._id;</span>
+            var appt = <span class="cstat-no" title="statement not covered" >result[0];</span>
+            var apptID = <span class="cstat-no" title="statement not covered" >appt._id;</span>
 <span class="cstat-no" title="statement not covered" >            req.session.appointmentId = apptID;</span>
-<span class="cstat-no" title="statement not covered" >            req.session.save(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >            req.session.save(<span class="fstat-no" title="function not covered" >fu</span>nction (err) {</span>
 <span class="cstat-no" title="statement not covered" >                if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                    console.error('Session save error:', err);</span>
                 }
@@ -700,7 +700,7 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
                 $set: {
                     state: 'checkedIn'
                 }
-            }, <span class="fstat-no" title="function not covered" >function (err) {</span>
+            }, <span class="fstat-no" title="function not covered" >fu</span>nction (err) {
 <span class="cstat-no" title="statement not covered" >                if (err) {</span>
 <span class="cstat-no" title="statement not covered" >                    return next(err);</span>
                 }
@@ -715,7 +715,7 @@ exports.post = <span class="fstat-no" title="function not covered" >function (re
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 13 2017 17:32:00 GMT-0700 (PDT)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed May 24 2017 22:58:50 GMT-0700 (PDT)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>
