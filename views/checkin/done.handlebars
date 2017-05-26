@@ -18,7 +18,7 @@
 
   .customBG {
     /*background-image: url(/images/bg/full/{{bg}});*/
-    background-image: url({{bg}});
+    background: rgb({{bg.r}}, {{bg.g}}, {{bg.b}});
     /* background: linear-gradient(to bottom, rgba(242,97,0, 1), rgba(255,151,0, 0.2)); */
   }
 
@@ -50,9 +50,11 @@
   </style>
 </head>
 <body class="customBG">
-<div class="container">
-  <h1 class="header text-center"> <strong>Thank you! <br />We will be with you shortly</strong></h1>
-  <img class="checkinphoto center-block" src="{{logo}}" alt="Logo">
+<div class="container" style="margin-top: 100px; padding: 10px 10px 10px 10px;">
+  <img class="checkinphoto center-block" src="{{logo}}" alt="Logo" style="width: 250px; height: 250px; margin-bottom: 50px;">
+  <div class="box" style="background-color: white; padding: 10px 10px 10px 10px;">
+    <h1 class="text-center"> <strong>Thank you for signing in! <br />We will be with you shortly.</strong></h1>
+  </div>
 </div>
 </body>
 <footer>
