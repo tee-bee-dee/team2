@@ -3,6 +3,30 @@ var _ = require('underscore');
 var fs = require('fs');
 var imgur = require('imgur');
 
+/**
+ * Credit to Stack Overflow user, https://stackoverflow.com/users/1047797/david, for the RGB and hex code.
+ *
+ * Link: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+ */
+
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
 imgur.setClientId('b67dffd2dbe1ea5');
 
 /**
@@ -297,6 +321,27 @@ exports.uploadLogo = function(req, res, next){
 
 };
 
+exports.signinBackground = function(req, res) {
+	var db = req.db;
+	var businesses = db.get('businesses');
+	var bid = req.user[0].business;
+
+	var hex = req.body.color;
+
+	var bg = hexToRgb(hex);
+
+	businesses.update({_id: bid}, { $set: { 'style.bg': bg }}, function(err, data) {
+		if (err)
+			return handleError(res, err);
+
+		render(req, res, {
+			edited: 'Sign-in background color saved.'
+		});
+
+		return;
+	});
+}
+
 
 /**
  * Helper function to render the settings page
@@ -328,6 +373,9 @@ function render(req, res, additionalFields) {
                 companyPhone = (companyPhone.length === 11) ? companyPhone.replace('1', '') : companyPhone;
                         companyPhone = companyPhone.slice(0, 3) + '-' + companyPhone.slice(3, 6) + '-' + companyPhone.slice(6);
 
+								var bg = business.style.bg;
+								var color = rgbToHex(bg.r, bg.g, bg.b);
+
 
                 var defaultFields = {
                     settings: 'active',
@@ -343,7 +391,7 @@ function render(req, res, additionalFields) {
                     emailNotify: emp.emailNotify,
                     admin: emp.admin,
                     logo: business.logo ? business.logo : null,
-                    bg: business.style.bg ? business.style.bg : null,
+                    bg: color,
                     companyName: business.companyName,
                     companyPhone: companyPhone
                 };

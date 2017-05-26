@@ -126,7 +126,30 @@
     </div>
   </div>
 
-  <!-- Row 3 -->
+  <!-- ROW 3 -->
+  <!-- Change sign-in background color -->
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class='box-title'>Change Sign-in Background Color</h3>
+          <p style="color:grey">Pick a background color for your sign-in page to match your office.</p>
+        </div>
+        <form class="" action="/signinbackground" method="post">
+          <div class='box-body'>
+            <span>Select a color: </span>
+            <input type="color" name="color" value="{{bg}}">
+          </div>
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary pull-right">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 4 -->
   <!-- Change company info -->
   <div class="row">
     <div class="col-md-8">

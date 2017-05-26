@@ -15,8 +15,8 @@
 
   .customBG {
     /*background-image: url(/images/bg/full/{{bg}});*/
-    /*background-image: url({{bg}});*/
-    background: linear-gradient(to bottom, rgba(242,97,0, 1), rgba(255,151,0, 0.2));
+    background: rgb({{bg.r}}, {{bg.g}}, {{bg.b}});
+    /*background: linear-gradient(to bottom, rgba(242,97,0, 1), rgba(255,151,0, 0.2));*/
   }
 
   .btn {
@@ -47,12 +47,12 @@
   </style>
 </head>
 <body class = "customBG">
-<h1 class ="header text-center"><strong>Welcome to {{companyName}}!</strong></h1>
-<img class="checkinphoto center-block" src="{{logo}}" alt="...">
-<div class="row">
+<img class="checkinphoto center-block" src="{{logo}}" alt="..." style="width: 250px; height: 250px;">
+<div class="row" style="margin-bottom: 100px;">
   <div class="col-xs-10 col-sm-6 col-md-6 col-lg-4 center-block" style="float:none; padding: 20px">
-    <div class="box box-primary">
-      <div class="box-header with-border">
+    <div class="box">
+      <div class="box-header text-center">
+        <h1>Welcome to {{companyName}}!</h1>
         <h3 class="box-title">Check In</h3>
       </div>
       {{#if error}}
@@ -78,9 +78,7 @@
               New Patient?
             </label>
           </div>
-        <div class="box-footer">
           <input type="submit" id="checkin" class="btn btn-lg btn-primary center-block" value="Check In" >
-        </div>
       </form>
     </div>
   </div>

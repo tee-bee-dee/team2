@@ -97,9 +97,13 @@ module.exports = function (passport) {
                             phone: phone,
                             fname: fname,
                             lname: lname,
-                            logo: 'http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png',
+                            logo: 'https://files.slack.com/files-pri/T4U1ZM4R5-F5FUGLD7X/tap.png',
                             style: {
-                                bg: 'http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-26.jpg',
+                                bg: {
+                                  r: 255,
+                                  g: 255,
+                                  b: 255,
+                                },
                                 buttonBg: {
                                     r: 222,
                                     g: 224,
