@@ -36,6 +36,8 @@ module.exports = function (passport) {
 
     router.post('/businesssetting', isLoggedInBusiness,accountSettings.setCompanyInfo);
 
+    router.post('/signinbackground', isLoggedInBusiness, accountSettings.signinBackground);
+
     router.get('/register', register.get);
     router.get('/forms', isLoggedInBusiness, formbuilder.get);
     router.post('/register', passport.authenticate('local-signup', {
