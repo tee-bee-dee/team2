@@ -4,14 +4,37 @@
   <h1 class="pull-right" id="currentDate"></h1>
 </section>
 <section class="content">
-  <form method="POST">
-    <textarea id="fill-me-in"></textarea>
-  </form>
+  <div id="formBuilder"></div>
   {{>scripts}}
-  <script src="/plugins/formBuilder/form-builder.js"></script>
-  <script src="/plugins/jQueryUI/jquery-ui.js"></script>
-  <link rel="stylesheet" type="text/css" href="/plugins/formBuilder/form-builder.css">
+  <script src="/plugins/formBuilder/form-builder.min.js"></script>
+  <script src="/plugins/formBuilder/form-render.min.js"></script>
   <script>
-  $("#fill-me-in").formBuilder();
+  jQuery(function($) {
+    var form = '{{form}}';
+    form = form.replace(/&quot;/g,'"');
+    var formBuilder = $(document.getElementById('formBuilder')).formBuilder({
+      disabledActionButtons: ['save'],
+      formData: form,
+      dataType: 'json',
+      actionButtons: [
+        {
+          id: 'saveForm',
+          className: 'btn btn-success',
+          label: 'Save Form',
+          type: 'button',
+          events: {
+            click: saveForm
+          }
+        }
+      ]
+    });
+
+    function saveForm() {
+      var form = formBuilder.actions.getData();
+      $.post('/forms', {
+        form: JSON.stringify(form)
+      });
+    }
+  });
   </script>
 </section>
