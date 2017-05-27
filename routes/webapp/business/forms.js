@@ -27,11 +27,39 @@ exports.get = function(req,res,next){
     var inputEmail = req.body.inputEmail;
     var inputPhone = req.body.inputPhone;
 
+    var forms = req.db.get('forms');
 
+    forms.find({ business: businessID }, function(err, result) {
+      if (result === undefined) {
         res.render('business/forms', {
+          title: 'Form Editor',
+          isOwner: req.user[0].admin,
+          businessId: req.user[0].business,
+          forms: "active",
+          form: ''
+        });
+        return;
+      }
+
+      res.render('business/forms', {
         title: 'Form Editor',
         isOwner: req.user[0].admin,
         businessId: req.user[0].business,
-        forms: "active"
+        forms: "active",
+        form: result[0].form
+      });
     });
+}
+
+exports.post = function(req, res, next) {
+  var db = req.db;
+  var forms = db.get('forms');
+  var business = req.user[0].business;
+
+  var form = req.body.form;
+
+  forms.update({ business: business }, { $set: {
+    business: business,
+    form: form
+  }}, { upsert: true });
 }
