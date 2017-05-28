@@ -89,21 +89,30 @@ function makeForm(db, businessId, body, fn) {
 
 exports.get = function (req, res, next) {
     var business = req.session.business;
-    makeForm(req.db, req.params.id, {}, function (err, formHtml) {
+    var db = req.db;
+    var forms = req.db.get('forms');
+
+    var businessId = business._id;
+
+    forms.find({ business: businessId }, function(err, result) {
+      var form = result[0].form;
+      console.log(form);
+      res.render('checkin/customform', {
+          form: form,
+          companyName: business.companyName,
+          bg: business.style.bg,
+          logo: business.logo,
+          layout: false
+      });
+    });
+
+
+    /*makeForm(req.db, req.params.id, {}, function (err, formHtml) {
         if (err) {
             return next(err);
         }
-        res.render('checkin/customform', {
-            formHtml: formHtml,
-            companyName: business.companyName,
-            bg: business.style.bg,
-            logo: business.logo,
-            buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
-            buttonText: style.rgbObjectToCSS(business.style.buttonText),
-            containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
-        });
-    });
+
+    });*/
 };
 
 exports.post = function (req, res, next) {
