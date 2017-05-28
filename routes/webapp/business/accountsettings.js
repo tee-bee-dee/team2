@@ -218,6 +218,17 @@ exports.post = function (req, res) {
 
 };
 
+/**
+ * @api {post} accountSettings.setCompanyInfo Set Company Info
+ * @apiName setCompanyInfo
+ * @apiGroup Account Settings
+ * @apiDescription Function to set company name and phone number
+ *
+ * @apiParam {object} req The Express request object
+ * @apiParam {object} res The Express HTTP response
+ * @apiParam (req body) {string} companyName The newly input company name
+ * @apiParam (req body) {string} phone The newly input company phone number
+ */
 exports.setCompanyInfo = function (req, res) {
 
     var db = req.db;
@@ -340,6 +351,16 @@ exports.uploadLogo = function(req, res, next){
 
 };
 
+/**
+ * @api {render} accountSettings.signinBackground Set Sign In Background Color
+ * @apiName signinBackground
+ * @apiGroup Account Settings
+ * @apiDescription Function to set the sign in backgroun color for a business
+ *
+ * @apiParam {object} req The Express request object
+ * @apiParam {object} res The Express HTTP response
+ * @apiParam (req body) {hex} color The input background color in hexadecimal form
+ */
 exports.signinBackground = function(req, res) {
 	var db = req.db;
 	var businesses = db.get('businesses');
