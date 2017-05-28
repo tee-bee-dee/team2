@@ -211,7 +211,7 @@ var gulp = require('gulp'),
 
 gulp.task('apidoc', function(){
           plugins.apidoc.exec({
-            src: "routes/webapp/business/",
+            src: "routes/webapp/",
             dest: "apidoc/",
 						debug: true
           });
