@@ -1,9 +1,9 @@
 {
-  "name": "Robobetty",
+  "name": "tee-bee-dee",
   "version": "0.6.0",
-  "description": "Mobile REST API",
-  "title": "Robobetty",
-  "url" : "https://www.example1.com/api",
+  "description": "Webapp documentation",
+  "title": "tee-bee-dee",
+  "url" : "https://www.example1.com/",
   "header": {
     "title": "Introduction",
     "filename": "apidoc_header.md"

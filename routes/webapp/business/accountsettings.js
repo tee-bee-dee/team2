@@ -30,10 +30,13 @@ function hexToRgb(hex) {
 imgur.setClientId('b67dffd2dbe1ea5');
 
 /**
- * Takes an req parameter and res parameter and returns the details of a particular employee.
+ * @api {get} accountSetting.get Get Account Settings
+ * @apiName accountSettingsGet
+ * @apiGroup Account Settings
+ * @apiDescription Takes an req parameter and res parameter and returns the details of a particular employee.
  *
- * @param req The req parameter used to access the database,
- * @returns title, fname, lname, password, phone, email, smsNotify, emailNotify
+ * @apiParam {object} req The Express request object used to access the database,
+ * @apiParam {object} res the Express HTTP response
  */
 exports.get = function (req,res) {
 	var eid = req.user[0]._id;
@@ -59,11 +62,18 @@ exports.get = function (req,res) {
 };
 
 /**
- * Takes an req parameter and res parameter and returns the details of a particular employee. The user
+ * @api {post} accountSettings.post Set Account Settings
+ * @apiName AccountSettingsPost
+ * @apiGroup Account Settings
+ * @apiDescription Takes an req parameter and res parameter and returns the details of a particular employee. The user
  * is then prompted to change any of the information presented.
- *
- * @param req The req parameter used to access the database,
- * @returns title, fname, lname, password, phone, email, smsNotify, emailNotify
+ * @apiParam {Object} req The Express request object containing the user input account settings
+ * @apiParam {Object} res The Express HTTP response
+ * @apiParam (req body) {String} oldPassword User's old password
+ * @apiParam (req body) {String} editPassword User's new password input
+ * @apiParam (req body) {String} editPassword2 User's new password confirmation
+ * @apiParam (req body) {String} editName User's new name
+ * @apiParam (req body) {String} editPhone User's new phone number
  */
 exports.post = function (req, res) {
 
@@ -210,7 +220,6 @@ exports.post = function (req, res) {
 
 exports.setCompanyInfo = function (req, res) {
 
-
     var db = req.db;
     var businesses = db.get('businesses');
     var bid = req.user[0].business;
@@ -255,7 +264,17 @@ exports.setCompanyInfo = function (req, res) {
 
 };
 
-
+/**
+ * @api {post} accountSettings.uploadLogo Upload Logo
+ * @apiName uploadLogo
+ * @apiGroup Account Settings
+ * @apiDescription Uploads a new logo for an account
+ *
+ * @apiParam {object} req The Express request object used to access the database,
+ * @apiParam {object} res the Express HTTP response
+ * @apiParam (req) {object} db Database information in req
+ * @apiParam (req files) {file} userLogo The userLogo image
+ */
 exports.uploadLogo = function(req, res, next){
 
     var db = req.db;
@@ -342,13 +361,15 @@ exports.signinBackground = function(req, res) {
 	});
 }
 
-
 /**
- * Helper function to render the settings page
+ * @api {render} accountSetting.render Render Account settings
+ * @apiName AccountSettingsRender
+ * @apiGroup Account Settings
+ * @apiDescription Function to render the Account Settings page
  *
- * @param req
- * @param res
- * @param additionalFields An object with the different fields to render (e.g. alert or message)
+ * @apiParam {object} req The Express request object
+ * @apiParam {object} res The Express HTTP response
+ * @apiParam {object} additionalFields An object with the different fields to render (e.g. alert or message)
  */
 function render(req, res, additionalFields) {
     var eid = req.user[0]._id;
