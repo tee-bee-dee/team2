@@ -7,8 +7,8 @@ var ObjectId = require('mongodb').ObjectID;
  /**
  * Takes a req and res parameters and is inputted into function to get employee, notemployee, and business data.
  *
- * @param req and res The two parameters passed in to get the apprporiate employee,
- * @returns The appropriate data about the employee
+ * param req and res The two parameters passed in to get the apprporiate employee,
+ * returns The appropriate data about the employee
  */
 exports.get = function(req,res){
 	    var database =  req.db;
@@ -56,8 +56,8 @@ exports.get = function(req,res){
 /**
  * Takes a req and res parameters and is inputted into function to get employee, notemployee, and business data.
  *  Allows the User to input specified data and make changes
- * @param req and res The two parameters passed in to get the apprporiate employee,
- * @returns The appropriate data about the employee
+ * param req and res The two parameters passed in to get the apprporiate employee,
+ * returns The appropriate data about the employee
  */
 exports.post = function(req,res,next){
 
@@ -74,7 +74,7 @@ exports.post = function(req,res,next){
     var password;
 
     crypto.pbkdf2('password', salt, 10000, 512, function(err, dk) {
-        password = dk;         
+        password = dk;
         employeeDB.insert({
             business: businessID,
             fname: name,
@@ -147,5 +147,3 @@ exports.post = function(req,res,next){
  function randomToken() {
         return crypto.randomBytes(24).toString('hex');
     }
-
-
