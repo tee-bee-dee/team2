@@ -12,7 +12,8 @@ exports.get = function(req, res, next) {
         buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
         buttonText: style.rgbObjectToCSS(business.style.buttonText),
         containerText: style.rgbObjectToCSS(business.style.containerText),
-        containerBg: style.rgbObjectToCSS(business.style.containerBg)
+        containerBg: style.rgbObjectToCSS(business.style.containerBg),
+        layout: false
     });
 };
 
@@ -30,7 +31,8 @@ exports.post = function (req, res, next) {
             buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
             buttonText: style.rgbObjectToCSS(business.style.buttonText),
             containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
+            containerBg: style.rgbObjectToCSS(business.style.containerBg),
+            layout: false
         });
     } else {
         //Update the state of the appointment

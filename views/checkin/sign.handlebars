@@ -1,77 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sign Disclosure</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel='stylesheet' href='/stylesheets/style.css'/>
-  <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-nav-wizard.css">
+  <title>Confidentiality Agreement</title>
+
+  {{>styles}}
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
   <style>
-  body, h1, h2, h3, h4, h5, h6 {
-    color: {{containerText}} !important;
-  }
-
   .customBG {
-    background-image: url(/images/bg/full/{{bg}});
-  }
-
-  .btn {
-    background-color: {{buttonBg}};
-    border-color: {{buttonBg}};
-    color: {{buttonText}}
+    background: rgb({{bg.r}}, {{bg.g}}, {{bg.b}});
   }
 
   .container-checkin {
     background-color: {{containerBg}};
   }
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #071C33;
+  }
+  footer h4 {
+    color: #eeeeee;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 50px;
+    font-weight: bold;
+    text-shadow: 0px 0px 8px #ffae00;
+  }
   </style>
-
-  <script>
-  $(document).ready(function () {
-    $('#sig').on('input', function () {
-      var sig = $('#sig').val();
-      sig = '/api/signature/' + sig;
-      $('#sigImg').attr('src', sig);
-    })
-  });
-  </script>
 </head>
 <body class="customBG">
-<div class="container container-margin">
-  <div class="row innerInfo">
-    <div class="nav-wizard-margins">
-      <h3>Your checkin process:</h3>
-      <ul class="nav nav-wizard">
-        <li><a href="#">Step 1: Identification</a></li>
-        <li><a href="#">Step 2: Confirm Appointment</a></li>
-        <li><a href="#">Step 3: Additional Information</a></li>
-        <li class="active"><a href="#">Step 4: Sign Disclosure Agreement</a></li>
-        <li><a href="#">Step 5: Checked In!</a></li>
-      </ul>
+  <div>
+    <div class="row" style="margin-top: 150px; margin-bottom: 100px;">
+      <div class="col-xs-10 col-sm-6 col-md-6 col-lg-4 center-block" style="float:none; padding: 20px">
+        <div class="box">
+          <div class="box-header">
+            <h1>Confidentiality Agreement</h1>
+            <br>
+            <h3 class="box-title">Please read the Non-Disclosure Agreement below and once you are done, please type in your signature below to finish the check-in process.</h3>
+          </div>
+          <div class="box-body">
+            <div class="text-center">
+              <a href="http://www.startupprofessionals.com/linked/non-disclosure-agreement-mutual-generic-blank.pdf" target="_blank">
+                <h4 class="lead" style="color: blue;">Non-Disclosure Agreement</h4>
+              </a>
+            </div>
+            <br>
+            <div class="row innerInfo">
+              <div class="col-md-6 col-md-offset-3 form-group">
+                <form action="sign" method="post">
+                  <label class="control-label">Signature</label>
+                  <input class="input form-control" type="text" name="sig">
+                  <br>
+                  {{#if error}}
+                  <div class="alert alert-danger" role="alert">{{ error }}</div>
+                  {{/if}}
+                  <button class="btn btn-lg btn-success btn-block" type="submit">Sign</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row innerInfo">
-    {{#if error}}
-    <div class="alert alert-danger" role="alert">
-      {{ error }}
-    </div>
-    {{/if}}
-    <h3>Disclosure Agreement</h3>
-    <div id="disclosure-text">
-      {{{ disclosure }}}
-    </div>
-  </div>
-  <div class="row text-center bottomInfo">
-    <h3>SIGN HERE</h3>
-    <form action="sign" method="post">
-      <img id="sigImg" alt="image for customer signature" src="/api/signature/" style="width:auto"/>
-      <br>
-      <input type="text" id="sig" name="sig" onkeyup="this.value=this.value.replace(/[^a-zA-Z0-9_ ' , \. -]/g, '')"  />
-      <button class="btn btn-default" type="submit">Sign</button>
-    </form>
-  </div>
-</div>
+  <footer>
+    <h4>Powered by ENQUÉ</h4>
+  </footer>
 </body>
 </html>

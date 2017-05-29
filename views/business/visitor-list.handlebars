@@ -10,7 +10,7 @@
   {{#if message}}
   <div class="alert alert-danger">{{message}}</div>
   {{/if}}
-  
+
   <div class="row">
     <div class="col-md-12">
       <div class="box box-info">
@@ -25,6 +25,7 @@
                   <th>Appointment Time</th>
                   <th>Check In Time</th>
                   <th>Status</th>
+                  <th>Completed Form</th>
                 </tr>
               </thead>
               <tbody id="appointment-list">
@@ -35,6 +36,7 @@
                   <td>{{apptTime}}</td>
                   <td>{{currentTime}}</td>
                   <td>{{state}}</td>
+                  <td><button class="btn btn-sm btn-flat btn-info" onclick="openFormResponse(`{{formResponse}}`)">Form</button></td>
                   {{/each}}
                 </tr>
               </tbody>
@@ -53,6 +55,10 @@
     </div>
   </div>
 </section>
-
 <script src="/socket.io/socket.io.js"></script>
 <script src="/javascripts/visitor-list.js"></script>
+<script>
+function openFormResponse(form) {
+  var formResponse = JSON.parse(form);
+}
+</script>

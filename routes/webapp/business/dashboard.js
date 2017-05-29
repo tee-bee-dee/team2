@@ -43,7 +43,6 @@ exports.get = function (req, res) {
 			});
 
 			var itemsProcessed = 0;
-			console.log(filteredAppts);
 
 			if( filteredAppts.length ) {
 				filteredAppts.forEach( function (elem, i, arr) {
@@ -54,6 +53,8 @@ exports.get = function (req, res) {
 					apptInfo.apptTime = formatDate(elem.date);
 					apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
 					apptInfo.currentTime = formatDate(elem.checkin);
+					apptInfo.formResponse = JSON.stringify(elem.formResponse);
+					console.log(apptInfo.formResponse);
 
 					employees.find({
 						business: req.user[0].business,

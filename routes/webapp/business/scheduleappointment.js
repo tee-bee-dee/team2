@@ -1,3 +1,5 @@
+var ObjectId = require('mongodb').ObjectID;
+
 exports.get = function(req, res) {
   var employees = req.db.get('employees');
 
@@ -22,7 +24,7 @@ exports.post = function(req, res) {
   appointments.insert({
     business: business,
     date: new Date('Thu, 01 Jan 1970 13:00:00 GMT-0500'),
-    employee: employee,
+    employee: ObjectId(patient.inputEmployee),
     state: 'scheduled',
     fname: patient.inputFirstName,
     lname: patient.inputLastName,
