@@ -12,6 +12,15 @@ exports.get = function(req, res) {
   });
 };
 
+/**
+ * @api {get} scheduleappointment.post Schedule New Appointment
+ * @apiName ScheduleAppointmentPost
+ * @apiGroup Schedule Appointment
+ * @apiDescription Schedules a new appointment fo the business
+ *
+ * @apiParam {object} req The Express request object
+ * @apiParam {object} res the Express HTTP response
+ */
 exports.post = function(req, res) {
   var patient = req.body;
   var business = req.user[0].business;

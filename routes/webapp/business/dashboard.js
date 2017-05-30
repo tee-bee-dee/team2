@@ -1,6 +1,20 @@
 var auth = require('../../../lib/auth');
 var async = require('async');
 
+/**
+ * @api {get} dashboard.get Get Dashboard
+ * @apiName GetDashboard
+ * @apiGroup Dashboard
+ * @apiDescription Gets the user's dashboard
+ *
+ * @apiParam {object} req The Express request object
+ * @apiParam {object} res the Express HTTP response
+ * @apiParam (req user) {boolean} peter Boolean check if the user is Peter
+ * @apiParam (req user) {boolean} admin Boolean check if the user is admin
+ * @apiParam (req user) {string} _id The employee ID
+ * @apiParam (req user) {string} fname The employee's first name
+ * @apiParam (req user) {string} lname The employee's last name
+ */
 exports.get = function (req, res) {
 
 	var isPeter = req.user[0].peter;

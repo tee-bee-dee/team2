@@ -5,19 +5,19 @@ var async = require('async');
 var sendgrid = require('sendgrid')('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');
 var ObjectId = require('mongodb').ObjectID;
 
- /**
- * Takes a req and res parameters and is inputted into function to get employee, notemployee, and business data.
- *
- * @param req and res The two parameters passed in to get the apprporiate employee,
- * @returns The appropriate data about the employee
- */
 
-/**
- * Takes a req and res parameters and is inputted into function to get employee, notemployee, and business data.
- *  Allows the User to input specified data and make changes
- * @param req and res The two parameters passed in to get the apprporiate employee,
- * @returns The appropriate data about the employee
- */
+
+ /**
+  * @api {get} forms.get Get Form
+  * @apiName FormsGet
+  * @apiGroup Forms
+  * @apiDescription Gets the forms for a business. (req.body object don't seem to
+  * to do anything in this function)
+  *
+  * @apiParam {object} req The Express request object
+  * @apiParam {object} res the Express HTTP response
+  * @apiParam (req db) {object} forms forms object from database
+  */
 exports.get = function(req,res,next){
 
     var database =  req.db;
@@ -26,7 +26,6 @@ exports.get = function(req,res,next){
     var name = req.body.inputName;
     var inputEmail = req.body.inputEmail;
     var inputPhone = req.body.inputPhone;
-
     var forms = req.db.get('forms');
 
     forms.find({ business: businessID }, function(err, result) {
@@ -51,6 +50,16 @@ exports.get = function(req,res,next){
     });
 }
 
+/**
+ * @api {get} forms.get Update Form
+ * @apiName FormsPost
+ * @apiGroup Forms
+ * @apiDescription Update the form for a business based on input
+ *
+ * @apiParam {object} req The Express request object
+ * @apiParam {object} res the Express HTTP response
+ * @apiParam (req body) {object} form Input form from the req.body
+ */
 exports.post = function(req, res, next) {
   var db = req.db;
   var forms = db.get('forms');
