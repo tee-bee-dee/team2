@@ -66,7 +66,7 @@ module.exports = {
         .pause(2000)
         .assert.urlEquals('https://tbd-team2.herokuapp.com/#');
         client.end();
-    }, 
+    },
 
     //PRICING FREE TRIAL / PREMIUM redirect tests
     'Free Trial sign up button' : function (client) {
@@ -77,7 +77,7 @@ module.exports = {
         .pause(2000)
         .assert.urlEquals('https://tbd-team2.herokuapp.com/#pricing');
         client.end();
-    },    
+    },
     'Premium buy now button' : function (client) {
     client
         .url('https://tbd-team2.herokuapp.com/#pricing').waitForElementVisible('body', 5000)
@@ -96,7 +96,7 @@ module.exports = {
         .click('.list-inline li:nth-child(1) a') //AS OF NOW THIS BUTTON REDIRECTS TO TOP OF PAGE
         .pause(1000)
         .assert.urlEquals('https://tbd-team2.herokuapp.com/#');
-    },    
+    },
     'Social Media: Google Plus' : function (client) {
     client
         .url('https://tbd-team2.herokuapp.com/').waitForElementVisible('body', 5000)
@@ -104,7 +104,7 @@ module.exports = {
         .click('.list-inline li:nth-child(2) a') //AS OF NOW THIS BUTTON REDIRECTS TO TOP OF PAGE
         .pause(1000)
         .assert.urlEquals('https://tbd-team2.herokuapp.com/#');
-    },    
+    },
     'Social Media: Twitter' : function (client) {
     client
         .url('https://tbd-team2.herokuapp.com/').waitForElementVisible('body', 5000)
@@ -112,7 +112,7 @@ module.exports = {
         .click('.list-inline li:nth-child(3) a') //AS OF NOW THIS BUTTON REDIRECTS TO TOP OF PAGE
         .pause(1000)
         .assert.urlEquals('https://tbd-team2.herokuapp.com/#');
-    },    
+    },
     'Social Media: LinkedIn' : function (client) {
     client
         .url('https://tbd-team2.herokuapp.com/').waitForElementVisible('body', 5000)
@@ -135,14 +135,4 @@ module.exports = {
         .assert.urlEquals('https://tbd-team2.herokuapp.com/register');
         client.end();
     },
-    'Ensure CSE 112 link redirects correctly' : function (client) {
-    client
-        .url('https://tbd-team2.herokuapp.com').waitForElementVisible('body', 5000)
-        .waitForElementVisible('#format_Footer_h3 + p a', 1000)
-        .click('#format_Footer_h3 + p a')//this click should redirect to powell's cse 112 homepage
-        .pause(3000)
-        .assert.urlEquals('http://classes.pint.com/cse112/');
-        client.end();
-    },
-
   };
