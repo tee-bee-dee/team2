@@ -3,9 +3,9 @@ module.exports = {
         //Login to user account
     client
         .url('https://tbd-team2.herokuapp.com/login').waitForElementVisible('body', 1000)
-        .setValue('input[type=email]', 'balrogSlayer@gmail.com') 
+        .setValue('input[type=email]', 'balrogSlayer@gmail.com')
         .setValue('input[type=password]', '1234')
-        .pause(1000) 
+        .pause(1000)
         .click('.btn')
         .pause(1000)
         .click('.sidebar-menu li:nth-child(7) a')
@@ -14,13 +14,13 @@ module.exports = {
 
         client.end();
     },
-    'Schedule Appointment' : function (client) {
+    /*'Schedule Appointment' : function (client) {
         //Login to user account
     client
         .url('https://tbd-team2.herokuapp.com/login').waitForElementVisible('body', 1000)
-        .setValue('input[type=email]', 'balrogSlayer@gmail.com') 
+        .setValue('input[type=email]', 'balrogSlayer@gmail.com')
         .setValue('input[type=password]', '1234')
-        .pause(1000) 
+        .pause(1000)
         .click('.btn')
         .pause(1000)
         .click('.sidebar-menu li:nth-child(4) a')
@@ -38,18 +38,18 @@ module.exports = {
         .setValue('input[name=inputLastName]', 'Lord Of Darkness')
         .setValue('input[name=inputEmail]', 'hobbit@test.com')
         .setValue('input[name=inputPhone]', '4445556666')
-        .click('select[id="inputEmployee"] option[value="Frodo Baggins"]')
+        .click('select[id="inputEmployee"] option[label="Frodo Baggins"]')
         .click('input.btn')
 
         client.end();
-    },
+    },*/
     'Check In' : function (client) {
         //Login to user account
     client
         .url('https://tbd-team2.herokuapp.com/login').waitForElementVisible('body', 1000)
-        .setValue('input[type=email]', 'balrogSlayer@gmail.com') 
+        .setValue('input[type=email]', 'balrogSlayer@gmail.com')
         .setValue('input[type=password]', '1234')
-        .pause(1000) 
+        .pause(1000)
         .click('.btn')
         .pause(1000)
         .click('.sidebar-menu li:nth-child(3) a')
@@ -60,7 +60,7 @@ module.exports = {
         //fill out check in forms
         .waitForElementVisible('input[name=inputFirst]', 1000)
         .waitForElementVisible('input[name=inputLast]', 1000)
-        .waitForElementVisible('input[name=inputPhone]', 1000)        
+        .waitForElementVisible('input[name=inputPhone]', 1000)
 
         .setValue('input[name=inputFirst]', 'Sauron')
         .setValue('input[name=inputLast]', 'Lord Of Darkness')
@@ -77,11 +77,11 @@ module.exports = {
         .assert.containsText('.box-header h1', 'Hello, Sauron!')
         .assert.containsText('.box-body h4:nth-child(2)', 'hobbit@test.com')
 
-        //click on Not you? 
+        //click on Not you?
         .click('.btn-danger')
         .assert.urlEquals('https://tbd-team2.herokuapp.com/office/592cce5a3bbbe2001139bfc8/checkin?')
 
-        //Check in again 
+        //Check in again
         .setValue('input[name=inputFirst]', 'Sauron')
         .setValue('input[name=inputLast]', 'Lord Of Darkness')
         .setValue('input[name=inputPhone]', '4445556666')
@@ -94,7 +94,7 @@ module.exports = {
         .assert.urlEquals('https://tbd-team2.herokuapp.com/office/592cce5a3bbbe2001139bfc8/customform?')
         .pause(500)
 
-        //Fillout custom form 
+        //Fillout custom form
         .waitForElementVisible('input[name=text-1]', 1000)
         .setValue('input[name=text-1]', 'Become Ruler Of Middle Earth.')
         .pause(1000)
