@@ -30,7 +30,7 @@ function hexToRgb(hex) {
 imgur.setClientId('b67dffd2dbe1ea5');
 
 /**
- * @api {get} accountSetting.get Get Account Settings
+ * @api {get} accountsettings.get Get Account Settings
  * @apiName accountSettingsGet
  * @apiGroup Account Settings
  * @apiDescription Takes an req parameter and res parameter and returns the details of a particular employee.
@@ -62,7 +62,7 @@ exports.get = function (req,res) {
 };
 
 /**
- * @api {post} accountSettings.post Set Account Settings
+ * @api {post} accountsettings.post Set Account Settings
  * @apiName AccountSettingsPost
  * @apiGroup Account Settings
  * @apiDescription Takes an req parameter and res parameter and returns the details of a particular employee. The user

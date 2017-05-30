@@ -6,13 +6,17 @@ var sendgrid = require('sendgrid')('SG.xF6AEimOTeq5W9SFUNQmQg.sFYxU8qr4jThqm_-T_
 var ObjectId = require('mongodb').ObjectID;
 
  /**
- * Takes a req and res parameters and is inputted into function to get employee, notemployee, and business data.
- *
- * @param req and res The two parameters passed in to get the apprporiate employee,
- * @returns The appropriate data about the employee
- */
+  * @api {get} addemployees.get Get Employee
+  * @apiName AddEmployeesGet
+  * @apiGroup Add Employee
+  * @apiDescription Takes a req and res parameters and is inputted into function
+	* to get employee, notemployee, and business data.
+  *
+  * @apiParam {object} req The Express request object used to access the database,
+  * @apiParam {object} res the Express HTTP response
+  */
 exports.get = function(req,res){
-	    var database =  req.db;
+	      var database =  req.db;
         var employeeDB = database.get('employees');
         var employee;
         var notemployee;
@@ -76,6 +80,19 @@ exports.get = function(req,res){
  * @param req and res The two parameters passed in to get the apprporiate employee,
  * @returns The appropriate data about the employee
  */
+ /**
+  * @api {get} addemployees.post Edit Employee
+  * @apiName AddEmployeesPost
+  * @apiGroup Add Employee
+  * @apiDescription Takes a req and res parameters and is inputted into function to get employee, notemployee, and business data.
+  * Allows the User to input specified data and make changes
+  *
+  * @apiParam {object} req The Express request object
+  * @apiParam {object} res the Express HTTP response
+	* @apiParam (req body) {string} inputName The input name for the employee
+	* @apiParam (req body) {string} inputEmail The input email for the employee
+	* @apiParam (req body) {string} inputPhone the input phone number for the employee
+  */
 exports.post = function(req,res,next){
 
     var database =  req.db;
