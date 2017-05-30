@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Additional Information</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel='stylesheet' href='/stylesheets/style.css'/>
-  <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-nav-wizard.css">
+  <title>Welcome</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  {{>styles}}
+  {{>scripts}}
+  <script src="/plugins/formBuilder/form-builder.min.js"></script>
+  <script src="/plugins/formBuilder/form-render.min.js"></script>
+
   <style>
-  body, h1, h2, h3, h4, h5, h6 {
-    color: {{containerText}} !important;
-  }
-
   .customBG {
-    background-image: url(/images/bg/full/{{bg}});
+    background: rgb({{bg.r}}, {{bg.g}}, {{bg.b}});
   }
 
-  .btn {
-    background-color: {{buttonBg}};
-    border-color: {{buttonBg}};
-    color: {{buttonText}}
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #071C33;
   }
-
-  .container {
-    background-color: {{containerBg}};
+  footer h4 {
+    color: #eeeeee;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 50px;
+    font-weight: bold;
+    text-shadow: 0px 0px 8px #ffae00;
   }
   </style>
 </head>
 <body class="customBG">
-<div class="container container-margin">
-  <div class="row innerInfo">
-    <div class="nav-wizard-margins">
-      <h3>Your checkin process:</h3>
-      <ul class="nav nav-wizard">
-        <li><a href="#">Step 1: Identification</a></li>
-        <li><a href="#">Step 2: Confirm Appointment</a></li>
-        <li class="active"><a href="#">Step 3: Additional Information</a></li>
-        <li><a href="#">Step 4: Sign Disclosure Agreement</a></li>
-        <li><a href="#">Step 5: Checked In!</a></li>
-      </ul>
+  <div>
+    <div class="row" style="margin-top: 150px; margin-bottom: 100px;">
+      <div class="col-xs-10 col-sm-6 col-md-8 col-lg-6 center-block" style="float:none; padding: 20px">
+        <div class="box">
+          <div class="box-header text-center">
+            <h1>Additional Info</h1>
+            <h3 class="box-title">Please tell us a little bit more about yourself.</h3>
+          </div>
+          <div class="box-body">
+            <form action="customform" method="post">
+              <div class="row innerInfo">
+                <div id="form" class="col-md-8 col-md-offset-2"></div>
+              </div>
+              <br>
+              <div class="row innerInfo">
+                <div class="col-md-4 col-md-offset-4">
+                  <button class="btn btn-lg btn-success btn-block" type="submit">Next</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row innerInfo">
-    <h3>Tell us a little bit more about yourself: </h3>
-    {{#if formError}}
-    <div class="alert alert-danger" role="alert">{{formError}}</div>
-    {{/if}}
-    {{{ formHtml }}}
-  </div>
-</div>
+  <footer>
+    <h4>Powered by ENQUÉ</h4>
+  </footer>
 </body>
+<script>
+jQuery(function($) {
+  var form = '{{form}}';
+  form = form.replace(/&quot;/g,'"');
+  var formRender = $(document.getElementById('form')).formRender({
+    formData: form,
+    dataType: 'json'
+  });
+});
+</script>
 </html>

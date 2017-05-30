@@ -10,7 +10,7 @@
   {{#if message}}
   <div class="alert alert-danger">{{message}}</div>
   {{/if}}
-  
+
   <div class="row">
     <div class="col-md-12">
       <div class="box box-info">
@@ -25,6 +25,7 @@
                   <th>Appointment Time</th>
                   <th>Check In Time</th>
                   <th>Status</th>
+                  <th>Completed Form</th>
                 </tr>
               </thead>
               <tbody id="appointment-list">
@@ -35,8 +36,40 @@
                   <td>{{apptTime}}</td>
                   <td>{{currentTime}}</td>
                   <td>{{state}}</td>
-                  {{/each}}
+                  <td><button class="btn btn-sm btn-flat btn-info" onclick="openFormResponse(`{{formResponse}}`)" data-toggle="modal" data-target="#myModal{{id}}">View Form</button></td>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal{{id}}" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Check-in Form</b></h4>
+                        </div>
+                        <div class="modal-body">
+                          <h4><b>Patient: </b>{{ visitor }}</h4>
+                          <h4><b>Form Responses</b></h4>
+                          <ol>
+                            {{#each formResponse}}
+                            <li>
+                              <div>
+                                <b>{{ label }}</b>
+                                <p>{{ value }}</p>
+                              </li>
+                            {{/each}}
+                          </ol>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
                 </tr>
+                {{/each}}
               </tbody>
             </table>
           </div>
@@ -53,6 +86,5 @@
     </div>
   </div>
 </section>
-
 <script src="/socket.io/socket.io.js"></script>
 <script src="/javascripts/visitor-list.js"></script>

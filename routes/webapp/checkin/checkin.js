@@ -53,10 +53,6 @@ exports.post = function (req, res, next) {
     var db = req.db;
     var io = req.app.io;
 
-    console.log("");
-
-
-
     var appointments = db.get('appointments');
     var businesses = db.get('businesses');
     var employees = db.get('employees');
@@ -134,7 +130,7 @@ exports.post = function (req, res, next) {
                     io.emit('checkin', newAppointment);
                 });
 
-                res.redirect('done');
+                res.redirect('apptinfo');
             });
                     //Update the state of the appointment
             req.db.get('appointments').updateById(req.session.appointmentId, {

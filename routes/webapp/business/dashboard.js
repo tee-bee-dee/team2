@@ -43,17 +43,19 @@ exports.get = function (req, res) {
 			});
 
 			var itemsProcessed = 0;
-			console.log(filteredAppts);
 
+			console.log(filteredAppts);
 			if( filteredAppts.length ) {
 				filteredAppts.forEach( function (elem, i, arr) {
 					var apptInfo = {};
 
-
+					apptInfo.id = elem._id;
 					apptInfo.visitor = elem.fname + ' ' + elem.lname;
 					apptInfo.apptTime = formatDate(elem.date);
 					apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
 					apptInfo.currentTime = formatDate(elem.checkin);
+					apptInfo.formResponse = elem.formResponse;
+					console.log(apptInfo.formResponse);
 
 					employees.find({
 						business: req.user[0].business,

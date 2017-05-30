@@ -1,3 +1,4 @@
+var ObjectId = require('mongodb').ObjectID;
 var request = require('request');
 var accountSid = 'AC5d8856fa6e558decc9a6576322291570';
 var authToken = 'f2c480c041deb944218ffe43e9e1c045';
@@ -27,7 +28,7 @@ exports.post = function(req, res) {
   appointments.insert({
     business: business,
     date: new Date('Thu, 01 Jan 1970 13:00:00 GMT-0500'),
-    employee: employee,
+    employee: ObjectId(patient.inputEmployee),
     state: 'scheduled',
     fname: patient.inputFirstName,
     lname: patient.inputLastName,

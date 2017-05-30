@@ -15,7 +15,7 @@ exports.get = function (req, res, next) {
 
         res.render('checkin/apptinfo', {
             name: appointment.fname,
-            DOB: appointment.dob,
+            date: appointment.date,
             email: appointment.email,
             companyName: business.companyName,
             bg: business.style.bg,
@@ -23,7 +23,8 @@ exports.get = function (req, res, next) {
             buttonBg: style.rgbObjectToCSS(business.style.buttonBg),
             buttonText: style.rgbObjectToCSS(business.style.buttonText),
             containerText: style.rgbObjectToCSS(business.style.containerText),
-            containerBg: style.rgbObjectToCSS(business.style.containerBg)
+            containerBg: style.rgbObjectToCSS(business.style.containerBg),
+            layout: false
         });
     });
 };
