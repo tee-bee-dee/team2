@@ -9,7 +9,7 @@ body {
 body, p, a, div, th, td {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 td.code {
@@ -32,7 +32,7 @@ p {
 h1 {
   font-family: "Source Sans Pro Semibold", sans-serif;
   font-weight: normal;
-  font-size: 44px;
+  font-size: 38px;
   line-height: 50px;
   margin: 0 0 10px 0;
   padding: 0;
@@ -41,7 +41,7 @@ h1 {
 h2 {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 40px;
   margin: 0 0 20px 0;
   padding: 0;
@@ -55,7 +55,7 @@ section {
 section h1 {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 40px;
   padding-bottom: 14px;
   margin: 0 0 20px 0;
