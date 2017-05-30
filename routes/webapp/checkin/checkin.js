@@ -73,10 +73,10 @@ exports.post = function (req, res, next) {
         //TODO: Uncomment this when front end is actually tied to the DB and checking if the appointment is valid
         //TODO: Also need to take out the slack request from the done.js file in the same directory as checkin
         var slackOptions = {
-           uri: 'https://hooks.slack.com/services/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',
+           uri: 'https://hooks.slack.com/services/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',
            method: 'POST',
            json: {
-               "channel": "#bobsburgers",
+               "channel": "#checkin",
                "text": inputFirst + " " + inputLast + " just checked in."
            }
         };
