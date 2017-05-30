@@ -1,4 +1,7 @@
 var request = require('request');
+var accountSid = 'AC5d8856fa6e558decc9a6576322291570';
+var authToken = 'f2c480c041deb944218ffe43e9e1c045';
+var client = require('twilio')(accountSid, authToken);
 
 exports.get = function(req, res) {
   var employees = req.db.get('employees');
@@ -36,8 +39,8 @@ exports.post = function(req, res) {
      uri: 'https://hooks.slack.com/services/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',
      method: 'POST',
      json: {
-         "channel": "#webhooks",
-         "text": patient.inputFirstName + " " + patient.inputLastName + " made an appointment."
+         "channel": "#appointments",
+         "text": patient.inputFirstName + " " + patient.inputLastName + " made an appointment with " + patient.inputEmployee + "."
      }
   };
 
@@ -45,6 +48,18 @@ exports.post = function(req, res) {
      if(!error && response.statusCode == 200) {
          console.log(body.id);
      }
+  });
+
+  client.messages.create({
+    to: '+1' + patient.inputPhone,
+    from: '+16572206491',
+    body: "Thank you " + patient.inputFirstName + " for scheduling with " + patient.inputEmployee
+  }, function(err, message){
+    if(err){
+      console.log(err);
+    } else{
+      console.log(message.sid);
+    }
   });
 
   res.redirect('/scheduleappointment');

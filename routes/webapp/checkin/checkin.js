@@ -80,7 +80,7 @@ exports.post = function (req, res, next) {
            uri: 'https://hooks.slack.com/services/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',
            method: 'POST',
            json: {
-               "channel": "#webhooks",
+               "channel": "#checkin",
                "text": inputFirst + " " + inputLast + " just checked in."
            }
         };
