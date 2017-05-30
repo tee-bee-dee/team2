@@ -26,7 +26,7 @@
               <option value="" selected disabled>Select Doctor</option>
               {{#each employees}}
               <h1>{{fname}} {{lname}}</h1>
-                <option value="{{_id}}">{{fname}} {{lname}}</option>
+                <option label='{{fname}} {{lname}}' value="{{_id}}">{{fname}} {{lname}}</option>
               {{/each}}
             </select>
           </div>
