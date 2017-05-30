@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
 }
 
 hr {
@@ -14,12 +15,16 @@ hr {
 h1 {
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
     color: #34495e;
-    font-weight: 700;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 2px;
 
 }
 
 #h1Custom{
     color: #fff;
+    letter-spacing: 2px;
+    font-size: 20px;
 }
 
 /*
@@ -27,8 +32,10 @@ h1 {
 */
 #format_Footer_h3{
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-    color: #ffae00;
+    color: #00cccc;
     font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 14px;
 
 }
 
@@ -37,6 +44,7 @@ h4 {
     color: #34495e;
     font-weight: 400;
     line-height: 1.4;
+    font-size: 14px;
 }
 
 
@@ -46,11 +54,11 @@ h4 {
 }
 
 section{
-    padding: 50px 0;
+    padding: 25px 0;
 }
 
 #custom_hr{
-    border-color: #ffae00;
+    border-color: #00cccc;
     border-width: 3px;
     max-width: 75px;
 }
@@ -78,6 +86,7 @@ section{
     -webkit-transition: all 0.35s;
     -moz-transition: all 0.35s;
     transition: all 0.35s;
+    font-size: 10px;
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -118,11 +127,12 @@ fieldset[disabled] .btn-default.active {
 .btn-default .badge {
     color: #ffffff;
     background-color: #222222;
+    border-radius: 4px;
 }
 .btn-primary {
     color: #ffffff;
+    border-radius: 4px;
     background-color: #071C33;
-    border-color: #ffae00;
     -webkit-transition: all 0.35s;
     -moz-transition: all 0.35s;
     transition: all 0.35s;
@@ -133,9 +143,10 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-    color: #ffffff;
-    background-color: #ffae00;
-    border-color: #ffae00;
+    color: #222222;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border-color: #ffffff;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -165,6 +176,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-primary .badge {
     color: #071C33;
+    border-radius: 4px;
     background-color: #ffffff;
 }
 .btn {
@@ -173,6 +185,7 @@ fieldset[disabled] .btn-primary.active {
     border-radius: 300px;
     font-weight: 700;
     text-transform: uppercase;
+    border-radius: 4px;
 }
 .btn-xl {
     padding: 15px 30px;
@@ -190,8 +203,8 @@ fieldset[disabled] .btn-primary.active {
 
 /***Carousel***/
 .carousel{
-    background: #ffae00;
-    margin-top: 20px;
+    background: #00cccc;
+
 }
 .carousel .item img{
     margin: 0 auto; /* Align slide image horizontally center */
@@ -219,7 +232,7 @@ footer .footer-col {
 footer .footer-below {
     padding: 25px 0;
     background-color: #071C33;
-    border-top-color: #ffae00;
+    border-top-color: #00cccc;
 }
 
 .btn-social {
@@ -239,7 +252,7 @@ footer .footer-below {
 }
 
 footer a{
-    color: #ffae00;
+    color: #00cccc;
 }
 
 /********************* NavBar CSS **************************/
@@ -248,24 +261,29 @@ footer a{
 */
 .navbar{
     margin-bottom: 0px !important;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 .navbar-default {
     background-color: #071C33;
     border-color: #071C33;
     font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
-    font-weight: 700;
+    font-weight: 400;
+    letter-spacing: 2px;
     color: #FFF;
     text-transform: uppercase;
 }
 .navbar-default .navbar-brand {
-    color: #ffae00;
+    font-weight: 500px;
+    font-size: 16px;
+    color: #00cccc;
 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
     color: #ffffff;
 }
 .navbar-default .navbar-text {
-    color: #ffae00;
+    color: #00cccc;
 }
 .navbar-default .navbar-nav > li > a {
     color: #ffffff;
@@ -274,7 +292,7 @@ footer a{
     color: #ffffff;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #ffae00;
+    color: #00cccc;
     background-color: #071C33;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -288,14 +306,14 @@ footer a{
     background-color: #071C33;
 }
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #ffae00;
+    background-color: #00cccc;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-    border-color: #ffae00;
+    border-color: #00cccc;
 }
 .navbar-default .navbar-link {
-    color: #ffae00;
+    color: #00cccc;
 }
 .navbar-default .navbar-link:hover {
     color: #ffffff;
@@ -303,19 +321,19 @@ footer a{
 
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #ffae00;
+        color: #00cccc;
     }
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
         color: #ffffff;
     }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-        color: #ffae00;
+        color: #00cccc;
         background-color: #071C33;
     }
 }
 
 .navbar-collapse, .navbar{
-    border-bottom-color: #ffae00;
+    border-bottom-color: #00cccc;
 }
 
 .navbar-landing-padding{
@@ -333,16 +351,15 @@ footer a{
 }
 
 .control-label{
-    color: #fff;
-    text-shadow: 1px 0 #071C33, 0 1px #071C33, 1px 0 #071C33, 0 1px #071C33;
+    color: #071C33;
 }
 
 .form-color{
-    border: 3px solid #071C33 !important;
+    border: 0px solid #fff !important;
 }
 
 .input-group-addon{
-    border: 3px solid #071C33;
+
 }
 
 textarea.form-control {
@@ -352,14 +369,13 @@ textarea.form-control {
 
 header {
     position: relative;
-    width: 100%;
-    min-height: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    height: 60%;
+    -webkit-background-size: center;
+    -moz-background-size: center;
+    background-size: 100%;
+    -o-background-size: center;
     background-position: center;
-    background-image: url('../images/bgFilter.jpg');
+    background-image: url('../images/fog.jpg');
     text-align: center;
     color: white;
 }
@@ -370,26 +386,24 @@ header .header-content {
     width: 100%;
 }
 header .header-content .header-content-inner h1 {
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
-    margin-top: 0;
-    color: #FFF;
-    margin-bottom: 0;
-    text-shadow: 2px 2px 0px #000;
+    color: #2f4f4f;
+    font-family: 'Lato', sans-serif;
 }
 header .header-content .header-content-inner hr {
-    margin: 30px auto;
+    margin: 10px auto;
 }
 header .header-content .header-content-inner p {
     font-weight: 300;
-    color: #FFFFFF;
-    font-size: 16px;
+    color: #2f4f4f;
+    font-size: 8px;
+    font-family: 'Lato', sans-serif;
     margin-bottom: 50px;
-    text-shadow: 2px 2px 0px #000;
 }
 @media (min-width: 768px) {
     header {
-        min-height: 100%;
+        min-height: 50%;
     }
     header .header-content {
         position: absolute;
@@ -405,16 +419,19 @@ header .header-content .header-content-inner p {
         margin-right: auto;
     }
     header .header-content .header-content-inner p {
-        font-size: 32px;
+        font-size: 16px;
         max-width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
 
     header .header-content .header-content-inner h1 {
-        font-size: 42px;
+        margin-top: 30px;
+        font-size: 26px;
     }
 }
+
+
 
 /***** Testimonials *****/
 .testimonial {
@@ -440,7 +457,7 @@ header .header-content .header-content-inner p {
     margin: 10px 0 0 20px;
     font-family: Arial, Helvetica, sans-serif;
     color: #071C33;
-    font-size: 15px;
+    font-size: 12px;
     text-align: left;
 }
 
@@ -451,8 +468,8 @@ header .header-content .header-content-inner p {
     text-align:left;
     height: 80px;
     width: 80px;
-    border-radius: 50%;
-    border: 5px solid white;
+    border-radius: 30%;
+    border: 3px solid white;
 }
 
 .testimonial-grey {
@@ -471,23 +488,23 @@ header .header-content .header-content-inner p {
 
 /*************** Pricing Charts (Landing Page) **************/
 .panel.price,
-.panel.price>.panel-heading{
+.panel.price>.paanel-heading{
     border-radius:0px;
     -moz-transition: all .3s ease;
     -o-transition:  all .3s ease;
     -webkit-transition:  all .3s ease;
+    box-shadow: 0px 0px 30px rgba(0,0,0, .2);
 }
 .panel.price:hover{
     box-shadow: 0px 0px 30px rgba(0,0,0, .2);
 }
 .panel.price:hover>.panel-heading{
-    box-shadow: 0px 0px 30px rgba(0,0,0, .2) inset;
+    
 }
 
 
 .panel.price>.panel-heading{
-    box-shadow: 0px 5px 0px rgba(50,50,50, .2) inset;
-    text-shadow:0px 3px 0px rgba(50,50,50, .6);
+
 }
 
 .price .list-group-item{
@@ -506,8 +523,8 @@ header .header-content .header-content-inner p {
 .price .panel-footer {
     color: #fff;
     border-bottom:0px;
-    background-color:  rgba(0,0,0, .1);
-    box-shadow: 0px 3px 0px rgba(0,0,0, .3);
+    background-color:  #fff
+
 }
 
 
@@ -518,54 +535,51 @@ header .header-content .header-content-inner p {
 
 .price.panel-green>.panel-heading {
     color: #fff;
-    background-color: #ffae00;
-    border-color: #ffae00;
-    border-bottom: 1px solid #ffcf66;
+    background-color: #464a4d;
+    border-color: #464a4d;
+    border-bottom: 1px solid #464a4d;
 }
 
 
 .price.panel-green>.panel-body {
     color: #fff;
-    background-color: #ffc64d;
+    background-color: #61666b;
 }
 
 
 .price.panel-green>.panel-body .lead{
-    text-shadow: 0px 3px 0px rgba(50,50,50, .3);
 }
 
 .price.panel-green .list-group-item {
     color: #333;
     background-color: rgba(50,50,50, .01);
-    font-weight:600;
-    text-shadow: 0px 1px 0px rgba(250,250,250, .75);
-    font-size: 24px;
+    font-weight:500;
+    font-size: 14px;
 }
 
 .price.panel-red>.panel-heading {
     color: #fff;
-    background-color: #071C33;
-    border-color: #071C33;
-    border-bottom: 1px solid #071C33;
+    background-color: #d7b740;
+    border-color: #d7b740;
+    border-bottom: 1px solid #d7b740;
 }
 
 
 .price.panel-red>.panel-body {
     color: #fff;
-    background-color: #092543;
+    background-color: #f0d64e;
 }
 
 
 .price.panel-red>.panel-body .lead{
-    text-shadow: 0px 3px 0px rgba(50,50,50, .3);
 }
 
 .price.panel-red .list-group-item {
     color: #333;
     background-color: rgba(50,50,50, .01);
-    font-weight:600;
+    font-weight:500;
     text-shadow: 0px 1px 0px rgba(250,250,250, .75);
-    font-size: 24px;
+    font-size: 14px;
 }
 
 #chartCheck {
@@ -580,28 +594,28 @@ header .header-content .header-content-inner p {
 }
 
 .btn-success {
-    background-color: #ffae00;
+    background-color: #464a4d;
     color: #ffffff;
     font-family: 'Lato', sans-serif;
     border-radius: 4px; /* Overrides bootstrap rounded corners*/
-    border-color: #ffae00;
+    border-color: #464a4d;
 }
 
 .btn-danger {
-    background-color: #071C33;
+    background-color: #d7b740;
     color: #ffffff;
     font-family: 'Lato', sans-serif;
     border-radius: 4px; /* Overrides bootstrap rounded corners*/
-    border-color: #071C33;
+    border-color: #d7b740;
 }
 
 .btn-success:hover {
-    background-color: #ffae00;
+    background-color: #2e3134;
     color: #ffffff;
 }
 
 .btn-danger:hover {
-    background-color: #071C33;
+    background-color: #c1a53b;
     color: #ffffff;
 }
 
@@ -610,7 +624,7 @@ header .header-content .header-content-inner p {
 .form-control{
     margin: 0 auto;
     width: 300px;
-    border:3px solid #071C33;
+    border:0px solid #071C33;
 }
 
 .control-label, .label{
@@ -618,7 +632,7 @@ header .header-content .header-content-inner p {
 }
 
 .form-control:focus{
-    border-color: #ffae00;
+    border-color: #fff;
 }
 
 /**Invalid login information**/
@@ -634,23 +648,22 @@ header .header-content .header-content-inner p {
 }
 
 .centerForm:focus{
-    border-color: #ffae00;
+    border-color: #fff;
 }
 
 .regis {
     display: block;
     margin-bottom: 15px;
-    margin-top: 20px;
-    height: 35px;
+    margin-top: 15px;
+    height: 30px;
     width: 300px;
-    border:3px solid #071C33;
+    border:0px solid #071C33;
     border-radius: 4px;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    padding-left: 10px;
 }
 
 .regTitleColor{
     color: #fff;
-    text-shadow: 1px 0 #071C33, 0 1px #071C33, 1px 0 #071C33, 0 1px #071C33;
 }
 
 .custom-center {
