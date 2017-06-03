@@ -8,11 +8,12 @@
   <div class="alert alert-danger">{{message}}</div>
   {{/message}}
   <div class="row">
+    {{#each businesses}}
     <div class="col-md-12">
       <div class="box box-warning box-solid">
         <div class="box-header with-border" data-widget="collapse">
           <i class="fa fa-minus" style="display: none"></i>
-          <h3 class="box-title">Quart 3.0</h3>
+          <h3 class="box-title">{{ companyName }}</h3>
           <h3 class="box-title pull-right" style="pull-right">Pending</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
@@ -21,23 +22,27 @@
               <col span="2" class="col-md-6">
             </colgroup>
             <tr>
-              <td>Company Name: Quart 3.0</td>
-              <td>Address: 2105 Garnet Ave. San Diego, CA 92109</td>
-            </tr>
-
-            <tr>
-              <td>Owner: Gev Gev</td>
-              <td>Description: Web developer co</td>
+              <td><b>Company Name</b>: {{ companyName }}</td>
+              <td><b>Address</b>: 9500 Gilman Dr, La Jolla, CA 92093</td>
             </tr>
             <tr>
-              <td>Contact: 858-270-2086</td>
-              <td>Notes:</td>
+              <td><b>Owner</b>: <span>{{ fname }} {{ lname }}</span></td>
+              <td><b>Email</b>: {{ email }}</td>
+            </tr>
+            <tr>
+              <td>
+                <b>Walk-ins:</b>
+                {{#if walkins}}Yes{{else}}No{{/if}}
+              </td>
+              <td><b>Phone</b>: {{ phone }}</td>
             </tr>
           </table>
         </div><!-- /.box-body -->
       </div><!-- /.box -->
     </div><!-- /.col -->
-
+    {{/each}}
+  </div>
+  <div class="row">
     <div class="col-md-12">
       <div class="box box-danger box-solid">
         <div class="box-header with-border" data-widget="collapse">
@@ -51,17 +56,17 @@
               <col span="2" class="col-md-6">
             </colgroup>
             <tr>
-              <td>Company Name: Pint 2.0</td>
-              <td>Address: 2105 Garnet Ave. San Diego, CA 92109</td>
+              <td><b>Company Name</b>: Pint 2.0</td>
+              <td><b>Address</b>: 2105 Garnet Ave. San Diego, CA 92109</td>
             </tr>
-            
+
             <tr>
-              <td>Owner: Thomas A. Powell</td>
-              <td>Description: Web dev</td>
+              <td><b>Owner</b>: Thomas A. Powell</td>
+              <td><b>Email</b>: tpowell@pint.com</td>
             </tr>
             <tr>
-              <td>Contact: 858-270-2086</td>
-              <td>Notes:</td>
+              <td><b>Walk-ins</b>: No</td>
+              <td><b>Phone</b>: 8585858888</td>
             </tr>
           </table>
         </div><!-- /.box-body -->
@@ -81,17 +86,17 @@
               <col span="2" class="col-md-6">
             </colgroup>
             <tr>
-              <td>Company Name: Fubar</td>
-              <td>Address: 2105 Garnet Ave. San Diego, CA 92109</td>
+              <td><b>Company Name</b>: Fubar</td>
+              <td><b>Address</b>: 2105 Garnet Ave. San Diego, CA 92109</td>
             </tr>
 
             <tr>
-              <td>Owner: Gev Gev</td>
-              <td>Description: Web developer co</td>
+              <td><b>Owner</b>: Gev Gev</td>
+              <td><b>Email</b>: gev@dev.gev</td>
             </tr>
             <tr>
-              <td>Contact: 858-270-2086</td>
-              <td>Notes:</td>
+              <td><b>Walk-ins</b>: No</td>
+              <td><b>Phone</b>: 8585858888</td>
             </tr>
           </table>
         </div><!-- /.box-body -->
@@ -99,65 +104,3 @@
     </div><!-- /.col -->
   </div>
 </section>
-
-
-<!--Analytics-->
-<script src='/javascripts/analytics.js'></script>
-
-<div>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
-  <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
-</div>
-<div class="mixpanel-platform-body">
-  <div class="">
-    <div id="eventSelect" style="float: left;"></div>
-    <div id="by" class="mixpanel-platform-label" style="margin-left: 10px; display: none;">by</div>
-    <div id="propSelect" style="float: left;"></div>
-    <div id="dateSelect" style="float: right;"></div>
-    <div style="clear: both;"></div>
-    <div id="graph"></div>
-  </div>
-  <div id="table"></div>
-  <script>
-  MP.api.setCredentials("efa2485252acd5e41711ceb71ec5285e", "e48ded64efa367831e11cfd37ee276c0")
-
-  var eventSelect = $('#eventSelect').MPEventSelect();
-  var propSelect  = $('#propSelect').MPPropertySelect();
-  var dateSelect  = $('#dateSelect').MPDatepicker();
-  var eventGraph  = $('#graph').MPChart({chartType: 'line'});
-  var eventTable  = $('#table').MPTable({
-    showPercentages: true,
-    firstColHeader: 'Event'
-  });
-
-  var runQuery = function() {
-    var eventName = eventSelect.MPEventSelect('value'),
-    propName  = propSelect.MPPropertySelect('value'),
-    dateRange = dateSelect.MPDatepicker('value');
-
-    if (eventName) {
-      MP.api.segment(eventName, propName, dateRange).done(function(results) {
-        eventGraph.MPChart('setData', results);
-        eventTable.MPTable('setData', results);
-      });
-    }
-  };
-  eventSelect.on('change', function(e, eventName) {
-    propSelect.MPPropertySelect('setEvent', eventName);
-    $("#by").show();
-    runQuery();
-  });
-  propSelect.on('change', runQuery);
-  dateSelect.on('change', runQuery);
-  </script>
-</div>
-
-</section>
-
-<style>
-.select_button {
-  height: 32px !important;
-}
-</style>

@@ -23,13 +23,19 @@ exports.get = function (req, res) {
 	var employeename = req.user[0].fname + ' ' + req.user[0].lname;
 
 	if( isPeter ) {
-		res.render('business/dashboard-admin', {
-			title: 'Express',
-			eid: employeeId,
-			employeeName: employeename,
-			message: req.flash("permission"),
-			layout: 'admin',
-			dashboard: "active"
+		var db = req.db;
+		var businesses = db.get('businesses');
+
+		businesses.find({ email: { $ne: 'peter@enque.com' }}, function(err, businesses) {
+			res.render('business/dashboard-admin', {
+				title: 'Express',
+				eid: employeeId,
+				employeeName: employeename,
+				businesses: businesses,
+				message: req.flash("permission"),
+				layout: 'admin',
+				dashboard: "active"
+			});
 		});
 	} else if( isOwner ) {
 		res.render('business/dashboard-business', {
@@ -39,6 +45,7 @@ exports.get = function (req, res) {
 			message: req.flash("permission"),
 			isOwner: isOwner,
 			businessId: req.user[0].business,
+			layout: 'main',
 			dashboard: "active"
 		});
 	} else {
