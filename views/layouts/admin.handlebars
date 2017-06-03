@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>{{ title }}</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
+  <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
   {{>styles}}
 </head>
 <body class="skin-blue">
@@ -10,6 +13,7 @@
     {{>sidebar-admin}}
     <div class="content-wrapper">
       {{{body}}}
+      {{>analytics}}
     </div>
     {{>footer}}
     {{>scripts}}
