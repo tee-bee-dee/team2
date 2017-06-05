@@ -29,7 +29,15 @@ router.get('/:id/done', updateBusiness, done.get);
 module.exports = router;
 
 /**
- * Middleware to ensure that req.session.business contains info about the current business
+ * @api {render} Update Session information
+ * @apiName updateSession
+ * @apiGroup Session info
+ * @apiDescription Used to set session information about business when logging in. Also
+ * provides security by maintaining company session id.
+ *
+ * @apiParam {object} req The Express request object used to access the database,
+ * @apiParam {object} res the Express HTTP response
+ * @apiParam {object} next The express next object, used to pass control to next matching route
  */
 function updateBusiness(req, res, next) {
     //Simple case: first time on the page
