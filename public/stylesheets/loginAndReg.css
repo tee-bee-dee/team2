@@ -1,0 +1,558 @@
+/*New stylesheet for landing page*/
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+}
+
+hr {
+    border-color: rgba(255, 255, 255, 0.7);
+    border-width: 3px;
+    max-width: 250px;
+}
+
+h1 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 2px;
+
+}
+
+h2 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 2px;
+
+}
+
+
+/*
+    <h3> format for footer
+*/
+#format_Footer_h3{
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: #00cccc;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 14px;
+
+}
+
+h4 {
+    font-family: "Raleway", sans-serif;
+    color: #34495e;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+
+
+.rowPadding{
+    padding:20px;
+}
+
+section{
+    padding: 25px 0;
+}
+
+#custom_hr{
+    border-color: #00cccc;
+    border-width: 3px;
+    max-width: 75px;
+}
+
+#custom_hr2{
+    border-color: rgba(255, 255, 255, 0.7);
+    border-width: 3px;
+    max-width: 75px;
+}
+/*** Call to Action Butto***/
+.call-to-action h2 {
+    margin: 0 auto 20px;
+}
+.text-primary {
+    color: #071C33;
+}
+.no-gutter > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+.btn-default {
+    color: #222222;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+    font-size: 10px;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    color: #222222;
+    background-color: #f2f2f2;
+    border-color: #ededed;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    background-image: none;
+}
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled.focus,
+.btn-default[disabled].focus,
+fieldset[disabled] .btn-default.focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-default .badge {
+    color: #ffffff;
+    background-color: #222222;
+    border-radius: 4px;
+}
+.btn-primary {
+    color: #ffffff;
+    border-radius: 4px;
+    background-color: #071C33;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    color: #222222;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    background-color: #071C33;
+    border-color: #071C33;
+}
+.btn-primary .badge {
+    color: #071C33;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+.btn {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    border: none;
+    border-radius: 300px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+.btn-xl {
+    padding: 15px 30px;
+}
+::-moz-selection {
+    color: white;
+    text-shadow: none;
+    background: #222222;
+}
+::selection {
+    color: white;
+    text-shadow: none;
+    background: #222222;
+}
+
+/***Carousel***/
+.carousel{
+    background: #00cccc;
+
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+/***Footer***/
+footer {
+    color: #00cccc;
+}
+footer h3 {
+    margin-bottom: 30px;
+}
+footer .footer-above {
+    padding-top: 50px;
+    background-color: #092543;
+    border-color: #092543;
+}
+footer .footer-col {
+    margin-bottom: 50px;
+}
+footer .footer-below {
+    padding: 25px 0;
+    background-color: #071C33;
+    border-top-color: #00cccc;
+}
+
+.btn-social {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border: 2px solid white;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 45px;
+}
+.btn:focus,
+.btn:active,
+.btn.active {
+    outline: none;
+}
+
+footer a{
+    color: #00cccc;
+}
+
+/********************* NavBar CSS **************************/
+/*
+    Editing Bootstrap navbar colors is very hacky.
+*/
+.navbar{
+    margin-bottom: 0px !important;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.navbar-default {
+    background-color: #071C33;
+    border-color: #071C33;
+    font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+.navbar-default .navbar-brand {
+    font-weight: 500px;
+    font-size: 16px;
+    color: #00cccc;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #ffffff;
+}
+.navbar-default .navbar-text {
+    color: #00cccc;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #00cccc;
+    background-color: #071C33;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: #ffffff;
+    background-color: #071C33;
+}
+.navbar-default .navbar-toggle {
+    border-color: #071C33;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #071C33;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #00cccc;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #00cccc;
+}
+.navbar-default .navbar-link {
+    color: #00cccc;
+}
+.navbar-default .navbar-link:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #00cccc;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #ffffff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #00cccc;
+        background-color: #071C33;
+    }
+}
+
+.navbar-collapse, .navbar{
+    border-bottom-color: #00cccc;
+}
+
+.navbar-landing-padding{
+    margin-right: 5px;
+}
+
+/***Contact form***/
+.btn-warning{
+    background-color: #071C33;
+}
+
+.btn-warning:hover{
+    color: #071C33;
+    background-color: #fff;
+}
+
+.control-label{
+    color: #071C33;
+}
+
+.form-color{
+    border: 0px solid #fff !important;
+}
+
+.input-group-addon{
+
+}
+
+textarea.form-control {
+    height: 100px;
+}
+/*** HEADER**/
+
+header {
+    position: relative;
+    height: 100%;
+    -webkit-background-size: center;
+    -moz-background-size: center;
+    background-size: 100%;
+    -o-background-size: center;
+    background-position: center;
+    background-image: url('../images/fog.jpg');
+    text-align: center;
+    color: white;
+}
+header .header-content {
+    position: relative;
+    text-align: center;
+    padding: 100px 15px 100px;
+    width: 100%;
+}
+header .header-content .header-content-inner h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #2f4f4f;
+    font-family: 'Lato', sans-serif;
+}
+header .header-content .header-content-inner hr {
+    margin: 10px auto;
+}
+header .header-content .header-content-inner p {
+    font-weight: 300;
+    color: #2f4f4f;
+    font-size: 8px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+    header {
+        min-height: 50%;
+    }
+    header .header-content {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding: 0 50px;
+    }
+    header .header-content .header-content-inner {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    header .header-content .header-content-inner p {
+        font-size: 16px;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header .header-content .header-content-inner h1 {
+        margin-top: 30px;
+        font-size: 26px;
+    }
+}
+
+
+
+/******** Login Page Form ****/
+.form-control{
+    margin: 20px auto;
+    background-color: rgba(255,255,255,1); 
+    width: 70%;
+    border: 0px;
+    outline: 0px;
+    /*border-bottom: 1px solid #071C33;*/
+}
+
+.control-label, .label{
+    font-size: 18px;
+
+}
+
+.form-control:focus{
+    outline: 0;
+    border: 0;
+}
+
+/**Invalid login information**/
+.alert-danger {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-horizontal {
+    border: 0px;
+    outline: 0px;
+    background-color: rgba(0,204,204,0.5);
+    padding-top: 45px;
+    padding-bottom: 45px;
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+
+
+}
+
+
+/********************* Registration Page **************************/
+.centerForm{
+    margin: 0 auto;
+    color: black;
+}
+
+.centerForm:focus{
+    border: 0;
+    outline: 0;
+}
+
+.regis {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    height: 30px;
+    width: 300px;
+    border: 0;
+    outline: 0;
+    border: 0px solid #071C33;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+.regTitleColor{
+    color: #fff;
+}
+
+.custom-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#regis-container {
+    margin-top: 20px;
+    margin-bottom: 150px;
+}
+
+#form-separator {
+    border-right: 2px solid;
+    border-color: #999999;
+}
+
+#register-image {
+    margin-left: 100px;
+    margin-top: -10px;
+    width:500px;
+}
+
+/**** Mobile Only ****/
+@media only screen and (max-device-width: 480px){
+    p{
+        font-size:24px;
+    }
+
+    .align-overview-mobile{
+        text-align: left;
+    }
+
+    h4{
+        text-align: left;
+        font-size: 30px;
+    }
+    h3{
+        font-size: 32px;
+    }
+    .btn{
+        font-size: 30px !important;
+    }
+    .btn-x1{
+        padding: 15px 30px !important;
+    }
+
+    .fa-5x {
+        font-size: 7em;
+    }
+
+}
