@@ -49,12 +49,12 @@ module.exports = {
             .setValue('input[name=inputName]', 'pete')
             .setValue('input[name=inputEmail]', 'pete@gmail.com')
             .setValue('input[name=inputPhone]', '888999777')
-            .click('input[name=submit]')
+            // .click('input[name=submit]') //uncomment to add test employee
             .pause(2000)
             .assert.visible('table[id=notRegisteredEmployees]')
-            .assert.containsText('table tbody:first-child','Name Email Phone')
-            // .assert.visible('table tbody:nth-child(3)' '')
-            // .assert.containsText('table tbody:nth-child(2) tr td','pete pete@gmail.com 888999777')
+            .assert.containsText('#notRegisteredEmployees tbody:first-child','Name Email Phone')
+            .assert.visible('#notRegisteredEmployees tbody tr:last-child')
+            .assert.containsText('#notRegisteredEmployees tbody tr:last-child','pete pete@gmail.com 888999777');
 
 
 
