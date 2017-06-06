@@ -450,16 +450,16 @@ a:hover {
 
 /************* Add Employees Page *************/
 #add-employee-show {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
-    background-color: #3c8dbc;
-    box-shadow: 2px 2px 5px #444;
+    background-color: #00cccc;
     border: none;
     position: fixed;
+    text-align: center;
     right: 30px;
     bottom: 30px;
-    font-size: 36px;
+    font-size: 34px;
     font-weight: bold;
     color: white;
 }
@@ -467,7 +467,7 @@ a:hover {
     outline: none;
 }
 #add-employee-show:hover {
-    background-color: #3989b6;
+    background-color: #00b3b3;
 }
 
 .add-email {

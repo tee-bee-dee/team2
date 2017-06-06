@@ -315,7 +315,10 @@ a:focus {
 }
 .content-header > h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform:uppercase;
 }
 .content-header > h1 > small {
   font-size: 15px;
@@ -1237,6 +1240,7 @@ a:focus {
   border-radius: 0;
   box-shadow: none;
   border-color: #d2d6de;
+  margin-bottom:15px;
 }
 .form-control:focus {
   border-color: #3c8dbc;
@@ -2172,11 +2176,12 @@ a:focus {
   text-transform: uppercase;
 }
 .btn.btn-flat {
-  border-radius: 0;
+  border:0; 
+  outline: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  border-width: 1px;
+  background-color: #00cccc;
 }
 .btn:active {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
