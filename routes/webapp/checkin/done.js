@@ -1,6 +1,17 @@
 var style = require('./../../../lib/style.js');
 var request = require('request');
 
+/**
+ * @api {get} done post to Slack channel
+ * @apiName postToSlackChannel
+ * @apiGroup Check In
+ * @apiDescription Notifies a slack channel when a client checks in
+ *
+ * @apiParam {object} req The Express request object used to access the database,
+ * @apiParam {object} res the Express HTTP response
+ * @apiParam {object} next The express next object, used to pass control to next matching route
+ */
+
 exports.get = function (req, res, next) {
     var business = req.session.business;
 

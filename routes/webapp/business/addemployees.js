@@ -6,7 +6,7 @@ var sendgrid = require('sendgrid')('SG.xF6AEimOTeq5W9SFUNQmQg.sFYxU8qr4jThqm_-T_
 var ObjectId = require('mongodb').ObjectID;
 
  /**
-  * @api {get} addemployees.get Get Employee
+  * @api {get} addemployees/get Get Employee
   * @apiName AddEmployeesGet
   * @apiGroup Add Employee
   * @apiDescription Takes a req and res parameters and is inputted into function
@@ -74,14 +74,8 @@ exports.get = function(req,res){
         });
 }
 
-/**
- * Takes a req and res parameters and is inputted into function to get employee, notemployee, and business data.
- *  Allows the User to input specified data and make changes
- * @param req and res The two parameters passed in to get the apprporiate employee,
- * @returns The appropriate data about the employee
- */
  /**
-  * @api {get} addemployees.post Edit Employee
+  * @api {post} addemployees/post Edit Employee
   * @apiName AddEmployeesPost
   * @apiGroup Add Employee
   * @apiDescription Takes a req and res parameters and is inputted into function to get employee, notemployee, and business data.

@@ -1,5 +1,16 @@
 var style = require('./../../../lib/style.js');
 
+/**
+ * @api {get} find appointments
+ * @apiName findAppointments
+ * @apiGroup Appointments
+ * @apiDescription Takes an req parameter and res parameter and returns information about appointments
+ *
+ * @apiParam {object} req The Express request object used to access the database,
+ * @apiParam {object} res the Express HTTP response
+ * @apiParam {object} next The express next object, used to pass control to next matching route
+ */
+
 exports.get = function (req, res, next) {
     var db = req.db;
     var appointments = db.get('appointments');

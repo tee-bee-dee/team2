@@ -2,6 +2,17 @@ var ObjectId = require('mongodb').ObjectID;
 var _ = require('underscore');
 var style = require('./../../../lib/style.js');
 
+/**
+ * @api {get} Get Account Settings
+ * @apiName getBusinessInfo
+ * @apiGroup Business Information
+ * @apiDescription Takes an req parameter and res parameter and returns the details of a business
+ *
+ * @apiParam {object} req The Express request object used to access the database,
+ * @apiParam {object} res the Express HTTP response
+ * @apiParam {object} next The express next object, used to pass control to next matching route
+ */
+
 exports.get = function (req, res, next) {
     var business = req.session.business;
     var db = req.db;
@@ -21,6 +32,17 @@ exports.get = function (req, res, next) {
       });
     });
 };
+
+/**
+ * @api {post} customform Get Account Settings
+ * @apiName getBuseinssInfo
+ * @apiGroup Business Information
+ * @apiDescription Takes an req parameter and res parameter and returns the details of a business
+ *
+ * @apiParam {object} req The Express request object used to access the database,
+ * @apiParam {object} res the Express HTTP response
+ * @apiParam {object} next The express next object, used to pass control to next matching route
+ */
 
 exports.post = function (req, res, next) {
     var db = req.db;

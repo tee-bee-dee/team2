@@ -30,7 +30,7 @@ function hexToRgb(hex) {
 imgur.setClientId('b67dffd2dbe1ea5');
 
 /**
- * @api {get} accountsettings.get Get Account Settings
+ * @api {get} accountsettings/get Get Account Settings
  * @apiName accountSettingsGet
  * @apiGroup Account Settings
  * @apiDescription Takes an req parameter and res parameter and returns the details of a particular employee.
@@ -62,7 +62,7 @@ exports.get = function (req,res) {
 };
 
 /**
- * @api {post} accountsettings.post Set Account Settings
+ * @api {post} accountsettings/post Set Account Settings
  * @apiName AccountSettingsPost
  * @apiGroup Account Settings
  * @apiDescription Takes an req parameter and res parameter and returns the details of a particular employee. The user
@@ -219,7 +219,7 @@ exports.post = function (req, res) {
 };
 
 /**
- * @api {post} accountSettings.setCompanyInfo Set Company Info
+ * @api {post} accountSettings/setCompanyInfo Set Company Info
  * @apiName setCompanyInfo
  * @apiGroup Account Settings
  * @apiDescription Function to set company name and phone number
@@ -276,7 +276,7 @@ exports.setCompanyInfo = function (req, res) {
 };
 
 /**
- * @api {post} accountSettings.uploadLogo Upload Logo
+ * @api {post} accountSettings/uploadLogo Upload Logo
  * @apiName uploadLogo
  * @apiGroup Account Settings
  * @apiDescription Uploads a new logo for an account
@@ -352,7 +352,7 @@ exports.uploadLogo = function(req, res, next){
 };
 
 /**
- * @api {render} accountSettings.signinBackground Set Sign In Background Color
+ * @api {render} accountSettings/signinBackground Set Sign In Background Color
  * @apiName signinBackground
  * @apiGroup Account Settings
  * @apiDescription Function to set the sign in backgroun color for a business
@@ -383,7 +383,7 @@ exports.signinBackground = function(req, res) {
 }
 
 /**
- * @api {render} accountSetting.render Render Account settings
+ * @api {render} accountSetting/render Render Account settings
  * @apiName AccountSettingsRender
  * @apiGroup Account Settings
  * @apiDescription Function to render the Account Settings page
