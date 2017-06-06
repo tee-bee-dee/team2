@@ -8,7 +8,7 @@ var ObjectId = require('mongodb').ObjectID;
 
 
  /**
-  * @api {get} forms.get Get Form
+  * @api {get} forms/get Get Form
   * @apiName FormsGet
   * @apiGroup Forms
   * @apiDescription Gets the forms for a business. (req.body object don't seem to
@@ -51,7 +51,7 @@ exports.get = function(req,res,next){
 }
 
 /**
- * @api {get} forms.get Update Form
+ * @api {post} forms/post Update Form
  * @apiName FormsPost
  * @apiGroup Forms
  * @apiDescription Update the form for a business based on input

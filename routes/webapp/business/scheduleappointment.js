@@ -19,7 +19,7 @@ exports.get = function(req, res) {
 };
 
 /**
- * @api {get} scheduleappointment.post Schedule New Appointment
+ * @api {post} scheduleappointment/post Schedule New Appointment
  * @apiName ScheduleAppointmentPost
  * @apiGroup Schedule Appointment
  * @apiDescription Schedules a new appointment fo the business

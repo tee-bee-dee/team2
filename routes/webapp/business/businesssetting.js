@@ -1,7 +1,7 @@
 var auth = require ('../../../lib/auth');
 
 /**
- * @api {get} businesssetting.post Edit Business Settings
+ * @api {post} businesssetting/post Edit Business Settings
  * @apiName BusinessSettingPost
  * @apiGroup Business Settings
  * @apiDescription Allows the user to change the settings and information for a business

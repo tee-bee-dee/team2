@@ -3,7 +3,7 @@
   "version": "0.6.0",
   "description": "Webapp documentation",
   "title": "tee-bee-dee",
-  "url" : "https://www.example1.com/",
+  "url" : "http://tbd-team2.herokuapp.com/",
   "header": {
     "title": "Introduction",
     "filename": "apidoc_header.md"

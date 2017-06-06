@@ -1,5 +1,5 @@
 /**
- * @api {get} landing.get Get Landing Page
+ * @api {get} landing/get Get Landing Page
  * @apiName LandingGet
  * @apiGroup Landing
  * @apiDescription Renders the business landing page
@@ -27,7 +27,7 @@ exports.get = function (req, res, next) {
 };
 
 /**
- * @api {get} landing.post Post Landing Page
+ * @api {post} landing/post Post Landing Page
  * @apiName LandingPost
  * @apiGroup Landing
  * @apiDescription Set the company name on landing page

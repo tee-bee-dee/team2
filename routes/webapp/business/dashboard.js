@@ -2,7 +2,7 @@ var auth = require('../../../lib/auth');
 var async = require('async');
 
 /**
- * @api {get} dashboard.get Get Dashboard
+ * @api {get} dashboard/get Get Dashboard
  * @apiName GetDashboard
  * @apiGroup Dashboard
  * @apiDescription Gets the user's dashboard
