@@ -8,9 +8,9 @@ module.exports = {
         .pause(1000)
         .click('.btn')
         .pause(1000)
-        .click('.sidebar-menu li:nth-child(7) a')
+        .click('.sidebar-menu li:nth-child(6) a')
         .pause(1000)
-        .assert.containsText('.content-header h1', 'Settings');
+        .assert.containsText('.content-header h1', 'SETTINGS');
 
         client.end();
     },
@@ -52,9 +52,8 @@ module.exports = {
         .pause(1000)
         .click('.btn')
         .pause(1000)
-        .click('.sidebar-menu li:nth-child(3) a')
+        .click('.sidebar-menu li:nth-child(2) a')
         .pause(1000)
-        .assert.containsText('.box-title', 'Check In')
         .assert.urlEquals('https://tbd-team2.herokuapp.com/office/592cce5a3bbbe2001139bfc8/checkin')
 
         //fill out check in forms
@@ -136,32 +135,32 @@ module.exports = {
         //Schedule appointment
         .click('.sidebar-toggle')//Open sidebar
         .assert.attributeEquals('body','class','skin-blue')//Ensure side bar is open
-        .waitForElementVisible('.sidebar-menu li:nth-child(4) a',1000,'Testing schedule appointment tab sidemenu collapse')
-        .click('.sidebar-menu li:nth-child(4) a')
+        .waitForElementVisible('.sidebar-menu li:nth-child(3) a',1000,'Testing schedule appointment tab sidemenu collapse')
+        .click('.sidebar-menu li:nth-child(3) a')
         .click('.sidebar-toggle')//Collapse sidebar
         .assert.attributeEquals('body','class','skin-blue sidebar-collapse')//Ensure sidebar is collapsed        //Schedule appointment
-        
+
         //Employees
         .click('.sidebar-toggle')//Open sidebar
         .assert.attributeEquals('body','class','skin-blue')//Ensure side bar is open
-        .waitForElementVisible('.sidebar-menu li:nth-child(5) a',1000,'Testing employees tab sidemenu collapse')
-        .click('.sidebar-menu li:nth-child(5) a')
+        .waitForElementVisible('.sidebar-menu li:nth-child(4) a',1000,'Testing employees tab sidemenu collapse')
+        .click('.sidebar-menu li:nth-child(4) a')
         .click('.sidebar-toggle')//Collapse sidebar
-        .assert.attributeEquals('body','class','skin-blue sidebar-collapse')//Ensure sidebar is collapsed        
+        .assert.attributeEquals('body','class','skin-blue sidebar-collapse')//Ensure sidebar is collapsed
 
         //Form Editor
         .click('.sidebar-toggle')//Open sidebar
         .assert.attributeEquals('body','class','skin-blue')//Ensure side bar is open
-        .waitForElementVisible('.sidebar-menu li:nth-child(6) a',1000,'Testing form editor tab sidemenu collapse')
-        .click('.sidebar-menu li:nth-child(6) a')
+        .waitForElementVisible('.sidebar-menu li:nth-child(5) a',1000,'Testing form editor tab sidemenu collapse')
+        .click('.sidebar-menu li:nth-child(5) a')
         .click('.sidebar-toggle')//Collapse sidebar
-        .assert.attributeEquals('body','class','skin-blue sidebar-collapse')//Ensure sidebar is collapsed        
+        .assert.attributeEquals('body','class','skin-blue sidebar-collapse')//Ensure sidebar is collapsed
 
         //Settings
         .click('.sidebar-toggle')//Open sidebar
         .assert.attributeEquals('body','class','skin-blue')//Ensure side bar is open
-        .waitForElementVisible('.sidebar-menu li:nth-child(7) a',1000,'Testing settings tab sidemenu collapse')
-        .click('.sidebar-menu li:nth-child(7) a')
+        .waitForElementVisible('.sidebar-menu li:nth-child(6) a',1000,'Testing settings tab sidemenu collapse')
+        .click('.sidebar-menu li:nth-child(6) a')
         .click('.sidebar-toggle')//Collapse sidebar
         .assert.attributeEquals('body','class','skin-blue sidebar-collapse')//Ensure sidebar is collapsed
 
