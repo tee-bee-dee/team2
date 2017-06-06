@@ -90,6 +90,7 @@ module.exports = {
                 // we can check if there was a successful drag of a form element by verifying the child element is visible
                 //
             // .assert.visible('//ul[@class = "frmb"]//li[@class="autocomplete-field"]')
+
             .useCss()
             .waitForElementVisible('.clear-all', 1000)
             .assert.containsText('.clear-all', 'Clear')
