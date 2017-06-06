@@ -24,8 +24,8 @@ module.exports = {
             .assert.visible('ul li:nth-child(6)')
             .assert.visible('ul li:nth-child(6) a')
             .assert.visible('.fa-pencil-square-o')
-            .assert.containsText('ul li:nth-child(6) a', 'Form Editor')
-            .click('ul li:nth-child(6) a', function(clickStatus){
+            .assert.containsText('ul li:nth-child(5) a', 'Form Editor')
+            .click('ul li:nth-child(5) a', function(clickStatus){
                 console.log(clickStatus.status);
             })
             .assert.urlEquals('https://tbd-team2.herokuapp.com/forms')
@@ -139,11 +139,11 @@ module.exports = {
             .waitForElementVisible('.main-sidebar', 1000)
             .assert.visible('.main-sidebar')
             .assert.visible('.sidebar')
-            .assert.visible('ul li:nth-child(6)')
-            .assert.visible('ul li:nth-child(6) a')
+            .assert.visible('ul li:nth-child(5)')
+            .assert.visible('ul li:nth-child(5) a')
             .assert.visible('.fa-pencil-square-o')
-            .assert.containsText('ul li:nth-child(6) a', 'Form Editor')
-            .click('ul li:nth-child(6) a', function(clickStatus){
+            .assert.containsText('ul li:nth-child(5) a', 'Form Editor')
+            .click('ul li:nth-child(5) a', function(clickStatus){
                 console.log(clickStatus.status);
             })
             .assert.urlEquals('https://tbd-team2.herokuapp.com/forms')
