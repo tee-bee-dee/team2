@@ -3,7 +3,7 @@
  */
 
 module.exports = {
-    'test1' : function (client) {
+    'Running form builder tests' : function (client) {
         //Login to user account
         client
             .url('https://tbd-team2.herokuapp.com/login').waitForElementVisible('body', 2000)
