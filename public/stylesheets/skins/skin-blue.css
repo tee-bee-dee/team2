@@ -43,7 +43,7 @@
   }
 }
 .skin-blue .main-header .logo {
-  background-color: #367fa9;
+  background-color: #00cccc;
   color: #ffffff;
   border-bottom: 0 solid transparent;
 }
@@ -59,7 +59,7 @@
 .skin-blue .wrapper,
 .skin-blue .main-sidebar,
 .skin-blue .left-side {
-  background-color: #222d32;
+  background-color: #071C33;
 }
 .skin-blue .user-panel > .info,
 .skin-blue .user-panel > .info > a {
