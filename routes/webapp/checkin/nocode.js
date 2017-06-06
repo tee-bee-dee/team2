@@ -2,7 +2,7 @@ var ObjectID = require('mongodb').ObjectID;
 var style = require('./../../../lib/style.js');
 
 /**
- * @api {get} checkin.post get all appointments
+ * @api {get} checkin - get all appointments
  * @apiName getBusinessInfo
  * @apiGroup Business Information
  * @apiDescription Takes an req parameter and res parameter and returns information of business
@@ -26,7 +26,7 @@ exports.get = function (req, res, next) {
 };
 
 /**
- * @api {post} nocode.post Create an appointment
+ * @api {post} nocode - post Create an appointment
  * @apiName createAppointment
  * @apiGroup Appointments
  * @apiDescription Takes an req parameter and res parameter and sets up appointments

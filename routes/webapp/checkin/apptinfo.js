@@ -1,7 +1,7 @@
 var style = require('./../../../lib/style.js');
 
 /**
- * @api {get} apptinfo.get find appointments
+ * @api {get} find appointments
  * @apiName findAppointments
  * @apiGroup Appointments
  * @apiDescription Takes an req parameter and res parameter and returns information about appointments

@@ -1,7 +1,7 @@
 var style = require('./../../../lib/style.js');
 
 /**
- * @api {get} sign.get get all appointments
+ * @api {get} get all appointments
  * @apiName getBusinessInfo
  * @apiGroup Business Information
  * @apiDescription Takes an req parameter and res parameter and returns information of business

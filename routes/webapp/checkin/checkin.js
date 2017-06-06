@@ -4,7 +4,7 @@ var style = require('./../../../lib/style.js');
 var request = require('request');
 
 /**
- * @api {get} checkin.post get all appointments
+ * @api {get} checkin get all appointments
  * @apiName getBusinessInfo
  * @apiGroup Business Information
  * @apiDescription Takes an req parameter and res parameter and returns information of business
@@ -31,7 +31,7 @@ exports.get = function (req, res, next) {
 };
 
 /**
- * @api {post} checkin.post get all appointments
+ * @api {post} get all appointments
  * @apiName postAppointments
  * @apiGroup Appointments
  * @apiDescription Takes an req parameter and res parameter and returns appointments by business name

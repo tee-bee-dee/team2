@@ -2,7 +2,7 @@ var style = require('./../../../lib/style.js');
 var request = require('request');
 
 /**
- * @api {get} done.get post to Slack channel
+ * @api {get} done post to Slack channel
  * @apiName postToSlackChannel
  * @apiGroup Check In
  * @apiDescription Notifies a slack channel when a client checks in
