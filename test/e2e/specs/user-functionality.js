@@ -1,4 +1,7 @@
 module.exports = {
+
+    // ----------------------------- Reach each side menu item ----------------------------------------
+
     'Reach user settings page' : function (client) {
         //Login to user account
     client
@@ -10,10 +13,131 @@ module.exports = {
         .pause(1000)
         .click('.sidebar-menu li:nth-child(6) a')
         .pause(1000)
-        .assert.containsText('.content-header h1', 'SETTINGS');
+        .assert.urlEquals('https://tbd-team2.herokuapp.com/accountSettings')
+
+    },
+    'Reach user dashboard' : function (client) {
+    client
+        .pause(1000)
+        .click('.sidebar-menu li:nth-child(1) a')
+        .pause(1000)
+        .assert.urlEquals('https://tbd-team2.herokuapp.com/dashboard')
+    },
+    'Reach user sign in screen' : function (client) {
+    client
+        .pause(1000)
+        .click('.sidebar-menu li:nth-child(2) a')
+        .pause(1000)
+        .assert.urlEquals('https://tbd-team2.herokuapp.com/office/592cce5a3bbbe2001139bfc8/checkin')
+        .back();
+    },
+    'Reach user schedule appointment page' : function (client) {
+    client
+        .pause(1000)
+        .click('.sidebar-menu li:nth-child(3) a')
+        .pause(1000)
+        .assert.urlEquals('https://tbd-team2.herokuapp.com/scheduleappointment')
+    },
+    'Reach user add employees page' : function (client) {
+    client
+        .pause(1000)
+        .click('.sidebar-menu li:nth-child(4) a')
+        .pause(1000)
+        .assert.urlEquals('https://tbd-team2.herokuapp.com/addemployees')
+    },
+    'Reach user add employees page' : function (client) {
+    client
+        .pause(1000)
+        .click('.sidebar-menu li:nth-child(5) a')
+        .pause(1000)
+        .assert.urlEquals('https://tbd-team2.herokuapp.com/forms');
+        client.end();
+    },
+
+
+    // ----------------------------- Update Password ----------------------------------------
+
+    'Reset user password with invalid current password' : function (client) {
+        //Login to user account
+    client
+        .url('https://tbd-team2.herokuapp.com/login').waitForElementVisible('body', 1000)
+        .setValue('input[type=email]', 'balrogSlayer@gmail.com')
+        .setValue('input[type=password]', '1234')
+        .pause(1000)
+        .click('.btn')
+        .pause(1000)
+        .click('.sidebar-menu li:nth-child(6) a')
+        .pause(1000)
+        .assert.urlEquals('https://tbd-team2.herokuapp.com/accountSettings')
+        .waitForElementVisible('input[name=oldPassword]', 1000)
+        .waitForElementVisible('input[name=editPassword]', 1000)
+        .waitForElementVisible('input[name=editPassword2]', 1000)
+        .setValue('input[name=oldPassword]', '0000') //incorrect current password
+        .setValue('input[name=editPassword]', '1234')
+        .setValue('input[name=editPassword2]', '1234')
+
+        .waitForElementVisible('.content .row:nth-child(2) .btn-primary', 1000)
+        .click('.content .row:nth-child(2) .btn-primary')
+        .waitForElementVisible('.alert-warning', 1000)
+        .assert.containsText('.alert-warning', 'Incorrect password')
+
+    },
+    'Reset user password with valid current password' : function (client) {
+        //Login to user account
+    client
+        .assert.urlEquals('https://tbd-team2.herokuapp.com/accountSettings')
+        .waitForElementVisible('input[name=oldPassword]', 1000)
+        .waitForElementVisible('input[name=editPassword]', 1000)
+        .waitForElementVisible('input[name=editPassword2]', 1000)
+        .setValue('input[name=oldPassword]', '1234') //incorrect current password
+        .setValue('input[name=editPassword]', '1234') //chose same to ensure testing will always work
+        .setValue('input[name=editPassword2]', '1234')
+
+        .waitForElementVisible('.content .row:nth-child(2) .btn-primary', 1000)
+        .click('.content .row:nth-child(2) .btn-primary')
+        .waitForElementVisible('.alert-success', 1000)
+        .assert.containsText('.alert-success', 'Password successfully changed!')
+
+
+        client.end();
+
+    },
+    // ----------------------------- Phone number update ----------------------------------------
+    'Update phone number invalid/valid' : function (client) {
+        //Login to user account
+    client
+        .url('https://tbd-team2.herokuapp.com/login').waitForElementVisible('body', 1000)
+        .setValue('input[type=email]', 'balrogSlayer@gmail.com')
+        .setValue('input[type=password]', '1234')
+        .pause(1000)
+        .click('.btn')
+        .pause(1000)
+        .click('.sidebar-menu li:nth-child(6) a')
+        .pause(1000)
+        .assert.urlEquals('https://tbd-team2.herokuapp.com/accountSettings')
+        .waitForElementVisible('input[name=editPhone]', 1000)
+
+        //should be 231-231-2345
+        .setValue('input[name=editPhone]', '231231234555') //incorrect number format
+        .waitForElementVisible('.content .row:nth-child(3) .btn-primary', 1000)
+        .click('.content .row:nth-child(3) .btn-primary')
+        .waitForElementVisible('.alert-warning', 500)
+        .assert.containsText('.alert-warning', 'Incorrect phone number format', 'Incorrect phone number format tested')
+
+        .pause(1000)
+
+        .clearValue('input[name=editPhone]')
+        .setValue('input[name=editPhone]', '231-231-2344') //correct number format
+        .waitForElementVisible('.content .row:nth-child(3) .btn-primary', 1000)
+        .click('.content .row:nth-child(3) .btn-primary')
+        .waitForElementVisible('.alert-success', 500)
+        .assert.containsText('.alert-success','Contact info saved.','Contact info saved');
 
         client.end();
     },
+
+    // ----------------------------- Schedule Appointment (uncomment to test) --------------------------------
+
     /*'Schedule Appointment' : function (client) {
         //Login to user account
     client
@@ -43,6 +167,9 @@ module.exports = {
 
         client.end();
     },*/
+
+    // ----------------------------- Check In ----------------------------------------
+
     'Check In' : function (client) {
         //Login to user account
     client
@@ -115,6 +242,8 @@ module.exports = {
         client.end();
 
     },
+
+    // ----------------------------- Hide Side Menu Functionality ----------------------------------------
     'Hide Side Menu' : function (client) {
         //Login to user account
     client
