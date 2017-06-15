@@ -59,6 +59,12 @@ Tests
 ``npm run e2e``: run only e2e tests
 ``npm run unit``: run only unit tests
 
+Code Reviews/GitHub Issues
+----------------------------
+To address bugs and other issues, opened up issues [here](https://github.com/tee-bee-dee/team2/issues).
+
+In addition, to add code into the `master` branch, team made pull requests that upon approval, would have feature branches rebased onto `master` and merged into `master`. Check out the pull requests opened and closed [here](https://github.com/tee-bee-dee/team2/pulls).
+
 Code Climate Test Coverage
 ----------------------------
 Go to [Code Climate](https://codeclimate.com/github/tee-bee-dee/team2) to view code coverage of application, as well as test coverage.
