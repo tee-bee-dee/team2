@@ -1,5 +1,15 @@
 # Enque
 
+## Introduction
+We are CSE 112 Spring 2017 Team 6, or also known as tee-bee-dee. Below you will find information regarding our application, such as how to set up for development, integrated services, credentials and more!
+
+## Team
+* Team Leads: Brandon Rahman & Audrey Eckman
+* Front-End: John Gamboa & Vanna Luu
+* Back-end: Cory Wei & Paula Quach
+* Testers: Gabriel Rangel & Ashish Pokharel
+* Documentation: John Senar & Kevin Wong
+
 Setup
 ----------------------------
 1. Setup Account with [mLab](https://mlab.com/) or setup local Mongo for development.
