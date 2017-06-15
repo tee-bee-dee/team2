@@ -22,6 +22,7 @@
                 <tr>
                   <th>Name</th>
                   <th>Doctor</th>
+                  <th>Appointment Date</th>
                   <th>Appointment Time</th>
                   <th>Check In Time</th>
                   <th>Status</th>
@@ -33,7 +34,8 @@
                 <tr onclick = "highlight()">
                   <td>{{visitor}}</td>
                   <td>{{doctor}}</td>
-                  <td>{{apptTime}}</td>
+                  <td>{{date}}</td>
+                  <td>{{time}}</td>
                   <td>{{currentTime}}</td>
                   <td>{{state}}</td>
                   <td><button class="btn btn-sm btn-flat btn-info" onclick="openFormResponse(`{{formResponse}}`)" data-toggle="modal" data-target="#myModal{{id}}">View Form</button></td>

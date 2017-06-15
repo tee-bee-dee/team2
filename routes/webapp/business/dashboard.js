@@ -76,6 +76,8 @@ exports.get = function (req, res) {
 					apptInfo.state = elem.state[0].toUpperCase() + elem.state.substr(1);
 					apptInfo.currentTime = formatDate(elem.checkin);
 					apptInfo.formResponse = elem.formResponse;
+					apptInfo.date = elem.date;
+					apptInfo.time = elem.time;
 					console.log(apptInfo.formResponse);
 
 					employees.find({

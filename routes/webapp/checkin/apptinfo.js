@@ -28,6 +28,7 @@ exports.get = function (req, res, next) {
             name: appointment.fname,
             date: appointment.date,
             email: appointment.email,
+            time: appointment.time,
             companyName: business.companyName,
             bg: business.style.bg,
             logo: business.logo,
