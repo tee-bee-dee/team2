@@ -28,7 +28,7 @@ exports.get = function (req, res) {
 
 		businesses.find({ email: { $ne: 'peter@enque.com' }}, function(err, businesses) {
 			res.render('business/dashboard-admin', {
-				title: 'Express',
+				title: 'Dashboard',
 				eid: employeeId,
 				employeeName: employeename,
 				businesses: businesses,
@@ -39,7 +39,7 @@ exports.get = function (req, res) {
 		});
 	} else if( isOwner ) {
 		res.render('business/dashboard-business', {
-			title: 'Express',
+			title: 'Dashboard',
 			eid: employeeId,
 			employeeName: employeename,
 			message: req.flash("permission"),
@@ -99,7 +99,7 @@ exports.get = function (req, res) {
 
 		function renderDashboard () {
 			res.render('business/visitor-list', {
-				title: "Express",
+				title: "Dashboard",
 				isAdmin: req.user[0].admin,
 				patients: patientList
 			});
