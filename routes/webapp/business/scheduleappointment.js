@@ -42,7 +42,9 @@ exports.post = function(req, res) {
     fname: patient.inputFirstName,
     lname: patient.inputLastName,
     phone: patient.inputPhone,
-    email: patient.inputEmail
+    email: patient.inputEmail,
+    date: patient.inputDate,
+    time: patient.inputTime
   });
 
   var slackOptions = {
