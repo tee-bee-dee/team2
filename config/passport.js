@@ -97,7 +97,7 @@ module.exports = function (passport) {
                             phone: phone,
                             fname: fname,
                             lname: lname,
-                            logo: 'https://files.slack.com/files-pri/T4U1ZM4R5-F5FUGLD7X/tap.png',
+                            logo: 'https://s-media-cache-ak0.pinimg.com/originals/9c/68/e6/9c68e6ba3c16d69bc780733618b4e142.png',
                             style: {
                                 bg: {
                                   r: 255,

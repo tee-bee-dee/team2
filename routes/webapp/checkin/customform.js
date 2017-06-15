@@ -21,6 +21,7 @@ exports.get = function (req, res, next) {
     var businessId = business._id;
 
     forms.find({ business: businessId }, function(err, result) {
+      if (!result) return res.redirect('sign');
       var form = result[0].form;
       if (!form) return res.redirect('sign');
       res.render('checkin/customform', {
