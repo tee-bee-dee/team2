@@ -9,7 +9,7 @@ exports.get = function(req, res) {
 
   employees.find({ business: req.user[0].business, admin: false }, function(err, result) {
     res.render('business/scheduleappointment', {
-      title: 'Express',
+      title: 'Schedule Appointment',
       isOwner: req.user[0].admin,
       employees: result,
       businessId: req.user[0].business,

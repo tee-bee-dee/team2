@@ -48,7 +48,7 @@ exports.get = function(req,res){
             if(err){
                 throw err;
             }
-            res.render('business/addemployees',{title: 'Express',notsigned: notemployee, signed: employeee});
+            res.render('business/addemployees',{title: 'Employees',notsigned: notemployee, signed: employeee});
 
         });
 }
