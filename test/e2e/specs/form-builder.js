@@ -102,6 +102,7 @@ module.exports = {
                 console.log(clickStatus.status);
             })
             .waitForElementVisible('.form-builder-dialog', 1000)
+            .pause(1000)
             .assert.containsText('.form-builder-dialog', 'Are you sure you want to clear all fields?')
             .assert.visible('.no')
             .assert.visible('.yes')
