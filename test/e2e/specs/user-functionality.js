@@ -201,7 +201,6 @@ module.exports = {
 
         //check that user is signed into correct account
         .assert.containsText('.box-header h1', 'Hello, Sauron!')
-        .assert.containsText('.box-body h4:nth-child(2)', 'hobbit@test.com')
 
         //click on Not you?
         .click('.btn-danger')
