@@ -36,9 +36,9 @@ In order to login as peter, use the following credentials on the live applicatio
 	username: peter@enque.com
 	password: peter
 
-The live app can be found [here](http://tbd-team2.herokuapp.com/).
+The live app can be found [here](https://tbd-team2.herokuapp.com/).
 
-For local development, go into Mongo and set company owner value `peter` to `true` to access Peter's dashboard.
+For local development, create a Peter account, then go into Mongo and set company owner value `peter` to `true` to access Peter's dashboard.
 
 Slack Integration can be found here
 
